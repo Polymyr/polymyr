@@ -1,0 +1,60 @@
+.nav {
+	background: yellow;
+	margin: 0;
+	padding: 0;
+	height: 50px;
+}
+
+ul.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 5em 0 5em;
+  overflow: hidden;
+}
+
+ul.menu li {
+	float: right;
+	display: none;
+	margin-left: 1em;
+  padding-top: 1em;
+}
+
+ul.menu li a {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+ul.menu li.icon {
+	position: absolute;
+	display: inline-block;
+  right: 1em;
+  top: 0.1em;
+}
+
+ul.menu.responsive {
+	position: relative;
+	width: 100%;
+	background: white;
+}
+
+ul.menu.responsive li {
+  float: none;
+  display: inline;
+}
+ul.menu.responsive li a {
+  display: block;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+	
+	/* For desktop: */
+	ul.menu li {
+		display: list-item;
+	}
+
+	ul.menu li.icon {
+		display: none;
+	}
+}

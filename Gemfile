@@ -32,6 +32,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# New gems
+gem 'devise'
+gem 'simple_form'
+gem 'activeadmin', github: 'activeadmin'
+gem "font-awesome-rails"
+
 # Static asset serving and logging on Heroku
 gem 'rails_12factor', group: :production
 
@@ -46,4 +52,7 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # Better error pages
+  gem "better_errors"
 end
