@@ -1,13 +1,8 @@
 <nav class="nav">
-	<a href=<%= root_path %>>
-    <%= image_tag("polymyr_logo.png", size: "128", alt: "Polymyr") %>
-  </a>
+	<h4><a href=<%= root_path %>>POLYMYR</a></h4>
 	<ul class="menu">
-		<li><a href="#">Home</a></li>
-		<li><a href="#">About</a></li>
-		<li><a href="#">Portfolio</a></li>
-		<li><a href="#">News</a></li>
-		<li><a href="#">Contact</a></li>
+		<li><%= link_to "Sign in", "#signin", "data-toggle" => "modal" %></li>
+		<li><a href="http://blog.polymyr.com/">Blog</a></li>
 		<li class="icon"><a href="#"><i class="fa fa-bars fa-lg"></i></a></li>
 	</ul>
 </nav>
