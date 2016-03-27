@@ -6,6 +6,11 @@ form div {
 	margin-bottom:10px;
 }
 
+.form-actions .btn {
+	background-color: #2274A5;
+	color: white;
+}
+
 .signup-submit {
 	margin-top:10px;
 }
@@ -22,6 +27,10 @@ form div {
 .authentication-wrapper hr {
 	margin-top: 15px;
 	margin-bottom: 25px;
+}
+
+.authentication-wrapper a {
+	color: #2274A5;
 }
 
 .authentication-wrapper label {

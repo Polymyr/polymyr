@@ -1,10 +1,9 @@
 <div class="authentication-wrapper">
-	
-	<h2>Sign in to Polymyr</h2>
+	<h2>Log in as a Maker</h2>
 
 	<hr>
 
-	<%= simple_form_for(:user, :url => session_path(:user)) do |f| %>
+	<%= simple_form_for(:maker, :url => session_path(:maker)) do |f| %>
 	  <div class="form-inputs">
 	    <%= f.input :email, required: false, autofocus: true %>
 	    <%= f.input :password, required: false %>
@@ -12,9 +11,9 @@
 	  </div>
 
 	  <div class="form-actions">
-	    <%= f.button :submit, "Sign in" %>
+	    <%= f.button :submit, "Log in" %>
 	  </div>
 	<% end %>
 
-	<%= render "users/shared/links" %>
+	<%= render "makers/shared/links" %>
 </div>

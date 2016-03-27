@@ -6,7 +6,7 @@
         <h4 class="modal-title" id="myModalLabel">Sign in to Polymyr</h4>
       </div>
       <div class="modal-body">
-        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+        <%= form_for(:user, :url => session_path(:user)) do |f| %>
           <div><%= f.label :email %><br />
           <%= f.email_field :email, :autofocus => true %></div>
           <div><%= f.label :password %><br />
