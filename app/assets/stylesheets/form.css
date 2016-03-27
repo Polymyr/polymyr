@@ -1,0 +1,51 @@
+form {
+	line-height: 1.2;
+}
+
+form div {
+	margin-bottom:10px;
+}
+
+.signup-submit {
+	margin-top:10px;
+}
+
+.authentication-wrapper {
+	width: 600px;
+	background: white;
+	margin: auto;
+	padding: 25px 25px 25px 25px;
+  border: 1px solid #E0E0E0;
+  border-radius: 10px;
+}
+
+.authentication-wrapper hr {
+	margin-top: 15px;
+	margin-bottom: 25px;
+}
+
+.authentication-wrapper label {
+	display: inline-block;
+	text-align: right;
+	width: 120px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.authentication-wrapper .checkbox {
+	margin-left: 120px;
+	text-align: left;
+	padding: 0;
+}
+
+.authentication-wrapper .checkbox input {
+	margin-right: 5px;
+}
+
+.authentication-wrapper .form-actions {
+	margin-left: 120px;
+}
+
+.authentication-wrapper a {
+	margin-left: 120px;
+}

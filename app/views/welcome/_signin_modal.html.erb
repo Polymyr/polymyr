@@ -3,7 +3,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Sign in</h4>
+        <h4 class="modal-title" id="myModalLabel">Sign in to Polymyr</h4>
       </div>
       <div class="modal-body">
         <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
@@ -18,11 +18,11 @@
         <% end %>
       </div>
       <div class="modal-footer">
-				<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+				<%- if devise_mapping.registerable? %>
 				  <%= link_to "Sign up", "#signup", "data-toggle" => "modal", "data-dismiss" => "modal" %><br />
 				<% end -%>
 
-				<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+				<%- if devise_mapping.recoverable? %>
 				  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
 				<% end -%>
 
