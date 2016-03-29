@@ -1,4 +1,4 @@
-<div class="authentication-wrapper">
+<div class="form-wrapper">
 
 	<h2>Request access to launch and test your products</h2>
 
@@ -13,7 +13,7 @@
 	    <%= f.input :email, required: true %>
 	    <%= f.input :company, required: true %>
 	    <%= f.input :website, required: true %>
-	    <%= f.input :password, required: true %>
+	    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
 	  </div>
 
 	  <div class="form-actions">

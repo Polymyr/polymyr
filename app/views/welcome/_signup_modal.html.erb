@@ -5,15 +5,19 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Sign up for Polymyr</h4>
       </div>
-      <div class="modal-body">
-        <%= form_for(:user, :url => registration_path(:user)) do |f| %>
-          <div><%= f.label :name %><br />
-          <%= f.text_field :name, :autofocus => true %></div>
-          <div><%= f.label :email %><br />
-          <%= f.email_field :email %></div>
-          <div><%= f.label :password %><br />
-          <%= f.password_field :password %></div>
-          <div class="signup-submit"><%= f.submit "Sign up", :class => 'btn btn-small btn-success' %></div>
+      <div class="form-wrapper">
+
+        <%= simple_form_for(:user, :url => registration_path(:user)) do |f| %>
+
+          <div class="form-inputs">
+            <%= f.input :name, required: true, label: 'Full name', autofocus: true %>
+            <%= f.input :email, required: true, autofocus: true %>
+            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Sign up" %>
+          </div>
         <% end %>
       </div>
       <div class="modal-footer">

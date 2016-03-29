@@ -8,6 +8,10 @@ class ProductsController < ApplicationController
 		@product = current_user.products.build(product_params)
 	end
 
+	def show
+		@product = Product.find(params[:id])
+	end
+
 	private
 
 		def product_params

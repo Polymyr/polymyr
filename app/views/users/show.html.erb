@@ -1,1 +1,5 @@
-<%= @user.email %>
+<div class="user-info">
+	<%= image_tag @user.avatar.url(:medium) %>
+	<h1><%= @user.name %></h1>
+	<%= link_to "Settings", edit_user_registration_path %>
+</div>

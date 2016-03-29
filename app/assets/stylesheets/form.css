@@ -15,7 +15,7 @@ form div {
 	margin-top:10px;
 }
 
-.authentication-wrapper {
+.form-wrapper {
 	width: 600px;
 	background: white;
 	margin: auto;
@@ -24,37 +24,56 @@ form div {
   border-radius: 10px;
 }
 
-.authentication-wrapper hr {
+.form-wrapper hr {
 	margin-top: 15px;
-	margin-bottom: 25px;
+	margin-bottom: 20px;
 }
 
-.authentication-wrapper a {
+.form-wrapper a {
 	color: #2274A5;
 }
 
-.authentication-wrapper label {
-	display: inline-block;
-	text-align: right;
-	width: 120px;
-	padding-left: 5px;
-	padding-right: 5px;
+.form-wrapper label {
+	display: block;
 }
 
-.authentication-wrapper .checkbox {
-	margin-left: 120px;
-	text-align: left;
-	padding: 0;
+.form-wrapper input {
+	width: 300px;
 }
 
-.authentication-wrapper .checkbox input {
+.form-wrapper .checkbox input {
 	margin-right: 5px;
+	width: 15px;
 }
 
-.authentication-wrapper .form-actions {
-	margin-left: 120px;
+.form-wrapper .hint {
+	margin-top: 2px;
+	display: block;
+	font-size: 0.8em;
+	color: #707070;
 }
 
-.authentication-wrapper a {
-	margin-left: 120px;
+.form-wrapper .btn {
+	margin-bottom: 10px;
+}
+
+.modal .modal-header {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.modal .form-wrapper {
+	width: auto;
+	border: none;
+	border-radius: none;
+}
+
+.modal .form-wrapper .btn {
+	margin-bottom: -10px;
+}
+
+.modal .modal-footer {
+	text-align: left;
+	padding-left: 25px;
+	padding-right: 25px;
 }

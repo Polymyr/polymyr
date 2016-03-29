@@ -1,4 +1,4 @@
-<div class="authentication-wrapper">
+<div class="form-wrapper">
   
   <h2>Sign up for Polymyr</h2>
 
@@ -9,7 +9,7 @@
     <div class="form-inputs">
     	<%= f.input :name, required: true, label: 'Full name', autofocus: true %>
       <%= f.input :email, required: true, autofocus: true %>
-      <%= f.input :password, required: true %>
+      <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     </div>
 
     <div class="form-actions">
