@@ -7,7 +7,12 @@
       </div>
       <div class="form-wrapper">
 
-        <%= simple_form_for(:user, :url => registration_path(:user)) do |f| %>
+        <% resource = :user %>
+        <% resource_name = :user %>
+        <% devise_mapping = Devise.mappings[:user] %>
+
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
 
           <div class="form-inputs">
             <%= f.input :name, required: true, label: 'Full name', autofocus: true %>

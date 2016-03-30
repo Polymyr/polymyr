@@ -1,1 +1,6 @@
-<%= @maker.email %>
+<%= @maker.company %>
+<%= @maker.website %>
+
+<% if current_maker == @maker %>
+	<%= link_to "Settings", edit_maker_registration_path %>
+<% end %>
