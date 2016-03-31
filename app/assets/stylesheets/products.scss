@@ -1,3 +1,26 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@media screen and (min-width: 768px) {
+  /* For desktop: */
+  .product .row .col-6 {
+		margin-left: 16.66%;
+	}
+
+	.product .row .col-2 {
+		margin-left: -66.66%;
+	}
+
+	.thumbnails li {
+		float: left;
+		clear: left;
+	}
+}
+
+.thumbnails {
+	text-align: center;
+}
+
+.thumbnails li {
+	display: inline;
+}

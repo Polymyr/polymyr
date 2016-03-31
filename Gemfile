@@ -56,4 +56,7 @@ group :development do
 
   # Better error pages
   gem "better_errors"
+
+  # Security
+  gem 'brakeman', :require => false
 end

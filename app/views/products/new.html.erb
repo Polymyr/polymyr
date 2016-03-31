@@ -1,0 +1,25 @@
+<div class="form-wrapper">
+	<h2>Launch your product</h2>
+
+	<hr>
+
+	<%= simple_form_for @product do |f| %>
+
+		<div class="form-inputs">
+			<%= f.input :name %>
+			<%= f.input :price %>
+			<%= f.input :rebate %>
+			<%= f.input :quantity %>
+			<%= f.input :description %>
+			<%= f.input :image1, as: :file %>
+			<%= f.input :image2, as: :file %>
+			<%= f.input :image3, as: :file %>
+			<%= f.input :image4, as: :file %>
+			<%= f.input :image5, as: :file %>
+		</div>
+
+		<div class="form-actions">
+	    <%= f.button :submit, "Submit" %>
+	  </div>
+	<% end %>
+</div>

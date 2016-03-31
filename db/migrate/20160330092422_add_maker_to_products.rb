@@ -1,0 +1,5 @@
+class AddMakerToProducts < ActiveRecord::Migration
+  def change
+    add_reference :products, :maker, index: true, foreign_key: true
+  end
+end

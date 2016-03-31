@@ -14,7 +14,20 @@ html, body {
 
 .container {
 	margin: 0;
-	padding: 2em 5em 0 5em;
+	padding: 2em 1em 0 1em;
 	background-color: #F8F8F8;
 	min-height: calc(100% - 60px);
+}
+
+@media screen and (min-width: 768px) {
+  /* For desktop: */
+  .container {
+  	padding-left: 5em;
+  	padding-right: 5em;
+  }
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
 }
