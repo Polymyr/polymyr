@@ -1,21 +1,84 @@
 <div class="product">
 	<div class="row">
-		<div class="col-6">
-			<%= image_tag @product.image1.url(:large) %>
-		</div>
-		<div class="col-2">
+
+		<% image2 = @product.image2.exists? %>
+		<% image3 = @product.image3.exists? %>
+		<% image4 = @product.image4.exists? %>
+		<% image5 = @product.image5.exists? %>
+
+		<div class="col-8">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+			  	<% if image2 || image3 || image4 || image5 %>
+				    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				  <% end %>
+				  <% if image2 %>
+				    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				  <% end %>
+				  <% if image3 %>
+				    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				  <% end %>
+				  <% if image4 %>
+				    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+				  <% end %>
+				 	<% if image5 %>
+				    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+				  <% end %>
+			  </ol>
+
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">
+			    <div class="item active">
+			      <%= image_tag @product.image1.url(:large) %>
+			    </div>
+			    <% if image2 %>
+				    <div class="item">
+				    	<%= image_tag @product.image2.url(:large) %>
+				    </div>
+				   <% end %>
+			    <% if image3 %>
+				    <div class="item">
+				    	<%= image_tag @product.image3.url(:large) %>
+				    </div>
+				   <% end %>
+			    <% if image4 %>
+				    <div class="item">
+				    	<%= image_tag @product.image4.url(:large) %>
+				    </div>
+				   <% end %>
+			    <% if image5 %>
+				    <div class="item">
+				    	<%= image_tag @product.image5.url(:large) %>
+				    </div>
+				   <% end %>
+			  </div>
+			</div>
+
 			<ul class="thumbnails">
-				<li><%= image_tag @product.image1.url(:thumb) %></li>
-				<li><%= image_tag @product.image2.url(:thumb) %></li>
-				<li><%= image_tag @product.image3.url(:thumb) %></li>
-				<li><%= image_tag @product.image4.url(:thumb) %></li>
-				<li><%= image_tag @product.image5.url(:thumb) %></li>
+				<% if image2 || image3 || image4 || image5 %>
+					<li data-target="#carousel-example-generic" data-slide-to="0"><%= image_tag @product.image1.url(:thumb), class: "image1 selected" %></li>
+				<% end %>
+				<% if image2 %>
+					<li data-target="#carousel-example-generic" data-slide-to="1"><%= image_tag @product.image2.url(:thumb), class: "image2" %></li>
+				<% end %>
+				<% if image3 %>
+					<li data-target="#carousel-example-generic" data-slide-to="2"><%= image_tag @product.image3.url(:thumb), class: "image3" %></li>
+				<% end %>
+				<% if image4 %>
+					<li data-target="#carousel-example-generic" data-slide-to="3"><%= image_tag @product.image4.url(:thumb), class: "image4" %></li>
+				<% end %>
+				<% if image5 %>
+					<li data-target="#carousel-example-generic" data-slide-to="4"><%= image_tag @product.image5.url(:thumb), class: "image5" %></li>
+				<% end %>
 			</ul>
 		</div>
+
 		<div class="col-4">
 			<div><%= @product.name %></div>
-			<div>Price if you review the product: $<%= @product.price - @product.rebate %></div>
-			<div>Full price: $<%= @product.price %></div>
+			<div>$<%= @product.price - @product.rebate %></div>
+			<div>Regular price: $<%= @product.price %></div>
 		</div>
 	</div>
 </div>

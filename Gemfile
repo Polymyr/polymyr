@@ -38,6 +38,7 @@ gem 'simple_form'
 gem 'activeadmin', github: 'activeadmin'
 gem "font-awesome-rails"
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'valid_url'
 
 # Static asset serving and logging on Heroku
 gem 'rails_12factor', group: :production

@@ -3,24 +3,61 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @media screen and (min-width: 768px) {
   /* For desktop: */
-  .product .row .col-6 {
-		margin-left: 16.66%;
+	.product .thumbnails {
+		display: block;
 	}
 
-	.product .row .col-2 {
-		margin-left: -66.66%;
-	}
-
-	.thumbnails li {
-		float: left;
-		clear: left;
+	.carousel-indicators {
+		display: none;
 	}
 }
 
 .thumbnails {
+	display: none;
+	margin: 0;
 	text-align: center;
+	line-height: 0;
 }
 
 .thumbnails li {
-	display: inline;
+	display: inline-block;
+	padding: 0;
+	margin: 20px 10px 0px 10px;
 }
+
+.thumbnails li img {
+	border-radius: 5px;
+	opacity: 0.4;
+	cursor: pointer;
+}
+
+.thumbnails li .selected {
+	opacity: 1;
+}
+
+.product #carousel-example-generic .item img {
+	margin: auto;
+}
+
+// .product .col-6 {
+// 	position: relative;
+// 	height: auto;
+// }
+
+// .col-6 img {
+// 	position: absolute;
+// 	top: 0;
+// 	right: 0;
+// 	bottom: 0;
+// 	left: 0;
+
+// 	opacity: 0;
+// 	-webkit-transition: all 0.5s ease;
+//   -moz-transition: all 0.5s ease;
+//   -o-transition: all 0.5s ease;
+//   transition: all 0.5s ease;
+// }
+
+// .hidden {
+// 	opacity: 0;
+// }

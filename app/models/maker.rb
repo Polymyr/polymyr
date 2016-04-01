@@ -8,9 +8,13 @@ class Maker < ActiveRecord::Base
 
   has_many :products, dependent: :destroy
 
+  validates :first_name, presence: true, length: { maximum: 50 }
+  validates :last_name, presence: true, length: { maximum: 50 }
   validates :email,
     presence: true,
     length: { maximum: 255 }, 
     format: { with: VALID_EMAIL_REGEX }, 
     uniqueness: { case_sensitive: false }
+  validates :company, presence: true, length: { maximum: 50 }
+  validates :website, presence: true, :url => true
 end
