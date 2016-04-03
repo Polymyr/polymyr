@@ -4,5 +4,6 @@ class MakersController < ApplicationController
 
 	def show
 		@maker = Maker.find(params[:id])
+		@products = @maker.products
 	end
 end

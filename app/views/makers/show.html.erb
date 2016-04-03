@@ -1,6 +1,11 @@
-<%= @maker.company %>
-<%= @maker.website %>
-
-<% if current_maker == @maker %>
-	<%= link_to "Settings", edit_maker_registration_path %>
-<% end %>
+<div class="dashboard">
+	<h1><%= @maker.company %></h1>
+	<% if current_maker == @maker %>
+		<%= link_to "Settings", edit_maker_registration_path %>
+	<% end %>
+	<hr>
+	<h3>My Products</h3>
+	<ul>
+		<%= render @products %>
+	</ul>
+</div>
