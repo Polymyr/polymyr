@@ -17,6 +17,7 @@ form div {
 
 .form-wrapper {
 	width: 600px;
+	max-width: 100%;
 	background: white;
 	margin: auto;
 	padding: 25px 25px 25px 25px;

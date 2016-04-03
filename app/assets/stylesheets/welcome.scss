@@ -27,7 +27,26 @@ html, body {
   }
 }
 
-ul {
+@media screen and (min-width: 1170px) {
+	/* For large desktop: */
+	.container {
+		padding-left: 10em;
+		padding-right: 10em;
+	}
+}
+
+.product-listings {
 	list-style-type: none;
 	padding: 0;
+	text-align: center;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	color: black;
+	text-decoration: none;
 }
