@@ -84,6 +84,9 @@
 				<li>Free shipping</li>
 				<li>Available in the U.S.</li>
 			</ul>
+			<h5><%= link_to "Edit", edit_product_path(@product) %></h5>
+			<h5><%= link_to "Delete", @product, method: :delete,
+                                       data: { confirm: "You sure?" } %></h5>
 		</div>
 	</div>
 	<hr>
