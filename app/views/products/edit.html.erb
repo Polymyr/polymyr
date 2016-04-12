@@ -1,0 +1,26 @@
+<div class="form-wrapper product-form">
+	<h2>Edit your product</h2>
+
+	<hr>
+
+	<%= simple_form_for @product do |f| %>
+
+		<div class="form-inputs">
+			<%= f.input :image1, as: :file, label: "Main image" %>
+			<%= f.input :image2, as: :file, label: "Image 2" %>
+			<%= f.input :image3, as: :file, label: "Image 3" %>
+			<%= f.input :image4, as: :file, label: "Image 4" %>
+			<%= f.input :image5, as: :file, label: "Image 5" %>
+			<%= f.input :name, label: "Product name" %>
+			<%= f.input :description, label: "One-line description" %>
+			<%= f.input :price, label: "Full price" %>
+			<%= f.input :rebate %>
+			<%= f.input :quantity %>
+			<%= f.input :story, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'mini'} } %>
+		</div>
+
+		<div class="form-actions">
+	    <%= f.button :submit, "Submit" %>
+	  </div>
+	<% end %>
+</div>

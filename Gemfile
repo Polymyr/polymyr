@@ -41,6 +41,9 @@ gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523b
 gem 'valid_url'
 gem "ckeditor"
 gem 'aws-sdk'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+gem 'stripe'
 
 # Static asset serving and logging on Heroku
 gem 'rails_12factor', group: :production

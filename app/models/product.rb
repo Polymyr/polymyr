@@ -1,6 +1,10 @@
 class Product < ActiveRecord::Base
+	include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
 
 	belongs_to :maker
+	has_many :reviews
+	has_many :users, through: :reviews
 
 	has_attached_file :image1, styles: { large: "640x480#", medium: "320x240#", thumb: "50x50#" }
 	has_attached_file :image2, styles: { large: "640x480#", medium: "320x240#", thumb: "50x50#" }
@@ -27,4 +31,15 @@ class Product < ActiveRecord::Base
   validates_attachment_content_type :image3, content_type: /\Aimage\/.*\Z/
   validates_attachment_content_type :image4, content_type: /\Aimage\/.*\Z/
   validates_attachment_content_type :image5, content_type: /\Aimage\/.*\Z/
+
+  settings index: { number_of_shards: 1 }
+
+  def as_indexed_json(options = {})
+	  self.as_json({
+	    only: [:name],
+	    include: {
+	      maker: { only: :company }
+	    }
+	  })
+	end
 end

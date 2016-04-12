@@ -1,5 +1,11 @@
 <nav class="nav">
 	<div class="logo"><a href=<%= root_path %>>POLYMYR</a></div>
+	<%= form_for search_path, method: :get do |f| %>
+	  <p>
+	    <%= text_field_tag :q, params[:q] %>
+	    <%= submit_tag "Go", name: nil %>
+	  </p>
+	<% end %>
 	<ul class="menu">
 		<li><a href="http://www.polymyr.com/blog">Blog</a></li>
 		<% if user_signed_in? %>
