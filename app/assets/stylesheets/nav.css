@@ -59,6 +59,34 @@ ul.menu li {
   padding-top: 1.1em;
 }
 
+ul.menu li form {
+	text-align: center;
+	margin-top: -16px;
+}
+
+ul.menu li form .search-form {
+	margin-top: 14px;
+	display: inline-block;
+}
+
+ul.menu li form #search-bar {
+	border: 1px solid #B8B8B8;
+	height: 30px;
+	padding: 2px 0 0 3px;
+}
+
+ul.menu li form #search-btn {
+	background: none;
+	color: #707070;
+	font-size: 1.1em;
+	border: none;
+	border-top: 1px solid #B8B8B8;
+	border-right: 1px solid #B8B8B8;
+	border-bottom: 1px solid #B8B8B8;
+	height: 30px;
+	margin-left: -5px;
+}
+
 ul.menu li a {
   display: inline-block;
   text-align: center;

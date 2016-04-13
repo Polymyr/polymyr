@@ -1,3 +1,5 @@
+require 'elasticsearch/model'
+
 class Product < ActiveRecord::Base
 	include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
@@ -43,3 +45,5 @@ class Product < ActiveRecord::Base
 	  })
 	end
 end
+
+Product.import

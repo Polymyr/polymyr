@@ -1,10 +1,10 @@
 class SearchController < ApplicationController
 
 	def search
-		if params[:query].nil?
-	    @articles = Article.all
+		if params[:query].present?
+			@products = Product.__elasticsearch__.search(params[:query]).records
 	  else
-	    @articles = Article.search params[:query]
+	    @products = Product.all
 	  end
 	end
 end

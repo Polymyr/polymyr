@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users
   resources :makers
   resources :products
+  resources :reviews
 
-  get 'search', to: 'search#search'
+  get '/search', to: 'search#search'
 end
