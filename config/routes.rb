@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :makers
   resources :products
   resources :reviews
+  resources :charges
 
   get '/search', to: 'search#search'
 end
