@@ -1,3 +1,36 @@
 // Place all the styles related to the charges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.payment-form-wrapper {
+	width: 180px;
+	margin: auto;
+}
+
+.payment-form-wrapper label {
+	display: block;
+}
+
+.payment-errors {
+	display: block;
+}
+
+#card-number {
+	width: 100%;
+}
+
+#exp-month {
+	width: 40%;
+}
+
+#exp-year {
+	width: 40%;
+}
+
+#security-field {
+	padding-left: 20px;
+}
+
+#security {
+	width: 100%;
+}

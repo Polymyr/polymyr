@@ -41,7 +41,6 @@ h6{font-size:0.8em;}
 
 [class*="col-"] {
   float: left;
-  padding: 15px;
 }
 
 .row:after {

@@ -1,0 +1,44 @@
+<div class="modal fade" id="payment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog small" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        
+        <div class="payment-form-wrapper">
+
+          <%= form_tag charges_path, id: 'payment-form' do %>
+            <span class="payment-errors"></span>
+
+            <div class="row">
+              <div class="col-12">
+                <label>Card number:</label>
+                <input type="text" id="card-number" data-stripe="number">
+              </div>
+              <div class="col-6">
+                <label>Expiration:</label>
+                <input type="text" id="exp-month" placeholder="MM" data-stripe="exp_month">
+                <input type="text" id="exp-year" placeholder="YY" data-stripe="exp_year">
+              </div>
+              <div class="col-6" id="security-field">
+                <label>Security:</label>
+                <input type="text" id="security" placeholder="CVC" data-stripe="cvc">
+              </div>
+            </div>
+
+            <input type="hidden" name="product_id" value="<%= @product.id %>" readonly>
+
+            <div class="form-actions">
+              <input type="submit" name="commit" value="Submit Payment" class="btn">
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

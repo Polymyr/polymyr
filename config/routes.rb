@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'users/registrations' }
   devise_for :makers, :controllers => { registrations: 'makers/registrations' }
   
-  root 'welcome#home'
+  root 'general#home'
   resources :users
   resources :makers
   resources :products

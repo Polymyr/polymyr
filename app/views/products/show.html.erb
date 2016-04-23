@@ -87,7 +87,11 @@
 			<h5><%= link_to "Edit", edit_product_path(@product) %></h5>
 			<h5><%= link_to "Delete", @product, method: :delete,
                                        data: { confirm: "You sure?" } %></h5>
-      <%= form_tag charges_path do %>
+     
+			<%= link_to "Buy now", "#payment", "data-toggle" => "modal" %>
+			<%= render "charges/payment_modal" %>
+
+			<%= form_tag charges_path do %>
 			  <article>
 			    <% if flash[:error].present? %>
 			      <div id="error_explanation">
@@ -107,12 +111,9 @@
 			          data-allow-remember-me=false>
 			  </script>
 
-			  <input type="hidden" name="product_id" value="<%= @product.id %>" readonly>
-			          
+			  <input type="hidden" name="product_id" value="<%= @product.id %>" readonly>       
 			<% end %>
 
-
-			</form>
 		</div>
 	</div>
 	<hr>
@@ -122,3 +123,46 @@
 	</h4>
 	<br />
 </div>
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript">
+  Stripe.setPublishableKey("<%= Rails.configuration.stripe[:publishable_key] %>");
+</script>
+<script>
+	$(function() {
+	  var $form = $('#payment-form');
+	  $form.submit(function(event) {
+	    // Disable the submit button to prevent repeated clicks:
+	    $form.find('.submit').prop('disabled', true);
+
+	    // Request a token from Stripe:
+	    Stripe.card.createToken($form, stripeResponseHandler);
+
+	    // Prevent the form from being submitted:
+	    return false;
+	  });
+	});
+
+	function stripeResponseHandler(status, response) {
+	  // Grab the form:
+	  var $form = $('#payment-form');
+
+	  if (response.error) { // Problem!
+
+	    // Show the errors on the form:
+	    $form.find('.payment-errors').text(response.error.message);
+	    $form.find('.submit').prop('disabled', false); // Re-enable submission
+
+	  } else { // Token was created!
+
+	    // Get the token ID:
+	    var token = response.id;
+
+	    // Insert the token ID into the form so it gets submitted to the server:
+	    $form.append($('<input type="hidden" name="stripeToken">').val(token));
+
+	    // Submit the form:
+	    $form.get(0).submit();
+	  }
+	};
+</script>
