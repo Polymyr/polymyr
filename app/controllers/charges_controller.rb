@@ -13,7 +13,7 @@ class ChargesController < ApplicationController
 		# 	current_user.update_attribute(:zip, params[:zip])
 		# end
 
-		@product = Product.find(params[:product_id])
+		# @product = Product.find(params[:product_id])
 
 	  customer = Stripe::Customer.create(
 	  	:email 	 => params[:stripeEmail],
@@ -27,12 +27,11 @@ class ChargesController < ApplicationController
 	    :currency    => 'usd'
 	  )
 
-	  current_user.update_attribute(:customer_id, customer.id)
-	  Review.create(user_id: current_user.id, product_id: @product.id)
+	  # current_user.update_attribute(:customer_id, customer.id)
+	  # Review.create(user_id: current_user.id, product_id: @product.id)
 
 	rescue Stripe::CardError => e
-		print(4)
 	  flash[:error] = e.message
-	  redirect_to @product
+	  # redirect_to @product
 	end
 end
