@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .payment-form-wrapper {
-	width: 180px;
+	width: 200px;
 	margin: auto;
 }
 
@@ -11,26 +11,22 @@
 	display: block;
 }
 
+.payment-form-wrapper div {
+	margin-bottom: 5px;
+}
+
 .payment-errors {
 	display: block;
 }
 
-#card-number {
+.payment-form-wrapper input {
 	width: 100%;
 }
 
-#exp-month {
+.payment-form-wrapper .short-input {
 	width: 40%;
 }
 
-#exp-year {
-	width: 40%;
-}
-
-#security-field {
+.right-field {
 	padding-left: 20px;
-}
-
-#security {
-	width: 100%;
 }

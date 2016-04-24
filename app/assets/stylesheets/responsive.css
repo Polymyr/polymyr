@@ -27,6 +27,19 @@ body {
   .col-12 {width: 100%;}
 }
 
+.nocollapse-col-1 {width: 8.33%;}
+.nocollapse-col-2 {width: 16.66%;}
+.nocollapse-col-3 {width: 25%;}
+.nocollapse-col-4 {width: 33.33%;}
+.nocollapse-col-5 {width: 41.66%;}
+.nocollapse-col-6 {width: 50%;}
+.nocollapse-col-7 {width: 58.33%;}
+.nocollapse-col-8 {width: 66.66%;}
+.nocollapse-col-9 {width: 75%;}
+.nocollapse-col-10 {width: 83.33%;}
+.nocollapse-col-11 {width: 91.66%;}
+.nocollapse-col-12 {width: 100%;}
+
 h1,h2,h3,h4,h5,h6 {
   margin: 0;
   font-weight: normal;

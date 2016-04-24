@@ -2,14 +2,13 @@ form {
 	line-height: 1.2;
 }
 
-form div {
+.form-wrapper div {
 	margin-bottom:10px;
 }
 
 .form-actions .btn {
 	background-color: #2274A5;
 	color: white;
-	width: 100%;
 }
 
 .signup-submit {
@@ -17,10 +16,13 @@ form div {
 }
 
 .form-wrapper {
-	width: 300px;
+	width: 600px;
 	max-width: 100%;
 	background: white;
+	margin: auto;
 	padding: 25px 25px 25px 25px;
+  border: 1px solid #E0E0E0;
+  border-radius: 10px;
 }
 
 .form-wrapper hr {
@@ -37,7 +39,7 @@ form div {
 }
 
 .form-wrapper input {
-	width: 100%;
+	width: 300px;
 }
 
 .form-wrapper .checkbox input {
@@ -52,10 +54,24 @@ form div {
 	color: #707070;
 }
 
+.form-wrapper .btn {
+	margin-bottom: 10px;
+}
+
 .form-wrapper .error {
 	display: inline-block;
 	margin-left: 8px;
 	color: #D63230;
+}
+
+.modal .form-wrapper {
+	width: auto;
+	border: none;
+	border-radius: none;
+}
+
+.modal .form-wrapper .btn {
+	margin-bottom: -10px;
 }
 
 .alert {

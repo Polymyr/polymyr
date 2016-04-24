@@ -1,6 +1,7 @@
-// Place all the styles related to the products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.product .row .col-4 {
+	padding-top: 10px;
+}
+
 @media screen and (min-width: 768px) {
   /* For desktop: */
 	.product .thumbnails {
@@ -9,6 +10,11 @@
 
 	.carousel-indicators {
 		display: none;
+	}
+
+	.product .row .col-4 {
+		padding-top: 0;
+		padding-left: 20px;
 	}
 }
 

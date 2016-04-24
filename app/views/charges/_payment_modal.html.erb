@@ -3,7 +3,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Pay now</h4>
       </div>
       <div class="modal-body">
         
@@ -14,19 +14,50 @@
 
             <div class="row">
               <div class="col-12">
-                <label>Card number:</label>
-                <input type="text" id="card-number" data-stripe="number">
-              </div>
-              <div class="col-6">
-                <label>Expiration:</label>
-                <input type="text" id="exp-month" placeholder="MM" data-stripe="exp_month">
-                <input type="text" id="exp-year" placeholder="YY" data-stripe="exp_year">
-              </div>
-              <div class="col-6" id="security-field">
-                <label>Security:</label>
-                <input type="text" id="security" placeholder="CVC" data-stripe="cvc">
+                <label>Full name:</label>
+                <input type="text" name="full_name">
               </div>
             </div>
+
+            <div class="row">
+              <div class="col-12">
+                <label>Address:</label>
+                <input type="text" name="address">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="nocollapse-col-6">
+                <label>City:</label>
+                <input type="text" name="city">
+              </div>
+              <div class="nocollapse-col-6 right-field">
+                <label>ZIP:</label>
+                <input type="text" name="zip">
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+              <div class="col-12">
+                <label>Card number:</label>
+                <input type="text" data-stripe="number">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="nocollapse-col-6">
+                <label>Expiration:</label>
+                <input type="text" class="short-input" placeholder="MM" data-stripe="exp_month">
+                <input type="text" class="short-input" placeholder="YY" data-stripe="exp_year">
+              </div>
+              <div class="nocollapse-col-6 right-field">
+                <label>Security:</label>
+                <input type="text" placeholder="CVC" data-stripe="cvc">
+              </div>
+            </div>
+
 
             <input type="hidden" name="product_id" value="<%= @product.id %>" readonly>
 
