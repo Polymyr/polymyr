@@ -12,32 +12,35 @@
           <%= form_tag charges_path, id: 'payment-form' do %>
             <span class="payment-errors"></span>
 
-            <div class="row">
-              <div class="col-12">
-                <label>Full name:</label>
-                <input type="text" name="full_name">
+            <% if current_user.name.present? || !current_user.address.present? ||
+                  !current_user.city.present? || !current_user.zip.present? %>
+              <!-- <div class="row">
+                <div class="col-12">
+                  <label>Full name:</label>
+                  <input type="text" name="name">
+                </div>
               </div>
-            </div>
 
-            <div class="row">
-              <div class="col-12">
-                <label>Address:</label>
-                <input type="text" name="address">
+              <div class="row">
+                <div class="col-12">
+                  <label>Address:</label>
+                  <input type="text" name="address">
+                </div>
               </div>
-            </div>
 
-            <div class="row">
-              <div class="nocollapse-col-6">
-                <label>City:</label>
-                <input type="text" name="city">
+              <div class="row">
+                <div class="nocollapse-col-6">
+                  <label>City:</label>
+                  <input type="text" name="city">
+                </div>
+                <div class="nocollapse-col-6 right-field">
+                  <label>ZIP:</label>
+                  <input type="text" name="zip">
+                </div>
               </div>
-              <div class="nocollapse-col-6 right-field">
-                <label>ZIP:</label>
-                <input type="text" name="zip">
-              </div>
-            </div>
 
-            <hr>
+              <hr> -->
+            <% end %>
 
             <div class="row">
               <div class="col-12">
@@ -59,10 +62,10 @@
             </div>
 
 
-            <input type="hidden" name="product_id" value="<%= @product.id %>" readonly>
+            <!-- <input type="hidden" name="product_id" value="<%= @product.id %>" readonly> -->
 
             <div class="form-actions">
-              <input type="submit" name="commit" value="Submit Payment" class="btn">
+              <input type="submit" class="submit" value="Submit Payment">
             </div>
           <% end %>
         </div>

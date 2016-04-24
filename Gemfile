@@ -44,6 +44,7 @@ gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'stripe'
 gem 'activeadmin', github: 'activeadmin'
+gem 'jquery-turbolinks'
 
 # Static asset serving and logging on Heroku
 gem 'rails_12factor', group: :production
