@@ -95,3 +95,33 @@ a:hover {
 	color: white;
 	text-decoration: none;
 }
+
+.alert {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 30px;
+	opacity: 0.8;
+	text-align: center;
+}
+
+.alert ul {
+	list-style: none;
+	line-height: 0;
+}
+
+.alert-notice, .alert-success {
+	background: #20BF55;
+	color: white;
+}
+
+.alert-alert, .alert-error {
+	background: #D63230;
+	color: white;
+}
+
+.error {
+	color: red;
+	margin-top: 5px;
+}
