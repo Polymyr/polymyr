@@ -84,8 +84,12 @@
 				<li>Free shipping</li>
 				<li>Available in the U.S.</li>
 			</ul>
-			<%= link_to "Buy now", "#payment", "data-toggle" => "modal", class: "blue-btn" %>
-			<%= render "charges/payment_modal" %>
+
+			<% if user_signed_in? %>
+				<%= link_to "Buy now", "#payment", "data-toggle" => "modal", class: "blue-btn" %>
+				<%= render "charges/payment_modal" %>
+			<% end %>
+
 			<br />
 			<br />
 			<h5><%= link_to "Edit", edit_product_path(@product) %></h5>

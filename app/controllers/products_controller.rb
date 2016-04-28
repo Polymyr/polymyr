@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
 	before_action :authenticate_maker!, except: [:show]
+	before_action :correct_maker, only: [:edit, :update, :destroy]
 
 	def new
 		@product = Product.new
@@ -49,5 +50,13 @@ class ProductsController < ApplicationController
 		def product_params
 			params.require(:product).permit(:name, :description, :price, :rebate, :quantity,
 																			:image1, :image2, :image3, :image4, :image5, :story)
+		end
+
+		def correct_maker
+			@maker = Product.find(params[:id]).maker
+			if @maker != current_maker
+				flash[:error] = "No access permission."
+				redirect_to(root_url)
+			end
 		end
 end
