@@ -30,7 +30,7 @@ class ChargesController < ApplicationController
 		    :currency    => 'usd'
 		  )
 
-		  current_user.update(:customer_id => customer.id)
+		  current_user.update_attribute(:customer_id, customer.id)
 		else
 			Stripe::Charge.create(
 				:customer 	 => current_user.customer_id,
