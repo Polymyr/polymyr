@@ -27,8 +27,8 @@ class Product < ActiveRecord::Base
 																											 greater_than_or_equal_to: 0,
 																											 less_than_or_equal_to: 100000 }
 	validates :story, presence: true, length: { maximum: 10000 }
-  
-  validates_attachment_content_type :image1, content_type: /\Aimage\/.*\Z/
+  validates_attachment :image1, presence: true,
+  	 content_type: { content_type: /\Aimage\/.*\Z/ }
   validates_attachment_content_type :image2, content_type: /\Aimage\/.*\Z/
   validates_attachment_content_type :image3, content_type: /\Aimage\/.*\Z/
   validates_attachment_content_type :image4, content_type: /\Aimage\/.*\Z/

@@ -11,7 +11,7 @@
 
           <% if current_user.customer_id.present? %>
 
-            <%= form_tag charges_path do %>
+            <%= simple_form_for(:charge, url: charges_path) do %>
 
               <input type="hidden" name="product_id" value="<%= @product.id %>" readonly>
 
@@ -22,7 +22,7 @@
 
           <% else %>
 
-            <%= form_tag charges_path, id: 'payment-form' do %>
+            <%= simple_form_for(:charge, url: charges_path, html: {id: 'payment-form' }) do %>
 
               <% if !current_user.name.present? || 
                     !current_user.address.present? ||
@@ -30,26 +30,26 @@
                     !current_user.zip.present? %>
                 <div class="row">
                   <div class="col-12">
-                    <label>Full name:</label>
+                    <label>Full name</label>
                     <input type="text" name="name" maxlength="50" required>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="col-12">
-                    <label>Address:</label>
+                    <label>Address</label>
                     <input type="text" name="address" maxlength="100" required>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="nocollapse-col-6">
-                    <label>City:</label>
+                    <label>City</label>
                     <input type="text" name="city" maxlength="50" required>
                   </div>
                   <div class="nocollapse-col-6 right-field">
-                    <label>ZIP:</label>
-                    <input type="text" name="zip" required>
+                    <label>ZIP</label>
+                    <input type="text" name="zip" pattern="^\d{5}(?:[-\s]\d{4})?$" required>
                   </div>
                 </div>
 
@@ -62,19 +62,19 @@
 
                 <div class="row">
                   <div class="col-12">
-                    <label>Card number:</label>
+                    <label>Card number</label>
                     <input type="text" data-stripe="number">
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="nocollapse-col-6">
-                    <label>Expiration:</label>
+                    <label>Expiration</label>
                     <input type="text" class="short-input" placeholder="MM" data-stripe="exp_month">
                     <input type="text" class="short-input" placeholder="YY" data-stripe="exp_year">
                   </div>
                   <div class="nocollapse-col-6 right-field">
-                    <label>Security:</label>
+                    <label>Security</label>
                     <input type="text" placeholder="CVC" data-stripe="cvc">
                   </div>
                 </div>

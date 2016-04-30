@@ -35,8 +35,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # New gems
 gem 'devise'
 gem 'simple_form'
-gem 'client_side_validations'
-gem 'client_side_validations-simple_form'
+# gem 'client_side_validations'
+# gem 'client_side_validations-simple_form'
 gem "font-awesome-rails"
 gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'
 gem 'valid_url'
