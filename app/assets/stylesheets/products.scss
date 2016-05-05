@@ -47,8 +47,14 @@
 	opacity: 1;
 }
 
-.product #carousel-example-generic .item img {
+.carousel .item img {
 	margin: auto;
+}
+
+.carousel .carousel-indicators li {
+	margin: 0 9px 0 9px;
+	width: 14px;
+	height: 14px;
 }
 
 .overview li {
