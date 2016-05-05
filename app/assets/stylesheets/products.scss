@@ -9,15 +9,12 @@
 }
 
 @media screen and (min-width: 768px) {
-  /* For desktop: */
 	.product .thumbnails {
 		display: block;
 	}
-
 	.carousel-indicators {
 		display: none;
 	}
-
 	.product .row .col-4 {
 		padding-top: 0;
 		padding-left: 20px;
@@ -49,6 +46,7 @@
 
 .carousel .item img {
 	margin: auto;
+	border-radius: 5px;
 }
 
 .carousel .carousel-indicators li {
@@ -76,17 +74,14 @@
 }
 
 @media screen and (min-width: 768px) {
-  /* For desktop: */
   .product-card {
 		margin: 20px;
 	}
-
 	.product-card img {
 		width: 320px;
 		height: 240px;
 	}
 }
-
 
 .product-card-info {
 	border-right: 1px solid #E8E8E8;
@@ -100,3 +95,25 @@
 .product-form {
 	width: 800px;
 }
+
+/* Bootstrap carousel fade */
+@media screen and (min-width: 768px) {
+	.carousel-fade {
+	  .carousel-inner {
+      .item {
+        transition-property: opacity;
+      }
+      .item, .active.left, .active.right {
+        opacity: 0;
+      }
+      .active, .next.left, .prev.right {
+        opacity: 1;
+      }
+      .next, .prev, .active.left, .active.right {
+        left: 0;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+	}
+}
+
