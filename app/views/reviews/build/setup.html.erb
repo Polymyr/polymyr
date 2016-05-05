@@ -1,0 +1,14 @@
+<%= simple_form_for @review, url: wizard_path, method: :put do |f| %>
+
+	<div class="form-inputs">
+		<%= f.input :q11, label: "Question 11" %>
+		<%= f.input :q12, label: "Question 12" %>
+		<%= f.input :q13, label: "Question 13" %>
+		<%= f.input :q14, label: "Question 14" %>
+		<%= f.input :q15, label: "Question 15" %>
+	</div>
+
+	<div class="form-actions">
+    <%= f.button :submit, "Submit" %>
+  </div>
+<% end %>

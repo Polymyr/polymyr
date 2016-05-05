@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160424031837) do
+ActiveRecord::Schema.define(version: 20160504080706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20160424031837) do
     t.string   "image5_content_type"
     t.integer  "image5_file_size"
     t.datetime "image5_updated_at"
-    t.string   "description"
+    t.text     "description"
   end
 
   add_index "products", ["maker_id"], name: "index_products_on_maker_id", using: :btree
@@ -93,6 +93,31 @@ ActiveRecord::Schema.define(version: 20160424031837) do
     t.integer  "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text     "q1"
+    t.text     "q2"
+    t.text     "q3"
+    t.text     "q4"
+    t.text     "q5"
+    t.text     "q6"
+    t.text     "q7"
+    t.text     "q8"
+    t.text     "q9"
+    t.text     "q10"
+    t.text     "q11"
+    t.text     "q12"
+    t.text     "q13"
+    t.text     "q14"
+    t.text     "q15"
+    t.text     "q16"
+    t.text     "q17"
+    t.text     "q18"
+    t.text     "q19"
+    t.text     "q20"
+    t.text     "q21"
+    t.text     "q22"
+    t.text     "q23"
+    t.text     "q24"
+    t.text     "q25"
   end
 
   add_index "reviews", ["product_id"], name: "index_reviews_on_product_id", using: :btree
@@ -117,7 +142,7 @@ ActiveRecord::Schema.define(version: 20160424031837) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "customer_id"
-    t.string   "address"
+    t.text     "address"
     t.string   "city"
     t.string   "zip"
   end

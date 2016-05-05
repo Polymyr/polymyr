@@ -65,26 +65,28 @@ ul.menu li form {
 }
 
 ul.menu li form .search-form {
-	margin-top: 14px;
+	padding-top: 14px;
+	height: 60px;
 	display: inline-block;
 }
 
 ul.menu li form #search-bar {
 	border: 1px solid #B8B8B8;
 	height: 30px;
-	padding: 2px 0 0 3px;
+	padding: 0 0 0 3px;
 }
 
 ul.menu li form #search-btn {
 	background: none;
 	color: #707070;
-	font-size: 1.1em;
 	border: none;
 	border-top: 1px solid #B8B8B8;
 	border-right: 1px solid #B8B8B8;
 	border-bottom: 1px solid #B8B8B8;
 	height: 30px;
 	margin-left: -5px;
+	padding-top: 3px;
+	padding-left: 8px;
 }
 
 ul.menu li a {

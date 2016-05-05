@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   resources :users
   resources :makers
   resources :products
-  resources :reviews
+  resources :reviews do
+    resources :build, controller: 'reviews/build'
+  end
   resources :charges
 
   get '/search', to: 'search#search'
