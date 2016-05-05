@@ -46,6 +46,10 @@ form {
   font-size: 1em;
 }
 
+.form-wrapper .file {
+	border: none;
+}
+
 .form-wrapper .checkbox input {
 	margin-right: 5px;
 	width: 16px;

@@ -23,7 +23,6 @@ html, body {
 }
 
 @media screen and (min-width: 768px) {
-  /* For desktop: */
   .container {
   	padding-left: 5em;
   	padding-right: 5em;
@@ -31,7 +30,6 @@ html, body {
 }
 
 @media screen and (min-width: 1170px) {
-	/* For large desktop: */
 	.container {
 		padding-left: 10em;
 		padding-right: 10em;
@@ -60,7 +58,6 @@ a:link, a:visited, a:hover, a:active {
 }
 
 @media screen and (min-width: 768px) {
-	/* For large desktop: */
 	.modal .modal-dialog {
 		margin-top: 60px;
 	}
@@ -75,25 +72,10 @@ a:link, a:visited, a:hover, a:active {
 }
 
 @media screen and (min-width: 768px) {
-	/* For large desktop: */
 	.modal .small {
 		width: 360px;
 		margin-top: 20px;
 	}
-}
-
-.blue-btn {
-	padding: 5px 10px 5px 10px;
-	font-size: 1.5em;
-	background-color: #2274A5;
-	color: white;
-	border-radius: 5px;
-	text-decoration: none;
-}
-
-.blue-btn:hover {
-	color: white;
-	text-decoration: none;
 }
 
 .alert {

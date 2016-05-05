@@ -23,4 +23,7 @@
 	    <%= f.button :submit, "Submit" %>
 	  </div>
 	<% end %>
+
+	<%= link_to "Delete", @product, method: :delete,
+	                                data: { confirm: "You sure?" } %>
 </div>

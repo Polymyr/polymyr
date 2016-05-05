@@ -4,7 +4,7 @@
 	text-align: center;
 }
 
-.product .row .col-4 {
+.product .row .overview {
 	padding-top: 10px;
 }
 
@@ -15,7 +15,7 @@
 	.carousel-indicators {
 		display: none;
 	}
-	.product .row .col-4 {
+	.product .row .overview {
 		padding-top: 0;
 		padding-left: 20px;
 	}
@@ -55,8 +55,22 @@
 	height: 14px;
 }
 
-.overview li {
+.overview ul li {
 	color: #707070;
+}
+
+.overview .payment-btn {
+	padding: 5px 10px 5px 10px;
+	font-size: 1.5em;
+	background-color: #2274A5;
+	color: white;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+.payment-btn:hover {
+	color: white;
+	text-decoration: none;
 }
 
 .product-card {
