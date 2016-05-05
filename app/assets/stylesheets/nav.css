@@ -9,24 +9,21 @@
 
 .nav .logo {
 	position: absolute;
-	margin-top: 10px;
+	margin-top: 9px;
 	height: 35px;
 	margin-left: 1em;
 }
 
+.nav .logo a {
+	font-size: 2em;
+}
+
 @media screen and (min-width: 768px) {
-  /* For desktop: */
   .nav .logo {margin-left:5em;}
 }
 
 @media screen and (min-width: 1170px) {
-	/* For large desktop: */
 	.nav .logo {margin-left:10em;}
-}
-
-.nav .logo a {
-	text-decoration: none;
-	font-size: 2em;
 }
 
 ul.menu {
@@ -34,11 +31,9 @@ ul.menu {
   padding-right: 1em;
   overflow: hidden;
   list-style-type: none;
-  height: 60px;
 }
 
 @media screen and (min-width: 768px) {
-  /* For desktop: */
   ul.menu {
   	padding-right: 5em;
   	float: right;
@@ -62,11 +57,21 @@ ul.menu li {
 ul.menu li form {
 	text-align: center;
 	margin-top: -16px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 216px;
+}
+
+@media screen and (min-width: 768px) {
+  ul.menu li form {
+  	margin-right: 5px;
+	}
 }
 
 ul.menu li form #search-bar {
 	border: 1px solid #B8B8B8;
 	height: 36px;
+	width: 180px;
 	margin-top: 11px;
 	float: left;
 }
@@ -75,10 +80,11 @@ ul.menu li form #search-btn {
 	background: none;
 	color: #707070;
 	border: none;
+	height: 36px;
+	width: 36px;
 	border-top: 1px solid #B8B8B8;
 	border-right: 1px solid #B8B8B8;
 	border-bottom: 1px solid #B8B8B8;
-	height: 36px;
 	font-size: 1.1em;
 	margin-top: 11px;
 	float: left;
