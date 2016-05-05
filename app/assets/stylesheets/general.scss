@@ -3,6 +3,7 @@ html, body {
 	width: 100%;
 	margin: 0;
 	font-family: 'Alegreya Sans', sans-serif;
+	color: #505050;
 }
 
 .logo {
@@ -12,8 +13,13 @@ html, body {
 .container {
 	margin: 0;
 	padding: 2em 1em 1em 1em;
-	background-color: #F8F8F8;
+	background-color: #F7F7F7;
 	min-height: calc(100% - 60px);
+}
+
+.title {
+	font-size: 2.4em;
+	text-align: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -32,19 +38,13 @@ html, body {
 	}
 }
 
-.product-listings {
-	list-style-type: none;
-	padding: 0;
-	text-align: center;
-}
-
 a {
-	color: black;
+	color: #505050;
 	text-decoration: none;
 }
 
-a:hover {
-	color: black;
+a:link, a:visited, a:hover, a:active {
+	color: #505050;
 	text-decoration: none;
 }
 
