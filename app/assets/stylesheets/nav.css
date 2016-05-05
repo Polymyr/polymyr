@@ -34,6 +34,7 @@ ul.menu {
   padding-right: 1em;
   overflow: hidden;
   list-style-type: none;
+  height: 60px;
 }
 
 @media screen and (min-width: 768px) {
@@ -55,7 +56,7 @@ ul.menu li {
 	float: left;
 	display: none;
 	margin-left: 1em;
-  padding-top: 1.1em;
+  padding-top: 17px;
 }
 
 ul.menu li form {
@@ -63,16 +64,11 @@ ul.menu li form {
 	margin-top: -16px;
 }
 
-ul.menu li form .search-form {
-	padding-top: 14px;
-	height: 60px;
-	display: inline-block;
-}
-
 ul.menu li form #search-bar {
 	border: 1px solid #B8B8B8;
-	height: 30px;
-	padding: 0 0 0 3px;
+	height: 36px;
+	margin-top: 11px;
+	float: left;
 }
 
 ul.menu li form #search-btn {
@@ -82,10 +78,10 @@ ul.menu li form #search-btn {
 	border-top: 1px solid #B8B8B8;
 	border-right: 1px solid #B8B8B8;
 	border-bottom: 1px solid #B8B8B8;
-	height: 30px;
-	margin-left: -5px;
-	padding-top: 3px;
-	padding-left: 8px;
+	height: 36px;
+	font-size: 1.1em;
+	margin-top: 11px;
+	float: left;
 }
 
 ul.menu li a {

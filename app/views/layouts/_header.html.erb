@@ -3,10 +3,8 @@
 	<ul class="menu">
 		<li>
 			<%= form_for :search, url: search_path, method: :get do |f| %>
-			  <div class="search-form">
 			    <%= text_field_tag :query, params[:query], id: "search-bar" %>
 			    <%= submit_tag "Go", name: nil, id: "search-btn" %>
-			  </div>
 			<% end %>
 		</li>
 		<li><a href="http://www.polymyr.com/blog">Blog</a></li>
