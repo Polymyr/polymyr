@@ -1,14 +1,17 @@
-<%= simple_form_for @review, url: wizard_path, method: :put do |f| %>
+<div class="form-wrapper">
 
-	<div class="form-inputs">
-		<%= f.input :q21, label: "Question 21" %>
-		<%= f.input :q22, label: "Question 22" %>
-		<%= f.input :q23, label: "Question 23" %>
-		<%= f.input :q24, label: "Question 24" %>
-		<%= f.input :q25, label: "Question 25" %>
-	</div>
+	<%= simple_form_for @review, url: wizard_path, method: :put do |f| %>
 
-	<div class="form-actions">
-    <%= f.button :submit, "Submit" %>
-  </div>
-<% end %>
+		<div class="form-inputs">
+			<%= f.input :q21, label: "Question 21" %>
+			<%= f.input :q22, label: "Question 22" %>
+			<%= f.input :q23, label: "Question 23" %>
+			<%= f.input :q24, label: "Question 24" %>
+			<%= f.input :q25, label: "Question 25" %>
+		</div>
+
+		<div class="form-actions">
+	    <%= f.button :submit, "Submit" %>
+	  </div>
+	<% end %>
+</div>
