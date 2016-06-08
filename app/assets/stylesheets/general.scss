@@ -2,12 +2,8 @@ html, body {
 	height: 100%;
 	width: 100%;
 	margin: 0;
-	font-family: 'Alegreya Sans', sans-serif;
+	font-family: 'Roboto Slab', serif;
 	color: #505050;
-}
-
-.logo {
-	font-weight: bold;
 }
 
 .container {
@@ -27,13 +23,6 @@ html, body {
   	padding-left: 5em;
   	padding-right: 5em;
   }
-}
-
-@media screen and (min-width: 1170px) {
-	.container {
-		padding-left: 10em;
-		padding-right: 10em;
-	}
 }
 
 a {

@@ -6,7 +6,7 @@
 		<% image4 = @product.image4.exists? %>
 		<% image5 = @product.image5.exists? %>
 
-		<div class="col-8">
+		<div class="col-7">
 			<div id="product-carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
 
 			  <!-- Indicators -->
@@ -75,11 +75,14 @@
 			</ul>
 		</div>
 
-		<div class="col-4 overview">
-			<h1><%= @product.name %></h1>
-			<h4><%= @product.description %></h4>
+		<div class="col-5 overview">
+			<h3 class="product-show-name"><%= @product.name %></h3>
+			<h5><%= @product.maker.company %></h5>
+			<br />
+			<h5><%= @product.description %></h5>
+			<br />
 			<h3>$<%= @product.price - @product.rebate %></h3>
-			<div>Regular price: $<%= @product.price %></div>
+			<div class="product-price-reg">Regular price: $<%= @product.price %></div>
 			<ul>
 				<li>Free shipping</li>
 				<li>Available in the U.S.</li>

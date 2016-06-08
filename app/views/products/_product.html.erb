@@ -2,9 +2,10 @@
 	<%= link_to product do %>
 		<%= image_tag product.image1.url(:medium) %>
 		<div class="product-card-info">
-			<h5><%= product.name %></h5>
-			<h6><%= product.description %></h6>
-			<h6><%= product.maker.company %></h6>
+			<div class="product-card-name"><%= product.name %></div>
+			<div class="product-card-company"><%= product.maker.company %></div>
+			<div class="product-card-des"><%= product.description %></div>
+			<div class="product-card-price">$<%= product.price - product.rebate %></div>
 		</div>
 	<% end %>
 </li>
