@@ -6,6 +6,26 @@
 		<% image4 = @product.image4.exists? %>
 		<% image5 = @product.image5.exists? %>
 
+		<div class="col-2">
+			<ul class="thumbnails">
+				<% if image2 || image3 || image4 || image5 %>
+					<li data-target="#product-carousel" data-slide-to="0"><%= image_tag @product.image1.url(:thumb), class: "image1 selected" %></li>
+				<% end %>
+				<% if image2 %>
+					<li data-target="#product-carousel" data-slide-to="1"><%= image_tag @product.image2.url(:thumb), class: "image2" %></li>
+				<% end %>
+				<% if image3 %>
+					<li data-target="#product-carousel" data-slide-to="2"><%= image_tag @product.image3.url(:thumb), class: "image3" %></li>
+				<% end %>
+				<% if image4 %>
+					<li data-target="#product-carousel" data-slide-to="3"><%= image_tag @product.image4.url(:thumb), class: "image4" %></li>
+				<% end %>
+				<% if image5 %>
+					<li data-target="#product-carousel" data-slide-to="4"><%= image_tag @product.image5.url(:thumb), class: "image5" %></li>
+				<% end %>
+			</ul>
+		</div>
+
 		<div class="col-7">
 			<div id="product-carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
 
@@ -55,27 +75,9 @@
 				   <% end %>
 			  </div>
 			</div>
-
-			<ul class="thumbnails">
-				<% if image2 || image3 || image4 || image5 %>
-					<li data-target="#product-carousel" data-slide-to="0"><%= image_tag @product.image1.url(:thumb), class: "image1 selected" %></li>
-				<% end %>
-				<% if image2 %>
-					<li data-target="#product-carousel" data-slide-to="1"><%= image_tag @product.image2.url(:thumb), class: "image2" %></li>
-				<% end %>
-				<% if image3 %>
-					<li data-target="#product-carousel" data-slide-to="2"><%= image_tag @product.image3.url(:thumb), class: "image3" %></li>
-				<% end %>
-				<% if image4 %>
-					<li data-target="#product-carousel" data-slide-to="3"><%= image_tag @product.image4.url(:thumb), class: "image4" %></li>
-				<% end %>
-				<% if image5 %>
-					<li data-target="#product-carousel" data-slide-to="4"><%= image_tag @product.image5.url(:thumb), class: "image5" %></li>
-				<% end %>
-			</ul>
 		</div>
 
-		<div class="col-5 overview">
+		<div class="col-3 overview">
 			<h3 class="product-show-name"><%= @product.name %></h3>
 			<h5><%= @product.maker.company %></h5>
 			<br />
