@@ -10,19 +10,19 @@
 		<div class="col-2">
 			<ul class="thumbnails">
 				<% if image1 %>
-					<li data-target="#product-carousel" data-slide-to="0"><%= image_tag @product.image1.url(:thumb), class: "image1 selected" %></li>
+					<li><%= image_tag @product.image1.url(:thumb), class: "image1 selected", 'data-target' => "#product-carousel", 'data-slide-to' => "0" %></li>
 				<% end %>
 				<% if image2 %>
-					<li data-target="#product-carousel" data-slide-to="1"><%= image_tag @product.image2.url(:thumb), class: "image2" %></li>
+					<li><%= image_tag @product.image2.url(:thumb), class: "image2", 'data-target' => "#product-carousel", 'data-slide-to' => "1" %></li>
 				<% end %>
 				<% if image3 %>
-					<li data-target="#product-carousel" data-slide-to="2"><%= image_tag @product.image3.url(:thumb), class: "image3" %></li>
+					<li><%= image_tag @product.image3.url(:thumb), class: "image3", 'data-target' => "#product-carousel", 'data-slide-to' => "2" %></li>
 				<% end %>
 				<% if image4 %>
-					<li data-target="#product-carousel" data-slide-to="3"><%= image_tag @product.image4.url(:thumb), class: "image4" %></li>
+					<li><%= image_tag @product.image4.url(:thumb), class: "image4", 'data-target' => "#product-carousel", 'data-slide-to' => "3" %></li>
 				<% end %>
 				<% if image5 %>
-					<li data-target="#product-carousel" data-slide-to="4"><%= image_tag @product.image5.url(:thumb), class: "image5" %></li>
+					<li><%= image_tag @product.image5.url(:thumb), class: "image5", 'data-target' => "#product-carousel", 'data-slide-to' => "4" %></li>
 				<% end %>
 			</ul>
 		</div>

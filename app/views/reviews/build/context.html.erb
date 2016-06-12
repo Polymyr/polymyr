@@ -3,11 +3,11 @@
 	<%= simple_form_for @review, url: wizard_path, method: :put do |f| %>
 
 		<div class="form-inputs">
-			<%= f.input :answer1, label: "Question 1" %>
-			<%= f.input :answer2, label: "Question 2" %>
-			<%= f.input :answer3, label: "Question 3" %>
-			<%= f.input :answer4, label: "Question 4" %>
-			<%= f.input :answer5, label: "Question 5" %>
+			<%= f.input :answer1, label: @review.product.q1, as: :string %>
+			<%= f.input :answer2, label: "Question 2", as: :string %>
+			<%= f.input :answer3, label: "Question 3", as: :string %>
+			<%= f.input :answer4, label: "Question 4", as: :string %>
+			<%= f.input :answer5, label: "Question 5", as: :string %>
 		</div>
 
 		<div class="form-actions">
