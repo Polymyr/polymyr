@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 	include Wicked::Wizard
 
-	steps :context, :unboxing, :setup, :review, :conclusion
+	steps :context, :setup, :review, :conclusion
 
 	def show
 		@review = Review.find(params[:id])

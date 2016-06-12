@@ -1,6 +1,7 @@
 <div class="product">
 	<div class="row">
 
+		<% image1 = @product.image1.exists? %>
 		<% image2 = @product.image2.exists? %>
 		<% image3 = @product.image3.exists? %>
 		<% image4 = @product.image4.exists? %>
@@ -8,7 +9,7 @@
 
 		<div class="col-2">
 			<ul class="thumbnails">
-				<% if image2 || image3 || image4 || image5 %>
+				<% if image1 %>
 					<li data-target="#product-carousel" data-slide-to="0"><%= image_tag @product.image1.url(:thumb), class: "image1 selected" %></li>
 				<% end %>
 				<% if image2 %>
@@ -99,7 +100,7 @@
 				<% @review = Review.find_by(user_id: current_user.id, product_id: @product.id) %>
 				<% if @review != nil %>
 					<br /><br />
-					<%= link_to "Continue review", review_build_path(:context, review_id: @review.id) %>
+					<%= link_to "Review", review_build_path(:context, review_id: @review.id) %>
 				<% end %>
 			<% end %>
 

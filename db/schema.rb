@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160504080706) do
+ActiveRecord::Schema.define(version: 20160611201423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,26 @@ ActiveRecord::Schema.define(version: 20160504080706) do
     t.integer  "image5_file_size"
     t.datetime "image5_updated_at"
     t.text     "description"
+    t.string   "q1"
+    t.string   "q2"
+    t.string   "q3"
+    t.string   "q4"
+    t.string   "q5"
+    t.string   "q6"
+    t.string   "q7"
+    t.string   "q8"
+    t.string   "q9"
+    t.string   "q10"
+    t.string   "q11"
+    t.string   "q12"
+    t.string   "q13"
+    t.string   "q14"
+    t.string   "q15"
+    t.string   "q16"
+    t.string   "q17"
+    t.string   "q18"
+    t.string   "q19"
+    t.string   "q20"
   end
 
   add_index "products", ["maker_id"], name: "index_products_on_maker_id", using: :btree
@@ -93,31 +113,26 @@ ActiveRecord::Schema.define(version: 20160504080706) do
     t.integer  "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text     "q1"
-    t.text     "q2"
-    t.text     "q3"
-    t.text     "q4"
-    t.text     "q5"
-    t.text     "q6"
-    t.text     "q7"
-    t.text     "q8"
-    t.text     "q9"
-    t.text     "q10"
-    t.text     "q11"
-    t.text     "q12"
-    t.text     "q13"
-    t.text     "q14"
-    t.text     "q15"
-    t.text     "q16"
-    t.text     "q17"
-    t.text     "q18"
-    t.text     "q19"
-    t.text     "q20"
-    t.text     "q21"
-    t.text     "q22"
-    t.text     "q23"
-    t.text     "q24"
-    t.text     "q25"
+    t.text     "answer1"
+    t.text     "answer2"
+    t.text     "answer3"
+    t.text     "answer4"
+    t.text     "answer5"
+    t.text     "answer6"
+    t.text     "answer7"
+    t.text     "answer8"
+    t.text     "answer9"
+    t.text     "answer10"
+    t.text     "answer11"
+    t.text     "answer12"
+    t.text     "answer13"
+    t.text     "answer14"
+    t.text     "answer15"
+    t.text     "answer16"
+    t.text     "answer17"
+    t.text     "answer18"
+    t.text     "answer19"
+    t.text     "answer20"
   end
 
   add_index "reviews", ["product_id"], name: "index_reviews_on_product_id", using: :btree

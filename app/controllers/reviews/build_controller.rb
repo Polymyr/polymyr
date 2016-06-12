@@ -1,7 +1,7 @@
 class Reviews::BuildController < ApplicationController
   include Wicked::Wizard
 
-  steps :context, :unboxing, :setup, :review, :conclusion
+  steps :context, :setup, :review, :conclusion
 
   def show
     @review = Review.find(params[:review_id])
@@ -18,10 +18,9 @@ class Reviews::BuildController < ApplicationController
   private 
 
     def build_params
-      params.require(:review).permit(:q1, :q2, :q3, :q4, :q5,
-                                     :q6, :q7, :q8, :q9, :q10,
-                                     :q11, :q12, :q13, :q14, :q15,
-                                     :q16, :q17, :q18, :q19, :q20,
-                                     :q21, :q22, :q23, :q24, :q25)
+      params.require(:review).permit(:answer1, :answer2, :answer3, :answer4, :answer5,
+                                     :answer6, :answer7, :answer8, :answer9, :answer10,
+                                     :answer11, :answer12, :answer13, :answer14, :answer15,
+                                     :answer16, :answer17, :answer18, :answer19, :answer20,)
     end
 end

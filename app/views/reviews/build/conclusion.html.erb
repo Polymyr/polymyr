@@ -3,15 +3,18 @@
 	<%= simple_form_for @review, url: wizard_path, method: :put do |f| %>
 
 		<div class="form-inputs">
-			<%= f.input :q21, label: "Question 21" %>
-			<%= f.input :q22, label: "Question 22" %>
-			<%= f.input :q23, label: "Question 23" %>
-			<%= f.input :q24, label: "Question 24" %>
-			<%= f.input :q25, label: "Question 25" %>
+			<%= f.input :answer16, label: "Question 16" %>
+			<%= f.input :answer17, label: "Question 17" %>
+			<%= f.input :answer18, label: "Question 18" %>
+			<%= f.input :answer19, label: "Question 19" %>
+			<%= f.input :answer20, label: "Question 20" %>
 		</div>
 
 		<div class="form-actions">
-	    <%= f.button :submit, "Submit" %>
+	    <%= f.button :submit, "Submit Review" %>
+	  </div>
+	  <div class="previous-step">
+	  	<i class="fa fa-arrow-left" aria-hidden="true"></i><%= link_to "Prev", previous_wizard_path %>
 	  </div>
 	<% end %>
 </div>
