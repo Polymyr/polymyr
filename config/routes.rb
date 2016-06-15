@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   root 'general#home'
   resources :users
   resources :makers
-  resources :products
+  resources :products do
+    resources :build, controller: 'products/build'
+  end
   resources :reviews do
     resources :build, controller: 'reviews/build'
   end
