@@ -4,6 +4,8 @@ class Product < ActiveRecord::Base
 	include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
+  scope :active, -> { where(status: 'active') }
+
 	belongs_to :maker
 	has_many :reviews
 	has_many :users, through: :reviews

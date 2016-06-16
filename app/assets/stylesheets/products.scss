@@ -70,7 +70,7 @@
 .overview .payment-btn {
 	padding: 5px 10px 5px 10px;
 	font-size: 1.5em;
-	background-color: #2274A5;
+	background-color: #0094D8;
 	color: white;
 	border-radius: 5px;
 	text-decoration: none;
@@ -87,6 +87,7 @@
 	text-align: center;
 	margin: 5px;
 	border-radius: 15px;
+	border: 1px solid #E8E8E8;
 }
 
 .product-card img {
@@ -109,9 +110,6 @@
 }
 
 .product-card-info {
-	border-right: 1px solid #E8E8E8;
-	border-bottom: 1px solid #E8E8E8;
-	border-left: 1px solid #E8E8E8;
 	padding: 8px;
 	height: 120px;
 	border-bottom-right-radius: 10px;
@@ -162,3 +160,84 @@
 	}
 }
 
+/* Creating product */
+
+.product-progress {
+	list-style-type: none;
+	text-align: center;
+	margin: 0 auto;
+	padding: 0;
+	width: 320px;
+	border-radius: 15px;
+	font-size: 1.1em;
+}
+
+.product-progress li {
+	display: inline-block;
+}
+
+.product-progress li a {
+	color: #A0A0A0;
+	display: block;
+	padding: 3px 12px 3px 12px;
+}
+
+.product-progress li i {
+	color: #A0A0A0;
+}
+
+.product-progress li .progress-selected {
+	color: #0094D8;
+}
+
+.image-upload {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.image-upload li {
+	display: inline-block;
+	margin-left: 7px;
+	margin-right: 7px;
+}
+
+.image-upload .file {
+	opacity: 0;
+}
+
+.file input {
+	border: 1px solid #A0A0A0;
+	height: 150px;
+	width: 200px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.image-button {
+	height: 150px;
+	width: 200px;
+	margin-top: -160px;
+	padding-top: 36px;
+	text-align: center;
+	color: #C0C0C0;
+	border: 1px solid #C0C0C0;
+	border-radius: 10px;
+	background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+// .image-button img {
+// 	margin: auto;
+// 	height: 90px;
+// 	clip: rect(0px,118px,88px,0px);
+// 	position: absolute;
+// }

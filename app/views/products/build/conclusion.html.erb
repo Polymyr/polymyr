@@ -1,6 +1,6 @@
-<div class="form-wrapper">
+<%= render "products/build/product_progress" %>
 
-	<%= render "products/build/product_progress" %>
+<div class="form-wrapper">
 
 	<%= simple_form_for @product, url: wizard_path, method: :put do |f| %>
 

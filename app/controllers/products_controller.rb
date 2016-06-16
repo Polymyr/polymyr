@@ -10,7 +10,6 @@ class ProductsController < ApplicationController
 	def create
 		@product = current_maker.products.build(product_params)
 		if @product.save
-			flash[:success] = "Product launched!"
 			redirect_to product_build_path(:basics, product_id: @product.id)
 		else
 			flash.now[:error] = "There was an error, please try again."

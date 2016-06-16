@@ -1,15 +1,63 @@
-<div class="form-wrapper">
+<%= render "products/build/product_progress" %>
 
-	<%= render "products/build/product_progress" %>
+<div class="form-wrapper">
 
 	<%= simple_form_for @product, url: wizard_path, method: :put do |f| %>
 
 		<div class="form-inputs">
-			<%= f.input :image1, as: :file, label: "Main image" %>
-			<%= f.input :image2, as: :file, label: "Image 2" %>
-			<%= f.input :image3, as: :file, label: "Image 3" %>
-			<%= f.input :image4, as: :file, label: "Image 4" %>
-			<%= f.input :image5, as: :file, label: "Image 5" %>
+			<ul class="image-upload">
+				<li>
+					<%= f.input :image1, as: :file %>
+					<div class="image-button">
+						<i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+						<br />
+						Primary image
+					</div>
+				</li>
+				<li>
+					<%= f.input :image2, as: :file %>
+					<div class="image-button">
+						<i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+						<br />
+						Additional image
+					</div>
+				</li>
+				<li>
+					<%= f.input :image3, as: :file %>
+					<div class="image-button">
+						<i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+						<br />
+						Additional image
+					</div>
+				</li>
+				<li>
+					<%= f.input :image4, as: :file %>
+					<div class="image-button">
+						<i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+						<br />
+						Additional image
+					</div>
+				</li>
+				<li>
+					<%= f.input :image5, as: :file %>
+					<div class="image-button">
+						<i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+						<br />
+						Additional image
+					</div>
+				</li>
+			</ul>
+
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+
 			<%= f.input :name, label: "Product name" %>
 			<%= f.input :description, label: "One-line description" %>
 			<%= f.input :price, label: "Full price" %>
@@ -26,3 +74,28 @@
 	  </div>
 	<% end %>
 </div>
+
+<script>
+	$(function() {
+	  $('#product_image1').on('change', function(event) {
+	    var files = event.target.files;
+	    var image = files[0];
+	    console.log(image.size);
+	    var reader = new FileReader();
+	    reader.onload = function(file) {
+	      var img = new Image();
+	      console.log(file);
+	      img.src = file.target.result;
+	      console.log(img);
+	      // $('.image-button').html(img);
+	      $('.image-button').css("background-image", "url(" + img.src + ")");
+	      // $('.image-button').css("background-repeat", "no-repeat");
+	      // $('.image-button').css("background-position", "center center");
+	      // $('.image-button').css("background-attachment", "fixed");
+	      // $('.image-button').css("background-size", "cover");
+	    }
+	    reader.readAsDataURL(image);
+	    console.log(files);
+	  });
+	});
+</script>

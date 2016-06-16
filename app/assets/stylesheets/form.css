@@ -7,12 +7,12 @@ form {
 }
 
 .form-actions .btn {
-	background-color: #2274A5;
+	background-color: #0094D8;
 	color: white;
 }
 
 .signup-submit {
-	margin-top:10px;
+	margin-top: 10px;
 }
 
 .form-wrapper {
@@ -20,6 +20,14 @@ form {
 	max-width: 100%;
 	margin: auto;
 	padding: 25px 25px 25px 25px;
+}
+
+.form-inputs {
+	font-size: 1.2em;
+}
+
+.form-actions {
+	padding-top: 5px;
 	font-size: 1.2em;
 }
 
@@ -29,7 +37,7 @@ form {
 }
 
 .form-wrapper a {
-	color: #2274A5;
+	color: #0094D8;
 }
 
 .form-wrapper label {

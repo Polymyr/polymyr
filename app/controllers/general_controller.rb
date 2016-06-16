@@ -1,7 +1,7 @@
 class GeneralController < ApplicationController
 
 	def home
-		@products = Product.all
+		@products = Product.active
 	end
 end
 

@@ -7,11 +7,21 @@
 	<%= simple_form_for @review, url: wizard_path, method: :put do |f| %>
 
 		<div class="form-inputs">
-			<%= f.input :answer6, label: "Question 6", as: :string %>
-			<%= f.input :answer7, label: "Question 7", as: :string %>
-			<%= f.input :answer8, label: "Question 8", as: :string %>
-			<%= f.input :answer9, label: "Question 9", as: :string %>
-			<%= f.input :answer10, label: "Question 10", as: :string %>
+			<% if !@review.product.q6.blank? %>
+				<%= f.input :answer6, label: @review.product.q6, as: :string %>
+			<% end %>
+			<% if !@review.product.q7.blank? %>
+				<%= f.input :answer7, label: @review.product.q7, as: :string %>
+			<% end %>
+			<% if !@review.product.q8.blank? %>
+				<%= f.input :answer8, label: @review.product.q8, as: :string %>
+			<% end %>
+			<% if !@review.product.q9.blank? %>
+				<%= f.input :answer9, label: @review.product.q9, as: :string %>
+			<% end %>
+			<% if !@review.product.q10.blank? %>
+				<%= f.input :answer10, label: @review.product.q10, as: :string %>
+			<% end %>
 		</div>
 
 		<div class="form-actions">

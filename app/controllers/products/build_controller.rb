@@ -4,7 +4,7 @@ class Products::BuildController < ApplicationController
   before_action :authenticate_maker!
   before_action :correct_maker
 
-  steps :basics, :context, :setup, :usage, :conclusion
+  steps :basics, :context, :setup, :usage, :conclusion, :preview
 
   def show
     @product = Product.find(params[:product_id])
@@ -14,9 +14,15 @@ class Products::BuildController < ApplicationController
 
   def update
     @product = Product.find(params[:product_id])
-    params[:product][:status] = 'active' if step == steps.last
-    @product.update_attributes(build_params)
-    render_wizard @product
+    @product.status = 'active' if step == steps.last
+    if @product.update_attributes(build_params)
+      flash[:success] = "Product launched!" if step == steps.last
+      render_wizard @product
+    else
+      # params[:product][:status] = 'inactive'
+      flash[:error] = "There was an error, please try again."
+      redirect_to :back
+    end
   end
 
   private 
