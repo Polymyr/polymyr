@@ -9,6 +9,9 @@
 				<li>
 					<%= f.input :image1, as: :file %>
 					<div class="image-button">
+						<i class="fa fa-times fa-lg" aria-hidden="true"></i>
+					</div>
+					<div class="image-button-text">
 						<i class="fa fa-plus fa-2x" aria-hidden="true"></i>
 						<br />
 						Primary image
@@ -17,30 +20,9 @@
 				<li>
 					<%= f.input :image2, as: :file %>
 					<div class="image-button">
-						<i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-						<br />
-						Additional image
+						<i class="fa fa-times fa-lg" aria-hidden="true"></i>
 					</div>
-				</li>
-				<li>
-					<%= f.input :image3, as: :file %>
-					<div class="image-button">
-						<i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-						<br />
-						Additional image
-					</div>
-				</li>
-				<li>
-					<%= f.input :image4, as: :file %>
-					<div class="image-button">
-						<i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-						<br />
-						Additional image
-					</div>
-				</li>
-				<li>
-					<%= f.input :image5, as: :file %>
-					<div class="image-button">
+					<div class="image-button-text">
 						<i class="fa fa-plus fa-2x" aria-hidden="true"></i>
 						<br />
 						Additional image
@@ -77,25 +59,27 @@
 
 <script>
 	$(function() {
-	  $('#product_image1').on('change', function(event) {
+	  $('.file').on('change', function(event) {
 	    var files = event.target.files;
 	    var image = files[0];
-	    console.log(image.size);
 	    var reader = new FileReader();
+	    var original = $(this);
 	    reader.onload = function(file) {
 	      var img = new Image();
-	      console.log(file);
 	      img.src = file.target.result;
-	      console.log(img);
-	      // $('.image-button').html(img);
-	      $('.image-button').css("background-image", "url(" + img.src + ")");
-	      // $('.image-button').css("background-repeat", "no-repeat");
-	      // $('.image-button').css("background-position", "center center");
-	      // $('.image-button').css("background-attachment", "fixed");
-	      // $('.image-button').css("background-size", "cover");
+	      $(original).next().css("background-image", "url(" + img.src + ")");
+	      $(original).next().find('.fa-times').css("display", "inline-block");
 	    }
 	    reader.readAsDataURL(image);
-	    console.log(files);
 	  });
 	});
+
+  $('.fa-times').click(function(event) {
+    $(this).css("display", "none");
+    $(this).parent().css("background-image", "none");
+    $(this).parent().prev().find('input').wrap('<form>').closest('form').get(0).reset();
+  	$(this).parent().prev().find('input').unwrap();
+  	$(this).parent().prev().find('input').stopPropagation();
+  	$(this).parent().prev().find('input').preventDefault();
+  });
 </script>
