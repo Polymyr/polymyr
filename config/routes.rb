@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :makers
   resources :products do
     resources :build, controller: 'products/build'
+    resources :uploads, only: [:new, :create, :destroy]
   end
   resources :reviews do
     resources :build, controller: 'reviews/build'

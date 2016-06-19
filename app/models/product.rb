@@ -9,6 +9,7 @@ class Product < ActiveRecord::Base
 	belongs_to :maker
 	has_many :reviews
 	has_many :users, through: :reviews
+	has_many :uploads, dependent: :destroy
 
 	has_attached_file :image1, styles: { large: "640x480#", medium: "320x240#", thumb: "50x50#" }
 	has_attached_file :image2, styles: { large: "640x480#", medium: "320x240#", thumb: "50x50#" }

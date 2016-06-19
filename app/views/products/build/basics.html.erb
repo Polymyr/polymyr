@@ -1,14 +1,26 @@
 <%= render "products/build/product_progress" %>
 
-<div class="form-wrapper">
+<%= form_for([@product, Upload.new], html: { multipart: true, class: "dropzone", :product_id => @product.id }) do |f|  %>
+  <div class="dz-message" data-dz-message>
+  	<span><i class="fa fa-upload fa-3x" aria-hidden="true"></i></span>
+  	<br /><br />
+  	<span>Drop files here or click to upload</span>
+  </div>
+  <div class="fallback">
+    <%= f.file_field :image %><br>
+    <%= f.submit "Upload" %>
+  </div>
+<% end %>
+
+<div class="form-wrapper" data-id=<%= @product.id %>>
 
 	<%= simple_form_for @product, url: wizard_path, method: :put do |f| %>
 
 		<div class="form-inputs">
-			<ul class="image-upload">
+			<!-- <ul class="image-upload">
 				<li>
 					<%= f.input :image1, as: :file %>
-					<div class="image-button">
+					<div class="image-button" style="background-image: url(<%= @product.image1 %>)">
 						<i class="fa fa-times fa-lg" aria-hidden="true"></i>
 					</div>
 					<div class="image-button-text">
@@ -29,16 +41,7 @@
 					</div>
 				</li>
 			</ul>
-
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
+ -->
 
 			<%= f.input :name, label: "Product name" %>
 			<%= f.input :description, label: "One-line description" %>
@@ -57,29 +60,77 @@
 	<% end %>
 </div>
 
+
 <script>
-	$(function() {
-	  $('.file').on('change', function(event) {
-	    var files = event.target.files;
-	    var image = files[0];
-	    var reader = new FileReader();
-	    var original = $(this);
-	    reader.onload = function(file) {
-	      var img = new Image();
-	      img.src = file.target.result;
-	      $(original).next().css("background-image", "url(" + img.src + ")");
-	      $(original).next().find('.fa-times').css("display", "inline-block");
-	    }
-	    reader.readAsDataURL(image);
-	  });
+	
+
+
+	$(document).ready(function(){
+		
+
+		// alert(<%= @product.uploads.to_json %>);
+
+		// disable auto discover
+		Dropzone.autoDiscover = false;
+
+		// grap our upload form by its id
+		$("#new_upload").dropzone({
+			// restrict image size to a maximum 1MB
+			maxFilesize: 1,
+			// changed the passed param to one accepted by
+			// our rails app
+			paramName: "upload[image]",
+			// show remove links on each image upload
+			addRemoveLinks: true,
+			// if the upload was successful
+			success: function(file, response){
+				// find the remove button link of the uploaded file and give it an id
+				// based of the fileID response from the server
+				$(file.previewTemplate).find('.dz-remove').attr('id', response.fileID);
+				// add the dz-success class (the green tick sign)
+				$(file.previewElement).addClass("dz-success");
+			},
+			//when the remove button is clicked
+			removedfile: function(file){
+				// grap the id of the uploaded file we set earlier
+				var id = $(file.previewTemplate).find('.dz-remove').attr('id');
+				console.log(id);
+				var product_id = $('.dropzone').attr('product_id');
+				// make a DELETE ajax request to delete the file
+				$.ajax({
+					type: 'DELETE',
+					url: '/products/' + product_id + '/uploads/' + id,
+					success: function(data){
+						console.log(data.message);
+						file.previewElement.remove();
+					}
+				});
+			},
+
+			init: function () {
+		    this.on('maxfilesexceeded', function (file) {
+	        this.removeAllFiles();
+	        this.addFile(file);
+		    });
+
+		    // var mocks = $dropzone.data('dropzone');
+		    // for (var i = 0; i < mocks.length; i++) {
+	     //    var mock = mocks[i];
+	     	<% for u in @product.uploads %>
+			
+	     		mock = { name: "<%= u.image.original_filename %>", size: <%= u.image_file_size %> };
+	        mock.accepted = true;
+
+	        this.files.push(mock);
+	        this.emit('addedfile', mock);
+	        this.createThumbnailFromUrl(mock, "<%= u.image.url %>");
+	        this.emit('complete', mock);
+	        $(mock.previewTemplate).find('.dz-remove').attr('id', <%= u.id %>);
+	      <% end %>
+		    // }
+			}
+		});	
 	});
 
-  $('.fa-times').click(function(event) {
-    $(this).css("display", "none");
-    $(this).parent().css("background-image", "none");
-    $(this).parent().prev().find('input').wrap('<form>').closest('form').get(0).reset();
-  	$(this).parent().prev().find('input').unwrap();
-  	$(this).parent().prev().find('input').stopPropagation();
-  	$(this).parent().prev().find('input').preventDefault();
-  });
+	
 </script>
