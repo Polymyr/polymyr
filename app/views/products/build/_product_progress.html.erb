@@ -1,10 +1,7 @@
 <ul class="product-progress">
-	<li><%= link_to 'Product', wizard_path(:basics), class: 'progress-selected' %></li>
+	<li><%= link_to 'Product', wizard_path(:product), class: 'progress-selected' %></li>
 	<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
-	<li><%= link_to 'Questions', wizard_path(:context) %></li>
+	<li><%= link_to 'Questions', wizard_path(:questions) %></li>
 	<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
-	<!-- <li><%= link_to 'Usage', wizard_path(:usage) %></li>
-	<li><%= link_to 'Review', wizard_path(:review) %></li>
-	<li><%= link_to 'Conclusion', wizard_path(:conclusion) %></li> -->
-	<li><%= link_to 'Review', wizard_path(:preview) %></li>
+	<li><%= link_to 'Preview', wizard_path(:preview) %></li>
 </ul>

@@ -1,6 +1,6 @@
 <li class="product-card">
 	<%= link_to product do %>
-		<%= image_tag product.image1.url(:medium) %>
+		<%= image_tag product.uploads[0].image.url(:medium) %>
 		<div class="product-card-info">
 			<div class="product-card-name"><%= product.name %></div>
 			<div class="product-card-company"><%= product.maker.company %></div>

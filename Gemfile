@@ -38,7 +38,6 @@ gem 'simple_form'
 gem "font-awesome-rails"
 gem 'paperclip', :git => 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'
 gem 'valid_url'
-gem 'ckeditor'
 gem 'aws-sdk'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'

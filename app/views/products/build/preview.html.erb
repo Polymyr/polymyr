@@ -1,0 +1,85 @@
+<%= render "products/build/product_progress" %>
+
+<div class="product-build-heading">Preview your product page</div>
+
+<div class="product-preview-caption">
+	After we accept your submission, you can no longer edit your product, so make sure your product page is exactly the way you want it!
+</div>
+
+<div class="form-wrapper" data-id=<%= @product.id %>>
+
+	<%= simple_form_for @product, url: wizard_path, method: :put do |f| %>
+
+		<%= f.button :submit, "Submit for approval", id: "product-submit" %>
+
+	<% end %>
+</div>
+
+<hr>
+
+<div class="product">
+	<div class="row">
+
+		<div class="col-2">
+			<ul class="thumbnails">
+				<% for i in 0..@product.uploads.length - 1 %>
+					<li><%= image_tag @product.uploads[i].image.url(:thumb), class: "selected", 'data-target' => "#product-carousel", 'data-slide-to' => i %></li>
+				<% end %>
+			</ul>
+		</div>
+
+		<div class="col-7">
+			<div id="product-carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
+
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+			  	<% if @product.uploads.length > 0 %>
+				    <li data-target="#product-carousel" data-slide-to="1" class="active"></li>
+				  <% end %>
+				  <% for i in 1..@product.uploads.length - 1 %>
+				    <li data-target="#product-carousel" data-slide-to=<%= i %>></li>
+				  <% end %>
+			  </ol>
+
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">
+			  	<% if @product.uploads.length > 0 %>
+				    <div class="item active">
+				      <%= image_tag @product.uploads[0].image.url(:large) %>
+				    </div>
+				  <% end %>
+			  	<% for i in 1..@product.uploads.length - 1 %>
+				    <div class="item">
+				      <%= image_tag @product.uploads[i].image.url(:large) %>
+				    </div>
+				  <% end %>
+			  </div>
+			</div>
+		</div>
+
+		<div class="col-3 overview">
+			<h3 class="product-show-name"><%= @product.name if @product.name.present? %></h3>
+			<h5><%= @product.maker.company if @product.maker.company.present? %></h5>
+			<br />
+			<h5><%= @product.description if @product.description.present? %></h5>
+			<br />
+			<h3><%= '$' + (@product.price - @product.rebate).to_s if @product.price.present? && @product.rebate.present? %></h3>
+			<div class="product-price-reg"><%= 'Regular price: $' + @product.price.to_s if @product.price.present? %></div>
+			<ul>
+				<li>Free shipping</li>
+				<li>Available in the U.S.</li>
+			</ul>
+
+			<% if user_signed_in? %>
+				<%= link_to "Buy now", "#payment", "data-toggle" => "modal", class: "payment-btn" %>
+				<%= render "charges/payment_modal" %>
+			<% end %>
+		</div>
+	</div>
+	<hr>
+	<h2>The Story</h2>
+	<h4>
+		<%= sanitize @product.story if @product.story.present? %>
+	</h4>
+	<br />
+</div>

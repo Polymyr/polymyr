@@ -1,28 +1,10 @@
 <div class="product">
 	<div class="row">
 
-		<% image1 = @product.image1.exists? %>
-		<% image2 = @product.image2.exists? %>
-		<% image3 = @product.image3.exists? %>
-		<% image4 = @product.image4.exists? %>
-		<% image5 = @product.image5.exists? %>
-
 		<div class="col-2">
 			<ul class="thumbnails">
-				<% if image1 %>
-					<li><%= image_tag @product.image1.url(:thumb), class: "image1 selected", 'data-target' => "#product-carousel", 'data-slide-to' => "0" %></li>
-				<% end %>
-				<% if image2 %>
-					<li><%= image_tag @product.image2.url(:thumb), class: "image2", 'data-target' => "#product-carousel", 'data-slide-to' => "1" %></li>
-				<% end %>
-				<% if image3 %>
-					<li><%= image_tag @product.image3.url(:thumb), class: "image3", 'data-target' => "#product-carousel", 'data-slide-to' => "2" %></li>
-				<% end %>
-				<% if image4 %>
-					<li><%= image_tag @product.image4.url(:thumb), class: "image4", 'data-target' => "#product-carousel", 'data-slide-to' => "3" %></li>
-				<% end %>
-				<% if image5 %>
-					<li><%= image_tag @product.image5.url(:thumb), class: "image5", 'data-target' => "#product-carousel", 'data-slide-to' => "4" %></li>
+				<% for i in 0..@product.uploads.length - 1 %>
+					<li><%= image_tag @product.uploads[i].image.url(:thumb), class: "selected", 'data-target' => "#product-carousel", 'data-slide-to' => i %></li>
 				<% end %>
 			</ul>
 		</div>
@@ -32,60 +14,38 @@
 
 			  <!-- Indicators -->
 			  <ol class="carousel-indicators">
-			  	<% if image2 || image3 || image4 || image5 %>
-				    <li data-target="#product-carousel" data-slide-to="0" class="active"></li>
+			  	<% if @product.uploads.length > 0 %>
+				    <li data-target="#product-carousel" data-slide-to="1" class="active"></li>
 				  <% end %>
-				  <% if image2 %>
-				    <li data-target="#product-carousel" data-slide-to="1"></li>
-				  <% end %>
-				  <% if image3 %>
-				    <li data-target="#product-carousel" data-slide-to="2"></li>
-				  <% end %>
-				  <% if image4 %>
-				    <li data-target="#product-carousel" data-slide-to="3"></li>
-				  <% end %>
-				 	<% if image5 %>
-				    <li data-target="#product-carousel" data-slide-to="4"></li>
+				  <% for i in 1..@product.uploads.length - 1 %>
+				    <li data-target="#product-carousel" data-slide-to=<%= i %>></li>
 				  <% end %>
 			  </ol>
 
 			  <!-- Wrapper for slides -->
 			  <div class="carousel-inner" role="listbox">
-			    <div class="item active">
-			      <%= image_tag @product.image1.url(:large) %>
-			    </div>
-			    <% if image2 %>
-				    <div class="item">
-				    	<%= image_tag @product.image2.url(:large) %>
+			  	<% if @product.uploads.length > 0 %>
+				    <div class="item active">
+				      <%= image_tag @product.uploads[0].image.url(:large) %>
 				    </div>
-				   <% end %>
-			    <% if image3 %>
+				  <% end %>
+			  	<% for i in 1..@product.uploads.length - 1 %>
 				    <div class="item">
-				    	<%= image_tag @product.image3.url(:large) %>
+				      <%= image_tag @product.uploads[i].image.url(:large) %>
 				    </div>
-				   <% end %>
-			    <% if image4 %>
-				    <div class="item">
-				    	<%= image_tag @product.image4.url(:large) %>
-				    </div>
-				   <% end %>
-			    <% if image5 %>
-				    <div class="item">
-				    	<%= image_tag @product.image5.url(:large) %>
-				    </div>
-				   <% end %>
+				  <% end %>
 			  </div>
 			</div>
 		</div>
 
 		<div class="col-3 overview">
-			<h3 class="product-show-name"><%= @product.name %></h3>
-			<h5><%= @product.maker.company %></h5>
+			<h3 class="product-show-name"><%= @product.name if @product.name.present? %></h3>
+			<h5><%= @product.maker.company if @product.maker.company.present? %></h5>
 			<br />
-			<h5><%= @product.description %></h5>
+			<h5><%= @product.description if @product.description.present? %></h5>
 			<br />
-			<h3>$<%= @product.price - @product.rebate %></h3>
-			<div class="product-price-reg">Regular price: $<%= @product.price %></div>
+			<h3><%= '$' + (@product.price - @product.rebate).to_s if @product.price.present? && @product.rebate.present? %></h3>
+			<div class="product-price-reg"><%= 'Regular price: $' + @product.price.to_s if @product.price.present? %></div>
 			<ul>
 				<li>Free shipping</li>
 				<li>Available in the U.S.</li>
@@ -95,18 +55,6 @@
 				<%= link_to "Buy now", "#payment", "data-toggle" => "modal", class: "payment-btn" %>
 				<%= render "charges/payment_modal" %>
 			<% end %>
-
-			<% if user_signed_in? %>
-				<% @review = Review.find_by(user_id: current_user.id, product_id: @product.id) %>
-				<% if @review != nil %>
-					<br /><br />
-					<%= link_to "Review", review_build_path(:context, review_id: @review.id) %>
-				<% end %>
-			<% end %>
-
-			<% if maker_signed_in? && @product.maker == current_maker %>
-				<h5><%= link_to "Edit product", edit_product_path(@product) %></h5>
-      <% end %>
 		</div>
 	</div>
 	<hr>

@@ -1,5 +1,7 @@
 <%= render "products/build/product_progress" %>
 
+<div class="product-build-heading">Tell us about your product</div>
+
 <%= form_for([@product, Upload.new], html: { multipart: true, class: "dropzone", :product_id => @product.id }) do |f|  %>
   <div class="dz-message" data-dz-message>
   	<span><i class="fa fa-upload fa-3x" aria-hidden="true"></i></span>
@@ -17,38 +19,12 @@
 	<%= simple_form_for @product, url: wizard_path, method: :put do |f| %>
 
 		<div class="form-inputs">
-			<!-- <ul class="image-upload">
-				<li>
-					<%= f.input :image1, as: :file %>
-					<div class="image-button" style="background-image: url(<%= @product.image1 %>)">
-						<i class="fa fa-times fa-lg" aria-hidden="true"></i>
-					</div>
-					<div class="image-button-text">
-						<i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-						<br />
-						Primary image
-					</div>
-				</li>
-				<li>
-					<%= f.input :image2, as: :file %>
-					<div class="image-button">
-						<i class="fa fa-times fa-lg" aria-hidden="true"></i>
-					</div>
-					<div class="image-button-text">
-						<i class="fa fa-plus fa-2x" aria-hidden="true"></i>
-						<br />
-						Additional image
-					</div>
-				</li>
-			</ul>
- -->
-
-			<%= f.input :name, label: "Product name" %>
-			<%= f.input :description, label: "One-line description" %>
-			<%= f.input :price, label: "Full price" %>
-			<%= f.input :rebate %>
-			<%= f.input :quantity %>
-			<%= f.input :story, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'mini'} } %>
+			<%= f.input :name, label: false, placeholder: 'Product name' %>
+			<%= f.input :description, label: false, placeholder: "Short description", as: :string %>
+			<%= f.input :price, label: false, placeholder: "Price" %>
+			<%= f.input :rebate, label: false, placeholder: "Rebate" %>
+			<%= f.input :quantity, label: false, placeholder: "Number of units" %>
+			<%= f.input :story, label: false, placeholder: "Product story" %>
 		</div>
 
 		<div class="form-actions">
@@ -60,15 +36,8 @@
 	<% end %>
 </div>
 
-
 <script>
-	
-
-
 	$(document).ready(function(){
-		
-
-		// alert(<%= @product.uploads.to_json %>);
 
 		// disable auto discover
 		Dropzone.autoDiscover = false;
@@ -113,24 +82,18 @@
 	        this.addFile(file);
 		    });
 
-		    // var mocks = $dropzone.data('dropzone');
-		    // for (var i = 0; i < mocks.length; i++) {
-	     //    var mock = mocks[i];
-	     	<% for u in @product.uploads %>
+	     	<% for upload in @product.uploads %>
 			
-	     		mock = { name: "<%= u.image.original_filename %>", size: <%= u.image_file_size %> };
+	     		mock = { name: "<%= upload.image.original_filename %>", size: <%= upload.image_file_size %> };
 	        mock.accepted = true;
 
 	        this.files.push(mock);
 	        this.emit('addedfile', mock);
-	        this.createThumbnailFromUrl(mock, "<%= u.image.url %>");
+	        this.createThumbnailFromUrl(mock, "<%= upload.image.url %>");
 	        this.emit('complete', mock);
-	        $(mock.previewTemplate).find('.dz-remove').attr('id', <%= u.id %>);
+	        $(mock.previewTemplate).find('.dz-remove').attr('id', <%= upload.id %>);
 	      <% end %>
-		    // }
 			}
 		});	
 	});
-
-	
 </script>
