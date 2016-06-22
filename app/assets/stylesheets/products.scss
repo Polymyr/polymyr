@@ -157,11 +157,28 @@
 
 /* Creating product */
 
+.start-caption {
+	margin-top: 2em;
+	text-align: center;
+}
+
+.start-caption span {
+	color: #707070;
+	font-size: 1.5em;
+}
+
+.start-caption input {
+	font-size: 1.5em;
+	height: 2em;
+}
+
 .product-build-heading {
+	width: 21em;
 	font-size: 2em;
 	text-align: center;
-	margin-top: 30px;
+	margin: 10px auto;
 	color: #0094D8;
+	max-width: 100%;
 }
 
 .product-build-subheading {
@@ -187,7 +204,7 @@
 .product-progress {
 	list-style-type: none;
 	text-align: center;
-	margin: 0 auto;
+	margin: 0 auto 30px auto;
 	padding: 0;
 	width: 360px;
 	border-radius: 15px;

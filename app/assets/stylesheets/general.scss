@@ -10,12 +10,16 @@ html, body {
 	margin: 0;
 	padding: 2em 1em 1em 1em;
 	// background-color: #F7F7F7;
-	min-height: calc(100% - 60px);
 }
 
 .title {
 	font-size: 2.4em;
 	text-align: center;
+}
+
+hr {
+  border: 0;
+  border-top: 2px solid #E0E0E0;
 }
 
 @media screen and (min-width: 768px) {
@@ -44,6 +48,7 @@ a:link, a:visited, a:hover, a:active {
 	color: #0094D8;
 	text-align: center;
 	font-weight: 600;
+	padding-top: 20px;
 }
 
 @media screen and (min-width: 768px) {
@@ -109,4 +114,41 @@ a:link, a:visited, a:hover, a:active {
 .error {
 	color: red;
 	margin-top: 5px;
+}
+
+.footer-content {
+	padding: 10px 30px 30px 30px;
+}
+
+.footer-left {
+	width: 200px;
+	float: left;
+	margin-bottom: 20px;
+}
+
+.footer-right {
+	float: right;
+}
+
+.footer-right ul {
+	list-style-type: none;
+	padding: 0;
+	font-size: 0.8em;
+	margin-top: 5px;
+}
+
+.footer-bottom {
+	clear: both;
+	color: #A0A0A0;
+	font-size: 0.8em;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-content {
+  	padding: 35px 150px 50px 150px;
+  }
+  .footer-left {
+		width: 300px;
+		float: left;
+	}
 }
