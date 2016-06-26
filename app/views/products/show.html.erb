@@ -15,7 +15,7 @@
 			  <!-- Indicators -->
 			  <ol class="carousel-indicators">
 			  	<% if @product.uploads.length > 0 %>
-				    <li data-target="#product-carousel" data-slide-to="1" class="active"></li>
+				    <li data-target="#product-carousel" data-slide-to="0" class="active"></li>
 				  <% end %>
 				  <% for i in 1..@product.uploads.length - 1 %>
 				    <li data-target="#product-carousel" data-slide-to=<%= i %>></li>

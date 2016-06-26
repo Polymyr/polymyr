@@ -1,11 +1,12 @@
 <li class="product-card">
 	<%= link_to product do %>
-		<%= image_tag product.uploads[0].image.url(:medium) %>
+		<% if product.uploads.length == 0 %>
+			<%= image_tag("image_not_found.png") %>
+		<% else %>
+			<%= image_tag product.uploads[0].image.url(:medium) %>
+		<% end %>
 		<div class="product-card-info">
 			<div class="product-card-name"><%= product.name %></div>
-			<div class="product-card-company"><%= product.maker.company %></div>
-			<div class="product-card-des"><%= product.description %></div>
-			<div class="product-card-price">$<%= product.price - product.rebate %></div>
 		</div>
 	<% end %>
 </li>

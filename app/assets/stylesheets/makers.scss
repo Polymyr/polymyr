@@ -1,3 +1,54 @@
-// Place all the styles related to the makers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.maker-start {
+	display: table;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.maker-signup-info {
+	max-width: 100%;
+	display: table-footer-group;
+}
+
+.maker-signup-info-wrapper {
+	max-width: 100%;
+	width: 25em;
+	margin: 25px auto;
+}
+
+.maker-signup-caption {
+	margin-top: 1em;
+	font-size: 1.1em;
+}
+
+.maker-signup-portal {
+	margin-top: 0.8em;
+}
+
+.maker-signup-portal a {
+	color: #0094D8;
+	font-size: 1.8em;
+}
+
+.maker-signin-form {
+	max-width: 100%;
+	display: table-header-group;
+}
+
+@media screen and (min-width: 768px) {
+	.maker-start {
+		display: block;
+	}
+	.maker-signup-info {
+		width: 55%;
+		float: left;
+	}
+	.maker-signup-info-wrapper {
+		margin-top: 0;
+		width: 100%;
+		float: left;
+	}
+	.maker-signin-form {
+		width: 36%;
+		float: right;
+	}
+}

@@ -1,20 +1,43 @@
-<div class="title">Log in as a Maker</div>
+<div class="maker-start">
+	<div class="maker-signup-info">
 
-<div class="form-wrapper">
+		<div class="maker-signup-info-wrapper">
 
-	<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-		<%= f.error_notification %>
+			<h2>Join as a Maker</h2>
 
-	  <div class="form-inputs">
-	    <%= f.input :email, required: true, autofocus: true %>
-	    <%= f.input :password, required: true %>
-	    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-	  </div>
+			<div class="maker-signup-caption">
+				Join Polymyr as a maker to sell your product and gain valuable user feedback. Choose custom review questions for your buyers. Decide on a monetary reward for users who complete honest reviews of your product. Upon product submission approval, your product will be featured on our front page.
+			</div>
 
-	  <div class="form-actions">
-	    <%= f.button :submit, "Log in" %>
-	  </div>
-	<% end %>
+			<div class="maker-signup-portal">
+				<%= link_to new_maker_registration_path do %>
+					Sign up and improve your products <i class="fa fa-arrow-right" aria-hidden="true"></i>
+				<% end %>
+			</div>
+		</div>
+	</div>
 
-	<%= render "makers/shared/links" %>
+	<div class="maker-signin-form">
+
+		<div class="form-wrapper">
+
+			<h2>Maker sign in</h2>
+
+			<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+				<%= f.error_notification %>
+
+			  <div class="form-inputs">
+			    <%= f.input :email, required: true, autofocus: true %>
+			    <%= f.input :password, required: true %>
+			    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+			  </div>
+
+			  <div class="form-actions">
+			    <%= f.button :submit, "Sign in" %>
+			  </div>
+			<% end %>
+
+			<%= render "makers/shared/links" %>
+		</div>
+	</div>
 </div>
