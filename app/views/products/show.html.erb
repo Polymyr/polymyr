@@ -1,14 +1,6 @@
 <div class="product">
 	<div class="row">
 
-		<div class="col-2">
-			<ul class="thumbnails">
-				<% for i in 0..@product.uploads.length - 1 %>
-					<li><%= image_tag @product.uploads[i].image.url(:thumb), class: "selected", 'data-target' => "#product-carousel", 'data-slide-to' => i %></li>
-				<% end %>
-			</ul>
-		</div>
-
 		<div class="col-7">
 			<div id="product-carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
 
@@ -38,14 +30,20 @@
 			</div>
 		</div>
 
+		<div class="col-2">
+			<ul class="thumbnails">
+				<% for i in 0..@product.uploads.length - 1 %>
+					<li><%= image_tag @product.uploads[i].image.url(:thumb), class: "selected", 'data-target' => "#product-carousel", 'data-slide-to' => i %></li>
+				<% end %>
+			</ul>
+		</div>
+
 		<div class="col-3 overview">
-			<h3 class="product-show-name"><%= @product.name if @product.name.present? %></h3>
-			<h5><%= @product.maker.company if @product.maker.company.present? %></h5>
-			<br />
-			<h5><%= @product.description if @product.description.present? %></h5>
-			<br />
-			<h3><%= '$' + (@product.price - @product.rebate).to_s if @product.price.present? && @product.rebate.present? %></h3>
-			<div class="product-price-reg"><%= 'Regular price: $' + @product.price.to_s if @product.price.present? %></div>
+			<div class="product-show-name"><%= @product.name if @product.name.present? %></div>
+			<div class="product-show-maker"><%= @product.maker.company if @product.maker.company.present? %></div>
+			<div class="product-show-desc"><%= @product.description if @product.description.present? %></div>
+			<div class="product-show-price"><%= '$' + (@product.price - @product.rebate).to_s if @product.price.present? && @product.rebate.present? %></div>
+			<div class="product-show-price-reg"><%= 'Regular price: $' + @product.price.to_s if @product.price.present? %></div>
 			<ul>
 				<li>Free shipping</li>
 				<li>Available in the U.S.</li>
@@ -57,10 +55,10 @@
 			<% end %>
 		</div>
 	</div>
-	<hr>
-	<h2>The Story</h2>
-	<h4>
+	<br />
+	<h3>Description</h3>
+	<h5>
 		<%= sanitize @product.story %>
-	</h4>
+	</h5>
 	<br />
 </div>
