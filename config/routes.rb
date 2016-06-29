@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   devise_for :users, :controllers => { registrations: 'users/registrations' }
   devise_for :makers, :controllers => { registrations: 'makers/registrations' }
   
@@ -15,4 +17,6 @@ Rails.application.routes.draw do
   resources :charges
 
   get '/search', to: 'search#search'
+  get '/about', to: 'general#about'
+  get '/dash/:id', to: 'products#dash', as: 'dash'
 end

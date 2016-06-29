@@ -2,7 +2,7 @@ html, body {
 	height: 100%;
 	width: 100%;
 	margin: 0;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	color: #505050;
 }
 
@@ -11,6 +11,7 @@ html, body {
 	padding: 1em 1em 2em 1em;
 	// background-color: #F7F7F7;
 	overflow: auto;
+	min-height: calc(100% - 60px);
 }
 
 @media screen and (min-width: 768px) {

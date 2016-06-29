@@ -44,6 +44,11 @@ class ProductsController < ApplicationController
 		@product = Product.find(params[:id])
 	end
 
+	def dash
+		@product = Product.find(params[:id])
+		@reviews = @product.reviews
+	end
+
 	private
 
 		def product_params

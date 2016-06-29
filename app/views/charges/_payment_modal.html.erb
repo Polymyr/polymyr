@@ -1,97 +1,90 @@
 <div class="modal fade" id="payment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog small" role="document">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Pay now</h4>
-      </div>
-      <div class="modal-body">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         
-        <div class="payment-form-wrapper">
+      <div class="payment-form-wrapper">
 
-          <% if current_user.customer_id.present? %>
+        <h2 class="modal-title" id="myModalLabel">Pay now</h2>
 
-            <%= simple_form_for(:charge, url: charges_path) do %>
+        <br />
 
-              <input type="hidden" name="product_id" value="<%= @product.id %>" readonly>
+        <% if current_user.customer_id.present? %>
 
-              <div class="form-actions">
-                <input type="submit" class="submit btn" value="Submit Payment">
-              </div>
-            <% end %>
+          <%= simple_form_for(:charge, url: charges_path) do %>
 
-          <% else %>
+            <input type="hidden" name="product_id" value="<%= @product.id %>" readonly>
 
-            <%= simple_form_for(:charge, url: charges_path, html: {id: 'payment-form' }) do %>
-
-              <% if !current_user.name.present? || 
-                    !current_user.address.present? ||
-                    !current_user.city.present? || 
-                    !current_user.zip.present? %>
-                <div class="row">
-                  <div class="col-12">
-                    <label>Full name</label>
-                    <input type="text" name="name" maxlength="50" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-12">
-                    <label>Address</label>
-                    <input type="text" name="address" maxlength="100" required>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="nocollapse-col-6">
-                    <label>City</label>
-                    <input type="text" name="city" maxlength="50" required>
-                  </div>
-                  <div class="nocollapse-col-6 right-field">
-                    <label>ZIP</label>
-                    <input type="text" name="zip" pattern="^\d{5}(?:[-\s]\d{4})?$" required>
-                  </div>
-                </div>
-
-                <hr>
-              <% end %>
-
-              <% if !current_user.customer_id.present? %>
-
-                <span class="payment-errors"></span>
-
-                <div class="row">
-                  <div class="col-12">
-                    <label>Card number</label>
-                    <input type="text" data-stripe="number">
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="nocollapse-col-6">
-                    <label>Expiration</label>
-                    <input type="text" class="short-input" placeholder="MM" data-stripe="exp_month">
-                    <input type="text" class="short-input" placeholder="YY" data-stripe="exp_year">
-                  </div>
-                  <div class="nocollapse-col-6 right-field">
-                    <label>Security</label>
-                    <input type="text" placeholder="CVC" data-stripe="cvc">
-                  </div>
-                </div>
-              <% end %>
-
-
-              <input type="hidden" name="product_id" value="<%= @product.id %>" readonly>
-
-              <div class="form-actions">
-                <input type="submit" class="submit btn" value="Submit Payment">
-              </div>
-            <% end %>
+            <div class="form-actions">
+              <input type="submit" class="submit btn" value="Submit Payment">
+            </div>
           <% end %>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+        <% else %>
+
+          <%= simple_form_for(:charge, url: charges_path, html: {id: 'payment-form' }) do %>
+
+            <% if !current_user.name.present? || 
+                  !current_user.address.present? ||
+                  !current_user.city.present? || 
+                  !current_user.zip.present? %>
+              <div class="row">
+                <div class="col-12">
+                  <label>Full name</label>
+                  <input type="text" name="name" maxlength="50" required>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12">
+                  <label>Address</label>
+                  <input type="text" name="address" maxlength="100" required>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="nocollapse-col-6">
+                  <label>City</label>
+                  <input type="text" name="city" maxlength="50" required>
+                </div>
+                <div class="nocollapse-col-6 right-field">
+                  <label>ZIP</label>
+                  <input type="text" name="zip" pattern="^\d{5}(?:[-\s]\d{4})?$" required>
+                </div>
+              </div>
+            <% end %>
+
+            <% if !current_user.customer_id.present? %>
+
+              <span class="payment-errors"></span>
+
+              <div class="row">
+                <div class="col-12">
+                  <label>Card number</label>
+                  <input type="text" data-stripe="number">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="nocollapse-col-6">
+                  <label>Expiration</label>
+                  <input type="text" class="short-input" placeholder="MM" data-stripe="exp_month">
+                  <input type="text" class="short-input" placeholder="YY" data-stripe="exp_year">
+                </div>
+                <div class="nocollapse-col-6 right-field">
+                  <label>Security</label>
+                  <input type="text" placeholder="CVC" data-stripe="cvc">
+                </div>
+              </div>
+            <% end %>
+
+            <input type="hidden" name="product_id" value="<%= @product.id %>" readonly>
+
+            <div class="form-actions">
+              <input type="submit" class="submit btn" value="Submit Payment">
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>

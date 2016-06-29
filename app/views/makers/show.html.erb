@@ -3,9 +3,12 @@
 	<% if current_maker == @maker %>
 		<%= link_to "Settings", edit_maker_registration_path %>
 	<% end %>
+	<br />
+	<br />
 	<hr>
+	<br />
 	<h3>My Products</h3>
-	<ul>
-		<%= render @products %>
+	<ul class="product-listings">
+		<%= render partial: "products/dash_product", collection: @products %>
 	</ul>
 </div>

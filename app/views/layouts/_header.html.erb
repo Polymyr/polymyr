@@ -17,7 +17,7 @@
 			<li><%= link_to "Log out", destroy_maker_session_path, method: :delete %></li>
 		<% else %>
 			<li><%= link_to "Makers", new_maker_session_path %></li>
-			<li><%= link_to "Register", "#signup", "data-toggle" => "modal", "data-dismiss" => "modal" %></li>
+			<li><%= link_to "Sign up", "#signup", "data-toggle" => "modal", "data-dismiss" => "modal" %></li>
 			<li><%= link_to "Sign in", "#signin", "data-toggle" => "modal" %></li>
 		<% end %>
 		<li class="icon"><a href="#"><i class="fa fa-bars fa-lg"></i></a></li>

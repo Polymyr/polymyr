@@ -7,6 +7,9 @@
 		<% end %>
 		<div class="product-card-info">
 			<div class="product-card-name"><%= product.name %></div>
+			<div class="product-card-company"><%= product.maker.company %></div>
+			<div class="product-card-desc"><%= product.description %></div>
+			<div class="product-card-price">$<%= product.price %></div>
 		</div>
 	<% end %>
 </li>

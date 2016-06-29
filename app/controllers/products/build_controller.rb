@@ -14,7 +14,7 @@ class Products::BuildController < ApplicationController
   def update
     @product = Product.find(params[:product_id])
     if step == steps.last
-      @product.status = "active"
+      @product.status = "pending"
       if @product.save
         redirect_to @product
       else

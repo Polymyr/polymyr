@@ -181,23 +181,31 @@
 
 .product-card-name {
 	font-weight: 600;
-	font-size: 0.9em;
+	font-size: 1em;
 }
 
 .product-card-company {
-	font-size: 0.7em;
-	margin-bottom: 7px;
+	font-size: 0.8em;
+	margin-bottom: 5px;
 }
 
-.product-card-des {
+.product-card-desc {
 	font-size: 0.7em;
 }
 
 .product-card-price {
 	position: absolute;
-	bottom: 7px;
+	bottom: 8px;
 	left: 10px;
 	font-size: 0.9em;
+}
+
+.dash {
+	height: 250px;
+}
+
+.dash .product-card-info {
+	height: 50px;
 }
 
 /* Bootstrap carousel fade */

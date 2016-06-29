@@ -53,10 +53,17 @@
 				<%= link_to "Buy now", "#payment", "data-toggle" => "modal", class: "payment-btn" %>
 				<%= render "charges/payment_modal" %>
 			<% end %>
+
+			<% if user_signed_in? %>
+				<% @review = Review.find_by(user_id: current_user.id, product_id: @product.id) %>
+				<% if @review != nil %>
+					<%= link_to "Continue review", review_build_path(:context, review_id: @review.id) %>
+				<% end %>
+			<% end %>
 		</div>
 	</div>
 	<br />
-	<h3>Description</h3>
+	<h3>Product Description</h3>
 	<h5>
 		<%= sanitize @product.story %>
 	</h5>
