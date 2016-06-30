@@ -2,9 +2,11 @@
 	<div class="logo"><a href=<%= root_path %>>POLYMYR</a></div>
 	<ul class="menu">
 		<li>
-			<%= form_for :search, url: search_path, method: :get do |f| %>
+			<%= form_for :search, url: search_path, method: :get, html: { class: "search-form" } do |f| %>
 			    <%= text_field_tag :query, params[:query], id: "search-bar" %>
-			    <%= submit_tag "Go", name: nil, id: "search-btn" %>
+			    <button type="submit" id="search-btn">
+					  <i class="fa fa-search" aria-hidden="true"></i>
+					</button>
 			<% end %>
 			<div style="clear: both;"></div>
 		</li>
@@ -14,7 +16,7 @@
 		<% elsif maker_signed_in? %>
 			<li><%= link_to "Launch Product", new_product_path %></li>
 			<li><%= link_to "Dashboard", current_maker %></li>
-			<li><%= link_to "Log out", destroy_maker_session_path, method: :delete %></li>
+			<!-- <li><%= link_to "Log out", destroy_maker_session_path, method: :delete %></li> -->
 		<% else %>
 			<li><%= link_to "Makers", new_maker_session_path %></li>
 			<li><%= link_to "Sign up", "#signup", "data-toggle" => "modal", "data-dismiss" => "modal" %></li>
