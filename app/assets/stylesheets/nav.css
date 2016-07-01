@@ -64,7 +64,8 @@ ul.menu li.icon {
 	position: absolute;
 	display: inline-block;
   right: 20px;
-  top: 0;
+  top: -5px;
+  font-size: 1.4em;
 }
 
 ul.menu.responsive {
