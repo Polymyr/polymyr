@@ -52,35 +52,37 @@ a:link, a:visited, a:hover, a:active {
 	font-weight: 600;
 }
 
+.modal .modal-dialog {
+	width: 300px;
+	margin: 35px auto;
+}
+
 @media screen and (min-width: 768px) {
 	.modal .modal-dialog {
+		width: 360px;
 		margin-top: 60px;
 	}
 }
 
-.modal .modal-dialog {
-	width: 360px;
-}
+// .modal .small {
+// 	margin-top: 10px;
+// 	max-width: 100%;
+// 	margin-left: auto;
+// 	margin-right: auto;
+// }
 
-.modal .small {
-	margin-top: 10px;
-	max-width: 100%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-@media screen and (min-width: 768px) {
-	.modal .small {
-		margin-top: 20px;
-	}
-}
+// @media screen and (min-width: 768px) {
+// 	.modal .small {
+// 		margin-top: 20px;
+// 	}
+// }
 
 .close {
 	color: white;
-	margin-right: -50px;
-	margin-top: -52px;
+	margin-right: -48px;
+	margin-top: -53px;
 	opacity: 1;
-	font-size: 2.4em;
+	font-size: 40px;
 }
 
 .close:hover {
@@ -96,6 +98,7 @@ a:link, a:visited, a:hover, a:active {
 	height: 30px;
 	opacity: 0.8;
 	text-align: center;
+	z-index: 1;
 }
 
 .alert ul {

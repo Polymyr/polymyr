@@ -16,7 +16,7 @@
 		<% elsif maker_signed_in? %>
 			<li><%= link_to "Launch Product", new_product_path %></li>
 			<li><%= link_to "Dashboard", current_maker %></li>
-			<!-- <li><%= link_to "Log out", destroy_maker_session_path, method: :delete %></li> -->
+			<li><%= link_to "Log out", destroy_maker_session_path, method: :delete %></li>
 		<% else %>
 			<li><%= link_to "Makers", new_maker_session_path %></li>
 			<li><%= link_to "Sign up", "#signup", "data-toggle" => "modal", "data-dismiss" => "modal" %></li>

@@ -2,7 +2,7 @@
 	
 	<h2>Sign in to Polymyr</h2>
 
-	<hr>
+	<br />
 
 	<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 		<%= f.error_notification %>
@@ -17,8 +17,6 @@
 	    <%= f.button :submit, "Sign in" %>
 	  </div>
 	<% end %>
-
-	<hr>
 
 	<%= render "users/shared/links" %>
 </div>
