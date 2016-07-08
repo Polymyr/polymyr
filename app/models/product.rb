@@ -5,6 +5,9 @@ class Product < ActiveRecord::Base
   include Elasticsearch::Model::Callbacks
 
   scope :active, -> { where(status: 'active') }
+  scope :pending, -> { where(status: 'pending') }
+  scope :started, -> { where(status: nil) }
+  scope :past, -> { where(status: 'past') }
 
 	belongs_to :maker
 	has_many :reviews

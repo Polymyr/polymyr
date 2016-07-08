@@ -1,4 +1,12 @@
-<%= render "products/build/product_progress" %>
+<ul class="product-progress">
+	<li><%= link_to 'Product', wizard_path(:product) %></li>
+	<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
+	<li><%= link_to 'Questions', wizard_path(:questions) %></li>
+	<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
+	<li><%= link_to 'Preview', wizard_path(:preview), class: 'progress-selected' %></li>
+	<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
+	<li><%= link_to 'Submit', wizard_path(:preview) %></li>
+</ul>
 
 <div class="product-build-heading">This is what your product page will look like</div>
 
@@ -16,11 +24,7 @@
 	<% end %>
 </div>
 
-<br />
-
 <hr class="product-preview-separator">
-
-<br />
 
 <div class="product">
 	<div class="row">

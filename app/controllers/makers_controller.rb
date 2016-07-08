@@ -4,6 +4,9 @@ class MakersController < ApplicationController
 
 	def show
 		@maker = Maker.find(params[:id])
-		@products = @maker.products
+		@active_products = @maker.products.active
+		@pending_products = @maker.products.pending
+		@started_products = @maker.products.started
+		@past_products = @maker.products.past
 	end
 end

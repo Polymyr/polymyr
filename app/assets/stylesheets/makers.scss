@@ -52,3 +52,46 @@
 		float: right;
 	}
 }
+
+.dashboard-nav {
+	list-style-type: none;
+	padding: 0;
+}
+
+.dashboard-nav li {
+	display: inline-block;
+}
+
+.dash-heading {
+	text-align: center;
+	font-size: 1.4em;
+	margin-top: 0.8em;
+}
+
+.dash-product {
+	width: 25em;
+	margin: auto;
+	text-align: left;
+	border-top: 1px solid #E0E0E0;
+	padding: 5px 0 5px 0;
+}
+
+.dash-product:first-child {
+	border-top: none;
+}
+
+.green {
+	color: #20BF55;
+}
+
+.orange {
+	color: #F6511D;
+}
+
+.red {
+	color: #D90429;
+}
+
+.grey {
+	color: #707070;
+}

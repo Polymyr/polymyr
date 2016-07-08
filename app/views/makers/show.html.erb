@@ -1,14 +1,48 @@
 <div class="dashboard">
 	<h1><%= @maker.company %></h1>
-	<% if current_maker == @maker %>
-		<%= link_to "Settings", edit_maker_registration_path %>
-	<% end %>
-	<br />
-	<br />
-	<hr>
-	<br />
-	<h3>My Products</h3>
-	<ul class="product-listings">
-		<%= render partial: "products/dash_product", collection: @products %>
+	<%= link_to "Settings", edit_maker_registration_path %>
+	<ul class="dashboard-nav">
 	</ul>
+	<br />
+	<br />
+	<% if @active_products.length > 0 %>
+		<div class="dash-heading green">Active</div>
+		<ul class="product-listings">
+			<% for @product in @active_products %>
+				<li class="dash-product">
+					<%= link_to @product.name, dash_path(@product) %>
+				</li>
+			<% end %>
+		</ul>
+	<% end %>
+	<% if @pending_products.length > 0 %>
+		<div class="dash-heading orange">Pending approval</div>
+		<ul class="product-listings">
+			<% for @product in @pending_products %>
+				<li class="dash-product">
+					<%= link_to @product.name, product_build_path(:product, product_id: @product.id) %>
+				</li>
+			<% end %>
+		</ul>
+	<% end %>
+	<% if @started_products.length > 0 %>
+		<div class="dash-heading">Started</div>
+		<ul class="product-listings">
+			<% for @product in @started_products %>
+				<li class="dash-product">
+					<%= link_to @product.name, product_build_path(:product, product_id: @product.id) %>
+				</li>
+			<% end %>
+		</ul>
+	<% end %>
+	<% if @past_products.length > 0 %>
+		<div class="dash-heading grey">Past</div>
+		<ul class="product-listings">
+			<% for @product in @past_products %>
+				<li class="dash-product">
+					<%= link_to @product.name, dash_path(@product) %>
+				</li>
+			<% end %>
+		</ul>
+	<% end %>
 </div>

@@ -1,25 +1,44 @@
-<div class="product-build-heading">
-	Polymyr will help you grow whatever you're making into something beautiful.
-</div>
+<div class="product-start">
 
-<div class="form-wrapper product-form">
+	<div class="product-build-heading">
+		We will help you launch, market and improve your products
+	</div>
 
-	<%= simple_form_for @product do |f| %>
+	<div class="form-wrapper product-form">
 
-		<div class="form-inputs start-caption">
-			<span>My new product is called:</span>
-			<%= f.input :name, label: false, required: true, placeholder: "name" %>
-		</div>
+		<%= simple_form_for @product, html: { autocomplete: "off" } do |f| %>
 
-		<div class="form-actions">
-	    <%= f.button :submit, "Start" %>
-	  </div>
-	<% end %>
+			<div class="form-inputs start-caption">
+				<span>What are you making?</span>
+				<%= f.input :name, label: false, required: true, placeholder: "Name" %>
+			</div>
 
-	<ol class="product-instructions">
-		<li>Tell us basic info about your product</li>
-		<li>Choose review questions you'd like your users to answer</li>
-		<li>Submit your product for approval</li>
-		<li>Sell your product and get valuable feedback</li>
-	</ol>
+			<div class="form-actions">
+		    <%= f.button :submit, "Start now" %>
+		  </div>
+		<% end %>
+	</div>
+
+	<ul class="product-instructions">
+		<li>
+			<i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+			<br />
+			Tell us basic info about your product and upload relevant images/videos
+		</li>
+		<li>
+			<i class="fa fa-question-circle fa-2x" aria-hidden="true"></i>
+			<br />
+			Compose review questions you'd like your users to answer
+		</li>
+		<li>
+			<i class="fa fa-rocket fa-2x" aria-hidden="true"></i>
+			<br />
+			Submit your product for approval and launch to our community
+		</li>
+		<li>
+			<i class="fa fa-comments-o fa-2x" aria-hidden="true"></i>
+			<br />
+			Gain valuable feedback from your users and iterate on your product
+		</li>
+	</ul>
 </div>

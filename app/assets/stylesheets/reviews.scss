@@ -13,16 +13,23 @@
 	margin-right: 5px;
 }
 
-.review-listings {
-	list-style-type: none;
-	padding: 0 10em 0 10em;
+.reviews-table {
+	margin: auto;
+	width: 90%;
+	max-width: 100%;
 }
 
-.review-card-info {
-	border: 1px solid #E8E8E8;
-	height: 2.5em;
-	padding: 0.5em 0 0.5em 0;
-	background-color: #E8E8E8;
-	font-size: 1.4em;
-	border-radius: 5px;
+@media screen and (min-width: 768px) {
+	.reviews-table {
+		width: 30em;
+	}
+}
+
+tr {
+	height: 32px;
+  border-top: 1px solid #E0E0E0;
+}
+
+tr:first-child {
+  border-top: none;
 }

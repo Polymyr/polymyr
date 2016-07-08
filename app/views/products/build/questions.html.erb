@@ -1,4 +1,12 @@
-<%= render "products/build/product_progress" %>
+<ul class="product-progress">
+	<li><%= link_to 'Product', wizard_path(:product) %></li>
+	<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
+	<li><%= link_to 'Questions', wizard_path(:questions), class: 'progress-selected' %></li>
+	<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
+	<li><%= link_to 'Preview', wizard_path(:preview) %></li>
+	<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
+	<li><%= link_to 'Submit', wizard_path(:preview) %></li>
+</ul>
 
 <div class="product-build-heading">What questions do you want to ask your users?</div>
 
@@ -6,7 +14,7 @@
 
 	<%= simple_form_for @product, url: wizard_path, method: :put do |f| %>
 
-		<br />
+		<!-- <br />
 
 		<div class="product-build-subheading">Context</div>
 
@@ -16,11 +24,18 @@
 			<%= f.input :q3, label: false, placeholder: "Question 3" %>
 			<%= f.input :q4, label: false, placeholder: "Question 4" %>
 			<%= f.input :q5, label: false, placeholder: "Question 5" %>
-		</div>
+		</div> -->
 
 		<br />
 
 		<div class="product-build-subheading">Setup</div>
+
+		<ul class="example-questions">
+			<li>You can ask things like:</li>
+			<li>How was the unboxing experience?</li>
+			<li>Were any instructions confusing?</li>
+			<li>What's your first impression?</li>
+		</ul>
 
 		<div class="form-inputs">
 			<%= f.input :q6, label: false, placeholder: "Question 1" %>
@@ -34,6 +49,13 @@
 
 		<div class="product-build-subheading">Usage</div>
 
+		<ul class="example-questions">
+			<li>You can ask things like:</li>
+			<li>What did you like most about the product?</li>
+			<li>How often do you use it?</li>
+			<li>How effective is the product?</li>
+		</ul>
+
 		<div class="form-inputs">
 			<%= f.input :q11, label: false, placeholder: "Question 1" %>
 			<%= f.input :q12, label: false, placeholder: "Question 2" %>
@@ -45,6 +67,13 @@
 		<br />
 
 		<div class="product-build-subheading">Conclusion</div>
+
+		<ul class="example-questions">
+			<li>You can ask things like:</li>
+			<li>What did you hate the most about the product?</li>
+			<li>What's one suggestion you'd make to improve it?</li>
+			<li>Which feature did you like the most?</li>
+		</ul>
 
 		<div class="form-inputs">
 			<%= f.input :q16, label: false, placeholder: "Question 1" %>
