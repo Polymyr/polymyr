@@ -1,8 +1,8 @@
 .nav {
 	width: 100%;
 	margin: 0;
-	padding: 0 10px 0 10px;
-	height: 60px;
+	padding: 0 15px 0 15px;
+	height: 50px;
 	background: white;
 	position: fixed;
 	border: 1px solid white;
@@ -16,19 +16,21 @@
 
 @media screen and (min-width: 768px) {
 	.nav {
-		padding: 0 80px 0 80px;
+		height: 60px;
+		padding: 0 60px 0 60px;
 	}
 }
 
 .nav .logo {
 	float: left;
-	margin-top: 3px;
+	margin-top: 5px;
 	height: 35px;
 }
 
 .nav .logo a {
-	font-size: 36px;
+	font-size: 2em;
 	font-weight: 600;
+	color: #303030;
 }
 
 ul.menu {
@@ -39,26 +41,32 @@ ul.menu {
   float: right;
 }
 
+@media screen and (min-width: 768px) {
+	ul.menu {
+		margin: 0;
+	}
+}
+
 ul.menu li {
 	float: left;
 	display: none;
 	margin-left: 20px;
-  padding-top: 17px;
+  padding-top: 15px;
 }
 
 ul.menu li a {
   display: inline-block;
   text-align: center;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.1em;
 }
 
 .icon {
 	position: absolute;
 	display: inline-block;
-  right: 10px;
-  top: 10px;
-  font-size: 1.6em;
+  right: 15px;
+  top: 9px;
+  font-size: 1.4em;
   cursor: pointer;
 }
 
