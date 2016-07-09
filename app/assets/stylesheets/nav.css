@@ -23,20 +23,20 @@
 
 .nav .logo {
 	float: left;
-	margin-top: 10px;
+	margin-top: 5px;
 	height: 35px;
 }
 
 @media screen and (min-width: 768px) {
 	.nav .logo {
-		margin-top: 12px;
+		margin-top: 7px;
 	}
 }
 
 .nav .logo a {
-	font-size: 1.8em;
+	font-size: 2em;
 	font-weight: 600;
-	font-family: 'Arkhip', 'Open Sans', sans-serif;
+	font-family: 'Linotte', 'Open Sans', sans-serif;
 }
 
 ul.menu {
