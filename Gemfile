@@ -66,4 +66,7 @@ group :development do
 
   # Security
   gem 'brakeman', :require => false
+
+  # Favicon generator
+  gem 'rails_real_favicon'
 end

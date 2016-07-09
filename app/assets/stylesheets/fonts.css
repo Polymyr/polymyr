@@ -1,4 +1,5 @@
 @font-face {
-  font-family: "Bebas Neue Bold";
-  src: url(/assets/BebasNeueBold.otf) format("truetype");
+	font-family: 'Arkhip';
+	src: url('/assets/Arkhip_font.otf') format('opentype'),
+			 url('/assets/Arkhip_font.ttf') format('truetype');
 }
