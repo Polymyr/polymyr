@@ -32,8 +32,9 @@
 
 		<div class="col-2">
 			<ul class="thumbnails">
-				<% for i in 0..@product.uploads.length - 1 %>
-					<li><%= image_tag @product.uploads[i].image.url(:thumb), class: "selected", 'data-target' => "#product-carousel", 'data-slide-to' => i %></li>
+				<li><%= image_tag @product.uploads[0].image.url(:thumb), class: "selected", 'data-target' => "#product-carousel", 'data-slide-to' => 0 %></li>
+				<% for i in 1..@product.uploads.length - 1 %>
+					<li><%= image_tag @product.uploads[i].image.url(:thumb), 'data-target' => "#product-carousel", 'data-slide-to' => i %></li>
 				<% end %>
 			</ul>
 		</div>
