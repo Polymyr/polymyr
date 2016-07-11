@@ -1,15 +1,15 @@
 @font-face {
 	font-family: 'Arkhip';
-	src: url('/assets/Arkhip_font.otf') format('opentype'),
-			 url('/assets/Arkhip_font.ttf') format('truetype');
+	src: url('Arkhip_font.otf') format('opentype'),
+			 url('Arkhip_font.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'Linotte';
-	src: url('/assets/Linotte-SemiBold-webfont.eot') format('eot'),
-			 url('/assets/Linotte-SemiBold-webfont.ttf') format('truetype'),
-			 url('/assets/Linotte-SemiBold-webfont.svg') format('svg'),
-			 url('/assets/Linotte-SemiBold-webfont.woff2') format('woff2'),
-       url('/assets/Linotte-SemiBold-webfont.woff') format('woff');
+	src: url('Linotte-SemiBold-webfont.eot') format('eot'),
+			 url('Linotte-SemiBold-webfont.ttf') format('truetype'),
+			 url('Linotte-SemiBold-webfont.svg') format('svg'),
+			 url('Linotte-SemiBold-webfont.woff2') format('woff2'),
+       url('Linotte-SemiBold-webfont.woff') format('woff');
 			 ;
 }
