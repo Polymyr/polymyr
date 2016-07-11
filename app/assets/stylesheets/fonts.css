@@ -1,10 +1,4 @@
 @font-face {
-	font-family: 'Arkhip';
-	src: url('Arkhip_font.otf') format('opentype'),
-			 url('Arkhip_font.ttf') format('truetype');
-}
-
-@font-face {
 	font-family: 'Linotte';
 	src: url('Linotte-SemiBold-webfont.eot') format('eot'),
 			 url('Linotte-SemiBold-webfont.ttf') format('truetype'),
