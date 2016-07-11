@@ -1,8 +1,0 @@
-@font-face {
-	font-family: 'Linotte';
-	src: url(font-path('Linotte-SemiBold-webfont.eot')) format('eot'),
-			 url(font-path('Linotte-SemiBold-webfont.ttf')) format('truetype'),
-			 url(font-path('Linotte-SemiBold-webfont.svg')) format('svg'),
-			 url(font-path('Linotte-SemiBold-webfont.woff2')) format('woff2'),
-       url(font-path('Linotte-SemiBold-webfont.woff')) format('woff');
-}
