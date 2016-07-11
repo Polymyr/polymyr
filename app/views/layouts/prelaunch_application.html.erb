@@ -16,13 +16,11 @@
     <%= render 'favicon' %>
   </head>
   <body>
-    <%= render 'layouts/minimal_header' %>
-    <div class="container">
+    <%= render 'layouts/prelaunch_header' %>
+    <div>
       <%= render 'layouts/messages' %>
       <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
   </body>
-  <%= render "shared/signin_modal" %>
-  <%= render "shared/signup_modal" %>
 </html>

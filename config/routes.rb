@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'users/registrations' }
   devise_for :makers, :controllers => { registrations: 'makers/registrations' }
   
-  root 'general#home'
+  root 'prospects#new'
   resources :users
   resources :makers
   resources :products do
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :build, controller: 'reviews/build'
   end
   resources :charges
+  resources :prospects, only: [:new, :create]
 
   get '/search', to: 'search#search'
   get '/about', to: 'general#about'

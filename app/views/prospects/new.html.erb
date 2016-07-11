@@ -1,0 +1,23 @@
+<div class="banner">
+	<div class="prelaunch-title">
+		We give you access to incredible products
+	</div>
+	<div class="prelaunch-form-wrapper">
+
+		<%= simple_form_for @prospect, html: { autocomplete: "off" } do |f| %>
+
+			<div class="form-inputs">
+				<%= f.input :name, label: false, placeholder: "Name" %>
+				<%= f.input :email, label: false, placeholder: "Email" %>
+			</div>
+
+			<div class="form-actions">
+		    <%= f.button :submit, "Get on our invite list" %>
+		  </div>
+		<% end %>
+	</div>
+	<div class="emailing-list">
+	</div>
+</div>
+<div class="dark-mask">
+</div>
