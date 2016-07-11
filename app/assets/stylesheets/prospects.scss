@@ -8,7 +8,7 @@
   background-size: cover;  
 }
 
-.prelaunch-title {
+.prelaunch-heading {
 	text-align: center;
 	color: white;
 	font-size: 1.8em;
@@ -24,8 +24,8 @@
 }
 
 .prelaunch-form-wrapper {
-	width: 25em;
-	max-width: 100%;
+	width: 360px;
+	max-width: 90%;
 	margin: 20px auto;
 	text-align: center;
 }
@@ -43,4 +43,22 @@
 
 .prelaunch-form-wrapper .form-actions input {
 	height: 50px;
+}
+
+.prelaunch-info {
+	padding: 50px 0 50px 0;
+}
+
+.prelaunch-subheading {
+	text-align: center;
+	font-size: 1.5em;
+	color: #505050;
+}
+
+.prelaunch-text {
+	width: 700px;
+	max-width: 90%;
+	margin: 10px auto;
+	font-size: 1.1em;
+	color: #505050;
 }
