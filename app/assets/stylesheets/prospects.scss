@@ -41,6 +41,10 @@
 	font-size: 1.1em;
 }
 
+.prelaunch-form-wrapper input:focus {
+	outline: none;
+}
+
 .prelaunch-form-wrapper .form-actions input {
 	height: 50px;
 }
