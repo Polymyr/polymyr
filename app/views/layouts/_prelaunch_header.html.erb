@@ -1,5 +1,9 @@
 <nav class="prelaunch-nav">
-	<div class="logo"><a href=<%= root_path %>>POLYMYR</a></div>
+	<% if maker_signed_in? %>
+		<div class="logo"><a href=<%= maker_root_path %>>POLYMYR</a></div>
+	<% else %>
+		<div class="logo"><a href=<%= unauthenticated_root_path %>>POLYMYR</a></div>
+	<% end %>
 	<ul class="prelaunch-menu">
 		<li><%= link_to "Makers", new_maker_session_path %></li>
 	</ul>

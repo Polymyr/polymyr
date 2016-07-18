@@ -24,10 +24,10 @@ textarea {
 }
 
 /* Remove placeholder on focus */
-input:focus::-webkit-input-placeholder { color:transparent; }
-input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
-input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
-input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+.form-wrapper input:focus::-webkit-input-placeholder { color:transparent; }
+.form-wrapper input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+.form-wrapper input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+.form-wrapper input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
 /* Change placeholder color */
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */

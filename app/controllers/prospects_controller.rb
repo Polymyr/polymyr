@@ -19,6 +19,6 @@ class ProspectsController < ApplicationController
 	private
 
 		def prospect_params
-			params.require(:prospect).permit(:email)
+			params.require(:prospect).permit(:name, :email)
 		end
 end

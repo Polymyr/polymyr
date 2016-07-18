@@ -1,5 +1,11 @@
 <nav class="nav">
-	<div class="logo"><a href=<%= root_path %>>POLYMYR</a></div>
+	<% if user_signed_in? %>
+		<div class="logo"><a href=<%= user_root_path %>>POLYMYR</a></div>
+	<% elsif maker_signed_in? %>
+		<div class="logo"><a href=<%= maker_root_path %>>POLYMYR</a></div>
+	<% else %>
+		<div class="logo"><a href=<%= unauthenticated_root_path %>>POLYMYR</a></div>
+	<% end %>
 	<ul class="menu">
 		<li>
 			<%= form_for :search, url: search_path, method: :get, html: { class: "search-form" } do |f| %>

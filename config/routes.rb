@@ -3,8 +3,19 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users, :controllers => { registrations: 'users/registrations' }
   devise_for :makers, :controllers => { registrations: 'makers/registrations' }
+
+  authenticated :user do
+    root to: 'general#home', as: :user_root
+  end
+
+  authenticated :maker do
+    root to: 'makers#show', as: :maker_root
+  end
   
-  root 'prospects#new'
+  unauthenticated do
+    root to: 'prospects#new', as: :unauthenticated_root
+  end
+
   resources :users
   resources :makers
   resources :products do
