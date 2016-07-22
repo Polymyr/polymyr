@@ -1,16 +1,16 @@
 <div class="banner">
-	<div class="prelaunch-heading">We give you access to incredible products</div>
+	<div class="prelaunch-heading">First access to incredible hardware products</div>
+	<div class="prelaunch-caption">Enter your email and get on our invite list</div>
 	<div class="prelaunch-form-wrapper">
 
 		<%= simple_form_for @prospect, html: { autocomplete: "off" } do |f| %>
 
 			<div class="form-inputs">
-				<%= f.input :name, label: false, placeholder: "Name" %>
 				<%= f.input :email, label: false, placeholder: "Email" %>
 			</div>
 
 			<div class="form-actions">
-		    <%= f.button :submit, "Get on our invite list" %>
+		    <%= f.button :submit, "Get your invite now" %>
 		  </div>
 		<% end %>
 	</div>
@@ -20,8 +20,8 @@
 <div class="dark-mask">
 </div>
 <div class="prelaunch-info">
-	<div class="prelaunch-subheading">How it works</div>
+	<div class="prelaunch-subheading">What is Polymyr?</div>
 	<div class="prelaunch-text">
-		Polymyr is a feedback-driven marketplace for new and innovative products. If you give the company feedback after purchasing their product, you will receive a monetary reward. We're changing how companies improve their products, and we want you to be part of that process. If you're interested, enter your email above and we'll let you know when we launch!
+		Polymyr is a feedback-driven marketplace for innovative products where you can get the newest products before anyone else. What's more, you also get rewarded if you provide quality product feedback. We deliver to you awesome products and to companies real advice from real users. Enter your email above and we'll let you know when we launch!
 	</div>
 </div>

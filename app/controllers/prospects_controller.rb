@@ -1,6 +1,6 @@
 class ProspectsController < ApplicationController
 
-	layout 'prelaunch_application'
+	layout 'prelaunch_application', only: [:new]
 
 	def new
 		@prospect = Prospect.new
@@ -9,9 +9,8 @@ class ProspectsController < ApplicationController
 	def create
 		@prospect = Prospect.new(prospect_params)
 		if @prospect.save
-			redirect_to :back
+			redirect_to '/thanks'
 		else
-			flash.now[:error] = "There was an error, please try again."
 			render 'new'
 		end
 	end

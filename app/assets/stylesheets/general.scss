@@ -26,8 +26,8 @@ html, body {
 
 hr {
   border: 0;
-  border-top: 2px solid #D0D0D0;
-  margin: 0;
+  border-top: 1px solid #D0D0D0;
+  margin: 10px 0 10px 0;
 }
 
 a {
@@ -162,4 +162,11 @@ button:focus {
 	color: #A0A0A0;
 	font-size: 0.8em;
 	text-align: center;
+}
+
+.about-caption {
+	width: 36em;
+	max-width: 100%;
+	margin: 20px auto;
+	font-size: 1.2em;
 }

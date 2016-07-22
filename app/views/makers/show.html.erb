@@ -1,10 +1,10 @@
 <div class="dashboard">
 	<h1><%= @maker.company %></h1>
-	<%= link_to "Settings", edit_maker_registration_path %>
-	<ul class="dashboard-nav">
+	<ul class="dashboard-links">
+		<li><%= link_to "Settings", edit_maker_registration_path %></li>
+		<li><%= link_to "Log out", destroy_maker_session_path, method: :delete %></li>
 	</ul>
-	<br />
-	<br />
+	<hr>
 	<% if @active_products.length > 0 %>
 		<div class="dash-heading green">Active</div>
 		<ul class="product-listings">
