@@ -2,10 +2,9 @@
 	width: 100%;
 	margin: 0;
 	padding: 0 15px 0 15px;
-	height: 45px;
+	height: 40px;
 	background: white;
 	position: fixed;
-	border: 1px solid white;
 	z-index: 1;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
@@ -14,14 +13,14 @@
 	transition: all 200ms ease;
 }
 
-.minimal-nav {
-	width: 100%;
-	margin: 0;
-	padding: 0 15px 0 15px;
-	height: 45px;
-	background: white;
-	z-index: 1;
+.nav-maker {
+	background: #0094D8;
 	position: absolute;
+	color: white;
+}
+
+.nav-maker a {
+	color: white;
 }
 
 .prelaunch-nav {
@@ -53,7 +52,7 @@
 }
 
 @media screen and (min-width: 768px) {
-	.nav, .minimal-nav, .prelaunch-nav {
+	.nav, .prelaunch-nav {
 		height: 60px;
 		padding: 0 60px 0 60px;
 	}
@@ -61,7 +60,7 @@
 
 .logo {
 	float: left;
-	margin-top: 5px;
+	margin-top: 3px;
 	height: 35px;
 }
 
@@ -88,7 +87,13 @@ ul.menu {
 ul.menu li {
 	float: left;
 	margin-left: 20px;
-  padding-top: 15px;
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+	ul.menu li {
+		margin-top: 18px;
+	}
 }
 
 ul.menu li a {

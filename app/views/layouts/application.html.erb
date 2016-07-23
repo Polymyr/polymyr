@@ -16,13 +16,7 @@
     <%= render 'favicon' %>
   </head>
   <body>
-    <% if user_signed_in? %>
-      <%= render 'layouts/user_header' %>
-    <% elsif maker_signed_in? %>
-      <%= render 'layouts/maker_header' %>
-    <% else %>
-      <%= render 'layouts/unauthenticated_header' %>
-    <% end %>
+    <%= render 'layouts/header' %>
     <div class="container">
       <%= render 'layouts/messages' %>
       <%= yield %>

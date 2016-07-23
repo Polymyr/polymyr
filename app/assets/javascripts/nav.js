@@ -12,7 +12,7 @@ $(document).ready(function() {
 			} else {
 				// $('.nav').css('position', 'static');
 				$('.nav').css({'box-shadow': 'none',
-											 'border-bottom': '1px solid white'});
+											 'border-bottom': 'none'});
 			}
 		});
 	});

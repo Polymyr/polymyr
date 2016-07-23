@@ -1,9 +1,0 @@
-<nav class="minimal-nav">
-	<% if user_signed_in? %>
-		<div class="logo"><a href=<%= user_root_path %>>POLYMYR</a></div>
-	<% elsif maker_signed_in? %>
-		<div class="logo"><a href=<%= maker_root_path %>>POLYMYR</a></div>
-	<% else %>
-		<div class="logo"><a href=<%= unauthenticated_root_path %>>POLYMYR</a></div>
-	<% end %>
-</nav>
