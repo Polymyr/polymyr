@@ -1,6 +1,6 @@
 class ProspectsController < ApplicationController
 
-	layout 'prelaunch_application', only: [:new]
+	layout 'prelaunch_application'
 
 	def new
 		@prospect = Prospect.new

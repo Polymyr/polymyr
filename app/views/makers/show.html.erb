@@ -1,32 +1,35 @@
-<div class="dashboard">
-	<h1><%= @maker.company %></h1>
-	<ul class="dashboard-links">
-		<li><%= link_to "Settings", edit_maker_registration_path %></li>
-		<li><%= link_to "Log out", destroy_maker_session_path, method: :delete %></li>
-	</ul>
-	<hr>
-	<% if @active_products.length > 0 %>
-		<div class="dash-heading green">Active</div>
-		<ul class="product-listings">
-			<%= render partial: "products/dash_product", collection: @active_products, as: :product %>
+<div class="container-narrow">
+	<div class="dashboard">
+		<h1><%= @maker.company %></h1>
+		<ul class="dashboard-links">
+			<li><%= link_to "Settings", edit_maker_registration_path %></li>
+			<li><%= link_to "Log out", destroy_maker_session_path, method: :delete %></li>
 		</ul>
-	<% end %>
-	<% if @pending_products.length > 0 %>
-		<div class="dash-heading orange">Pending approval</div>
-		<ul class="product-listings">
-			<%= render partial: "products/dash_product", collection: @pending_products, as: :product %>
-		</ul>
-	<% end %>
-	<% if @started_products.length > 0 %>
-		<div class="dash-heading">Started</div>
-		<ul class="product-listings">
-			<%= render partial: "products/dash_product", collection: @started_products, as: :product %>
-		</ul>
-	<% end %>
-	<% if @past_products.length > 0 %>
-		<div class="dash-heading grey">Past</div>
-		<ul class="product-listings">
-			<%= render partial: "products/dash_product", collection: @past_products, as: :product %>
-		</ul>
-	<% end %>
+		<hr>
+		<h3>My Products</h3>
+		<% if @active_products.length > 0 %>
+			<div class="dash-heading green">Active</div>
+			<ul class="product-listings">
+				<%= render partial: "products/dash_product", collection: @active_products, as: :product %>
+			</ul>
+		<% end %>
+		<% if @pending_products.length > 0 %>
+			<div class="dash-heading orange">Pending approval</div>
+			<ul class="product-listings">
+				<%= render partial: "products/dash_product", collection: @pending_products, as: :product %>
+			</ul>
+		<% end %>
+		<% if @started_products.length > 0 %>
+			<div class="dash-heading">Started</div>
+			<ul class="product-listings">
+				<%= render partial: "products/dash_product", collection: @started_products, as: :product %>
+			</ul>
+		<% end %>
+		<% if @past_products.length > 0 %>
+			<div class="dash-heading grey">Past</div>
+			<ul class="product-listings">
+				<%= render partial: "products/dash_product", collection: @past_products, as: :product %>
+			</ul>
+		<% end %>
+	</div>
 </div>

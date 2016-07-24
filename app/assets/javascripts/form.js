@@ -15,6 +15,5 @@ $(document).ready(function() {
 	  }
 	});
 
-	// Fade out the flash messages
-	$(".alert" ).delay(2500).fadeOut(500);
+	$(".alert" ).delay(3000).fadeOut(500);
 });
