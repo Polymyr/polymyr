@@ -16,12 +16,12 @@
 }
 
 .maker-signup-caption {
-	margin-top: 25px;
+	margin-top: 10px;
 	font-size: 1.1em;
 }
 
 .maker-signup-portal {
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 .maker-signup-portal a {
@@ -34,34 +34,12 @@
 	display: table-header-group;
 }
 
-.blue-background {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	height: 450px;
-	background: #0094D8;
-	z-index: -1;
-}
-
-@media screen and (min-width: 768px) {
-	.blue-background {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 450px;
-		background: #0094D8;
-		z-index: -1;
-	}
-}
-
 @media screen and (min-width: 768px) {
 	.maker-start {
 		display: block;
 	}
 	.maker-signup-info {
-		width: 55%;
+		width: 58%;
 		float: left;
 	}
 	.maker-signup-info-wrapper {
@@ -69,9 +47,21 @@
 		width: 100%;
 		float: left;
 	}
+	.maker-signup-caption {
+		margin-top: 25px;
+	}
+	.maker-signup-portal {
+		margin-top: 20px;
+	}
 	.maker-signin-form {
 		width: 36%;
 		float: right;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.maker-signup-caption {
+		font-size: 1.25em;
 	}
 }
 
