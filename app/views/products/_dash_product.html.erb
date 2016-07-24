@@ -1,4 +1,22 @@
 <li class="dash-product">
-	<hr>
-	<%= link_to dash_product.name, dash_path(dash_product) %>
+	<% if !product.status %>
+		<%= link_to product_build_path(:product, product_id: product.id) do %>
+			<% if product.uploads.length == 0 %>
+				<%= image_tag("image_not_found_small.png") %>
+			<% else %>
+				<%= image_tag product.uploads[0].image.url(:thumb) %>
+			<% end %>
+			<%= product.name %>
+		<% end %>
+	<% else %>
+		<%= link_to dash_path(product) do %>
+			<% if product.uploads.length == 0 %>
+				<%= image_tag("image_not_found_small.png") %>
+			<% else %>
+				<%= image_tag product.uploads[0].image.url(:thumb) %>
+			<% end %>
+			<%= product.name %>
+		<% end %>
+	<% end %>
 </li>
+

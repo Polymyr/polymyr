@@ -70,11 +70,29 @@
 	margin: auto;
 	text-align: left;
 	border-top: 1px solid #E0E0E0;
-	padding: 5px 0 5px 0;
+	padding: 0.5em 0 0.5em 0;
 }
 
 .dash-product:first-child {
 	border-top: none;
+}
+
+.dash-product a {
+	display: block;
+}
+
+.dash-product a img {
+	height: 36px;
+	width: 48px;
+	border-radius: 5px;
+}
+
+@media screen and (min-width: 768px) {
+	.dash-product a img {
+		height: 45px;
+		width: 60px;
+		border-radius: 5px;
+	}
 }
 
 .green {

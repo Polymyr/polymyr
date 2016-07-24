@@ -8,41 +8,25 @@
 	<% if @active_products.length > 0 %>
 		<div class="dash-heading green">Active</div>
 		<ul class="product-listings">
-			<% for @product in @active_products %>
-				<li class="dash-product">
-					<%= link_to @product.name, dash_path(@product) %>
-				</li>
-			<% end %>
+			<%= render partial: "products/dash_product", collection: @active_products, as: :product %>
 		</ul>
 	<% end %>
 	<% if @pending_products.length > 0 %>
 		<div class="dash-heading orange">Pending approval</div>
 		<ul class="product-listings">
-			<% for @product in @pending_products %>
-				<li class="dash-product">
-					<%= link_to @product.name, product_build_path(:product, product_id: @product.id) %>
-				</li>
-			<% end %>
+			<%= render partial: "products/dash_product", collection: @pending_products, as: :product %>
 		</ul>
 	<% end %>
 	<% if @started_products.length > 0 %>
 		<div class="dash-heading">Started</div>
 		<ul class="product-listings">
-			<% for @product in @started_products %>
-				<li class="dash-product">
-					<%= link_to @product.name, product_build_path(:product, product_id: @product.id) %>
-				</li>
-			<% end %>
+			<%= render partial: "products/dash_product", collection: @started_products, as: :product %>
 		</ul>
 	<% end %>
 	<% if @past_products.length > 0 %>
 		<div class="dash-heading grey">Past</div>
 		<ul class="product-listings">
-			<% for @product in @past_products %>
-				<li class="dash-product">
-					<%= link_to @product.name, dash_path(@product) %>
-				</li>
-			<% end %>
+			<%= render partial: "products/dash_product", collection: @past_products, as: :product %>
 		</ul>
 	<% end %>
 </div>
