@@ -1,20 +1,4 @@
 <div class="maker-start">
-	<div class="maker-signup-info">
-		<div class="maker-signup-info-wrapper">
-
-			<h2>Sell on Polymyr</h2>
-
-			<div class="maker-signup-caption">
-				Partner with Polymyr to sell your product and gain valuable user feedback. Choose custom review questions for your buyers. Decide on a reward for users who complete quality reviews of your product. Upon submission approval, your product will be featured on our front page.
-			</div>
-
-			<div class="maker-signup-portal">
-				<%= link_to new_maker_registration_path do %>
-					Sign up and improve your products <i class="fa fa-arrow-right" aria-hidden="true"></i>
-				<% end %>
-			</div>
-		</div>
-	</div>
 
 	<div class="maker-signin-form">
 
@@ -37,6 +21,23 @@
 			<% end %>
 
 			<%= render "makers/shared/links" %>
+		</div>
+	</div>
+
+	<div class="maker-signup-info">
+		<div class="maker-signup-info-wrapper">
+
+			<h2>Sell on Polymyr</h2>
+
+			<div class="maker-signup-caption">
+				Partner with Polymyr to sell your product and gain valuable user feedback. Choose custom review questions and decide on a reward for reviewers. Upon submission, your product will be featured on our front page.
+			</div>
+
+			<div class="maker-signup-portal">
+				<%= link_to new_maker_registration_path do %>
+					Sign up and improve your products <i class="fa fa-arrow-right" aria-hidden="true"></i>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>

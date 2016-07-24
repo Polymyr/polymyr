@@ -22,6 +22,7 @@ html, body {
 
 .title {
 	font-size: 2.4em;
+	margin-bottom: 1em;
 	text-align: center;
 }
 
@@ -131,19 +132,13 @@ button:focus {
 }
 
 .footer-content {
-	padding: 15px 15px 15px 15px;
+	padding: 1.5em;
 	color: #909090;
 	font-size: 0.8em;
 }
 
 .footer-content a {
 	color: #909090;
-}
-
-@media screen and (min-width: 768px) {
-  .footer-content {
-  	padding: 35px 60px 35px 60px;
-  }
 }
 
 .footer-links {

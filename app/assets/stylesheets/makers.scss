@@ -1,7 +1,7 @@
 .maker-start {
 	display: table;
 	width: 100%;
-	margin-bottom: 20px;
+	overflow: auto;
 }
 
 .maker-signup-info {
@@ -16,12 +16,12 @@
 }
 
 .maker-signup-caption {
-	margin-top: 1em;
+	margin-top: 25px;
 	font-size: 1.1em;
 }
 
 .maker-signup-portal {
-	margin-top: 0.8em;
+	margin-top: 20px;
 }
 
 .maker-signup-portal a {
@@ -32,6 +32,28 @@
 .maker-signin-form {
 	max-width: 100%;
 	display: table-header-group;
+}
+
+.blue-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 450px;
+	background: #0094D8;
+	z-index: -1;
+}
+
+@media screen and (min-width: 768px) {
+	.blue-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 450px;
+		background: #0094D8;
+		z-index: -1;
+	}
 }
 
 @media screen and (min-width: 768px) {
