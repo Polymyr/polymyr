@@ -1,67 +1,43 @@
-.maker-start {
-	display: table;
-	width: 100%;
-	overflow: auto;
-}
-
 .maker-signup-info {
 	max-width: 100%;
-	display: table-footer-group;
-}
-
-.maker-signup-info-wrapper {
-	max-width: 100%;
-	width: 25em;
+	color: white;
+	width: 32em;
 	margin: 25px auto;
 }
 
 .maker-signup-caption {
-	margin-top: 10px;
-	font-size: 1.1em;
+	margin-top: 1.2em;
+	font-size: 1.2em;
 }
 
 .maker-signup-portal {
-	margin-top: 10px;
+	margin-top: 1.2em;
 }
 
 .maker-signup-portal a {
-	color: #0094D8;
+	color: white;
 	font-size: 1.8em;
+	font-weight: 600;
 }
 
 .maker-signin-form {
 	max-width: 100%;
-	display: table-header-group;
+	background: white;
+	padding: 1.5em;
+	border-radius: 8px;
+	width: 32em;
+	margin: auto;
 }
 
 @media screen and (min-width: 768px) {
-	.maker-start {
-		display: block;
-	}
 	.maker-signup-info {
-		width: 58%;
 		float: left;
-	}
-	.maker-signup-info-wrapper {
+		width: 55%;
 		margin-top: 0;
-		width: 100%;
-		float: left;
-	}
-	.maker-signup-caption {
-		margin-top: 25px;
-	}
-	.maker-signup-portal {
-		margin-top: 20px;
 	}
 	.maker-signin-form {
-		width: 36%;
 		float: right;
-	}
-}
-
-@media screen and (min-width: 992px) {
-	.maker-signup-caption {
-		font-size: 1.25em;
+		width: 40%;
 	}
 }
 

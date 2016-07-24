@@ -9,24 +9,29 @@ html, body {
 
 .container {
 	margin: 0;
-	padding: 80px 0 20px 0;
+	padding: 40px 0 20px 0;
 	overflow: auto;
 }
 
 .container-narrow {
-	padding: 0 15px 0 15px;
+	padding: 10px 15px 10px 15px;
+	overflow: auto;
 }
 
 .grey-background {
 	background: #F0F0F0;
 }
 
+.blue-background {
+	background: #0094D8;
+}
+
 @media screen and (min-width: 768px) {
 	.container {
-		padding: 90px 0 50px 0px;
+		padding: 60px 0 50px 0px;
 	}
 	.container-narrow {
-		padding: 0 60px 0 60px;
+		padding: 30px 60px 30px 60px;
 	}
 }
 
