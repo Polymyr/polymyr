@@ -9,7 +9,6 @@
   right: 5px;
   background: white;
   min-width: 9.5em;
-  box-shadow: 0px 0px 2px 0px #C0C0C0;
   border: 1px solid #C0C0C0;
   border-radius: 5px;
   font-size: 0.8em;
@@ -48,7 +47,7 @@
 
 @media screen and (min-width: 768px) {
 	.dropdown-content {
-		top: 70px;
+		top: 67px;
 		right: 43px;
 	}
 	.dropdown-content .fa-caret-up {
@@ -57,12 +56,12 @@
 	.dropdown-content:before {
 	  top: -15px;
 	  right: 12px;
-	  border-width: 0px 12px 14px;
+	  border-width: 0px 12px 15px;
 	}
 	.dropdown-content:after {
 		top: -14px;
 	  right: 12px;
-	  border-width: 0px 12px 14px;
+	  border-width: 0px 12px 15px;
 	}
 }
 
