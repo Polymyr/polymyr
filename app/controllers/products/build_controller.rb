@@ -18,6 +18,8 @@ class Products::BuildController < ApplicationController
       if @product.save
         redirect_to @product
       else
+        @product.status = ""
+        flash[:error] = "Something went wrong"
         redirect_to :back
       end
     else

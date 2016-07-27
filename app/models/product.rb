@@ -15,21 +15,21 @@ class Product < ActiveRecord::Base
 	has_many :uploads, dependent: :destroy
 
 	validates :maker_id, presence: true
-	validates :name, presence: true, length: { maximum: 50 }, :if => :active?
-	validates :description, presence: true, length: { maximum: 50 }, :if => :active?
+	validates :name, presence: true, length: { maximum: 50 }, :if => :pending?
+	validates :description, presence: true, length: { maximum: 50 }, :if => :pending?
 	validates :price, presence: true, numericality: { only_integer: true, 
 																										greater_than_or_equal_to: 0, 
 																										less_than_or_equal_to: 100000 }, 
-																										:if => :active?
+																										:if => :pending?
 	validates :rebate, presence: true, numericality: { only_integer: true, 
 																										 greater_than_or_equal_to: 0, 
 																										 less_than_or_equal_to: :price }, 
-																										 :if => :active?
+																										 :if => :pending?
 	validates :quantity, presence: true, numericality: { only_integer: true,
 																											 greater_than_or_equal_to: 0,
 																											 less_than_or_equal_to: 100000 }, 
-																											 :if => :active?
-	validates :story, presence: true, length: { maximum: 10000 }, :if => :active?
+																											 :if => :pending?
+	validates :story, presence: true, length: { maximum: 10000 }, :if => :pending?
 
   settings index: { number_of_shards: 1 }
 
@@ -42,8 +42,8 @@ class Product < ActiveRecord::Base
 	#   })
 	# end
 
-	def active?
-    status == 'active'
+	def pending?
+    status == 'pending'
   end
 end
 
