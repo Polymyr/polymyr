@@ -1,48 +1,50 @@
-<ul class="product-progress">
-	<li><%= link_to 'Product', wizard_path(:product), class: 'progress-selected' %></li>
-	<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
-	<li><%= link_to 'Questions', wizard_path(:questions) %></li>
-	<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
-	<li><%= link_to 'Preview', wizard_path(:preview) %></li>
-	<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
-	<li><%= link_to 'Submit', wizard_path(:preview) %></li>
-</ul>
+<div class="container-narrow">
+	<ul class="product-progress">
+		<li><%= link_to 'Product', wizard_path(:product), class: 'progress-selected' %></li>
+		<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
+		<li><%= link_to 'Questions', wizard_path(:questions) %></li>
+		<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
+		<li><%= link_to 'Preview', wizard_path(:preview) %></li>
+		<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
+		<li><%= link_to 'Submit', wizard_path(:preview) %></li>
+	</ul>
 
-<div class="product-build-heading">Tell us about your product</div>
+	<div class="product-build-heading">Tell us about your product</div>
 
-<%= form_for([@product, Upload.new], html: { multipart: true, class: "dropzone", :product_id => @product.id }) do |f|  %>
-  <div class="dz-message" data-dz-message>
-  	<span><i class="fa fa-upload fa-3x" aria-hidden="true"></i></span>
-  	<br /><br />
-  	<span>Drop files here or click to upload</span>
-  </div>
-  <div class="fallback">
-    <%= f.file_field :image %><br>
-    <%= f.submit "Upload" %>
-  </div>
-<% end %>
-
-<div class="form-wrapper" data-id=<%= @product.id %>>
-
-	<%= simple_form_for @product, url: wizard_path, method: :put do |f| %>
-
-		<div class="form-inputs">
-			<%= f.input :name, label: false, placeholder: 'Product name' %>
-			<%= f.input :description, label: false, placeholder: "Short description", as: :string %>
-			<%= f.input :price, label: false, placeholder: "Price" %>
-			<%= f.input :rebate, label: false, placeholder: "Rebate" %>
-			<%= f.input :quantity, label: false, placeholder: "Number of units" %>
-			<%= f.input :story, label: false, placeholder: "Product story" %>
-		</div>
-
-		<div class="form-actions">
-	    <%= f.button :submit, "Next" %>
+	<%= form_for([@product, Upload.new], html: { multipart: true, class: "dropzone", :product_id => @product.id }) do |f|  %>
+	  <div class="dz-message" data-dz-message>
+	  	<span><i class="fa fa-upload fa-3x" aria-hidden="true"></i></span>
+	  	<br /><br />
+	  	<span>Drop files here or click to upload</span>
 	  </div>
-	  
-	  <div class="previous-step">
-	  	<i class="fa fa-arrow-left" aria-hidden="true"></i><%= link_to "Prev", previous_wizard_path %>
+	  <div class="fallback">
+	    <%= f.file_field :image %><br>
+	    <%= f.submit "Upload" %>
 	  </div>
 	<% end %>
+
+	<div class="form-wrapper" data-id=<%= @product.id %>>
+
+		<%= simple_form_for @product, url: wizard_path, method: :put do |f| %>
+
+			<div class="form-inputs">
+				<%= f.input :name, label: false, placeholder: 'Product name' %>
+				<%= f.input :description, label: false, placeholder: "Short description", as: :string %>
+				<%= f.input :price, label: false, placeholder: "Price" %>
+				<%= f.input :rebate, label: false, placeholder: "Rebate" %>
+				<%= f.input :quantity, label: false, placeholder: "Number of units" %>
+				<%= f.input :story, label: false, placeholder: "Product story" %>
+			</div>
+
+			<div class="form-actions">
+		    <%= f.button :submit, "Next" %>
+		  </div>
+		  
+		  <div class="previous-step">
+		  	<i class="fa fa-arrow-left" aria-hidden="true"></i><%= link_to "Prev", previous_wizard_path %>
+		  </div>
+		<% end %>
+	</div>
 </div>
 
 <script>

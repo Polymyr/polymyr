@@ -1,16 +1,18 @@
-<% if @reviews.length > 0 %>
-	<table class="reviews-table">
-		<tr>
-	    <td></td>
-	    <td>Reviewer</td> 
-	    <td>Some number</td>
-	  </tr>
-		<% for i in 0..@reviews.length-1 %>
-		  <tr>
-		    <td><%= i+1 %></td>
-		    <td><%= link_to @reviews.first.user.name, @reviews.first %></td> 
-		    <td>50</td>
+<div class="container-narrow">
+	<% if @reviews.length > 0 %>
+		<table class="reviews-table">
+			<tr>
+		    <td></td>
+		    <td>Reviewer</td> 
+		    <td>Some number</td>
 		  </tr>
-	  <% end %>
-	</table>
-<% end %>
+			<% for i in 0..@reviews.length-1 %>
+			  <tr>
+			    <td><%= i+1 %></td>
+			    <td><%= link_to @reviews.first.user.name, @reviews.first %></td> 
+			    <td>50</td>
+			  </tr>
+		  <% end %>
+		</table>
+	<% end %>
+</div>
