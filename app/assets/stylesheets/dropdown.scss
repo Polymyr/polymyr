@@ -45,6 +45,16 @@
   width: 0;
 }
 
+.dropdown-content a {
+  color: #505050 !important;
+  padding: 0.8em 1em;
+  display: block !important;
+}
+
+.show {
+  display: block;
+}
+
 @media screen and (min-width: 768px) {
 	.dropdown-content {
 		top: 67px;
@@ -65,12 +75,8 @@
 	}
 }
 
-.dropdown-content a {
-  color: #505050 !important;
-  padding: 0.8em 1em;
-  display: block !important;
-}
-
-.show {
-	display: block;
+@media screen and (min-width: 1170px) {
+  .dropdown-content {
+    top: 72px;
+  }
 }
