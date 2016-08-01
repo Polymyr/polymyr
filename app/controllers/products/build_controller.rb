@@ -19,15 +19,12 @@ class Products::BuildController < ApplicationController
         redirect_to @product
       else
         @product.status = ""
-        flash[:error] = "Something went wrong"
-        redirect_to :back
+        render :preview
       end
     else
       if @product.update_attributes(build_params)
-        flash[:success] = "Product launched!" if step == steps.last
         render_wizard @product
       else
-        # params[:product][:status] = 'inactive'
         flash[:error] = "There was an error, please try again."
         redirect_to :back
       end

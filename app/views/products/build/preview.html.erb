@@ -7,6 +7,8 @@
 		<li><%= link_to 'Preview & Submit', wizard_path(:preview), class: 'progress-selected' %></li>
 	</ul>
 
+	<%= render 'layouts/product_error_messages' %>
+
 	<div class="product-build-heading">This is what your product page will look like</div>
 
 	<div class="product-preview-caption">

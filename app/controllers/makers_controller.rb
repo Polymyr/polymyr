@@ -4,6 +4,7 @@ class MakersController < ApplicationController
 
 	def show
 		@maker = current_maker
+		@products = @maker.products
 		@active_products = @maker.products.active
 		@pending_products = @maker.products.pending
 		@started_products = @maker.products.started

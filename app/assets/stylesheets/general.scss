@@ -37,6 +37,18 @@ html, body {
 
 .title {
 	font-size: 2.8em;
+	margin-bottom: 0.5em;
+	text-align: center;
+}
+
+.small-title {
+	font-size: 2em;
+	margin-bottom: 0.8em;
+	text-align: center;
+}
+
+.tiny-title {
+	font-size: 1.6em;
 	margin-bottom: 0.8em;
 	text-align: center;
 }
@@ -59,6 +71,19 @@ a:link, a:visited, a:hover, a:active {
 
 a:focus {
 	outline: none;
+}
+
+body .button {
+	display: block;
+	margin: auto;
+	color: white;
+	background: #0094D8;
+	text-align: center;
+	width: 15em;
+	max-width: 100%;
+	font-size: 1.5em;
+	padding: 0.5em;
+	border-radius: 5px;
 }
 
 ul {
@@ -142,6 +167,16 @@ button:focus {
 .error {
 	color: red;
 	margin-top: 5px;
+}
+
+#error_explanation {
+	text-align: center;
+	margin-bottom: 1em;
+	color: red;
+}
+
+#error_explanation ul {
+	list-style-type: none;
 }
 
 .footer-content {
