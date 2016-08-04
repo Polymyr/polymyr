@@ -7,6 +7,7 @@
 				<%= image_tag product.uploads[0].image.url(:thumb) %>
 			<% end %>
 			<%= product.name %>
+			<div class="dash-button">Edit</div>
 		<% end %>
 	<% else %>
 		<%= link_to dash_path(product) do %>
@@ -16,6 +17,7 @@
 				<%= image_tag product.uploads[0].image.url(:thumb) %>
 			<% end %>
 			<%= product.name %>
+			<div class="dash-button">Reviews</div>
 		<% end %>
 	<% end %>
 </li>

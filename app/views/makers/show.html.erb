@@ -2,13 +2,10 @@
 	<div class="dashboard">
 		<div class="title"><%= @maker.company %></div>
 		<% if @products.length == 0 %>
-			<div class="tiny-title">You don't have any products yet</div>
 			<%= link_to "Add a product", new_product_path, class: "button" %>
-		<% else %>
-			<div class="tiny-title">My Products</div>
 		<% end %>
 		<% if @active_products.length > 0 %>
-			<div class="dash-heading green">Active</div>
+			<div class="dash-heading green">Active products</div>
 			<ul class="product-listings">
 				<%= render partial: "products/dash_product", collection: @active_products, as: :product %>
 			</ul>
@@ -20,13 +17,13 @@
 			</ul>
 		<% end %>
 		<% if @started_products.length > 0 %>
-			<div class="dash-heading">Started</div>
+			<div class="dash-heading">Started products</div>
 			<ul class="product-listings">
 				<%= render partial: "products/dash_product", collection: @started_products, as: :product %>
 			</ul>
 		<% end %>
 		<% if @past_products.length > 0 %>
-			<div class="dash-heading grey">Past</div>
+			<div class="dash-heading grey">Past products</div>
 			<ul class="product-listings">
 				<%= render partial: "products/dash_product", collection: @past_products, as: :product %>
 			</ul>

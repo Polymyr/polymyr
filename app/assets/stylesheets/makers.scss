@@ -54,7 +54,8 @@
 }
 
 .dash-product {
-	width: 25em;
+	width: 30em;
+	max-width: 100%;
 	margin: auto;
 	text-align: left;
 	border-top: 1px solid #E0E0E0;
@@ -81,6 +82,11 @@
 		height: 45px;
 		width: 60px;
 	}
+}
+
+.dash-button {
+	float: right;
+	margin-top: 9px;
 }
 
 .green {
