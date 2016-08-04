@@ -105,7 +105,6 @@
 .landing-page-icons {
 	margin-top: 1.5em;
 	width: 100%;
-	font-size: 0.9em;
 }
 
 .landing-page-icons div {
@@ -151,6 +150,13 @@
 	width: 15em;
 }
 
+.thanks {
+	width: 24em;
+	max-width: 100%;
+	margin: 20px auto;
+	font-size: 1.8em;
+}
+
 @media screen and (min-width: 768px) {
 	#yellow-hr {
 		margin-top: 7em;
@@ -160,7 +166,8 @@
 	}
 	.landing-page-icons div {
 		float: left;
-		padding-right: 10px;
+		padding-right: 0.75em;
+		font-size: 0.8em;
 	}
 	#blueguy1 {
 		width: 23%;
@@ -188,9 +195,15 @@
 	}
 }
 
-.thanks {
-	width: 24em;
-	max-width: 100%;
-	margin: 20px auto;
-	font-size: 1.8em;
+@media screen and (min-width: 992px) {
+	#yellow-hr {
+		margin-top: 9em;
+	}
+	.landing-page-icons img {
+		height: 8em;
+	}
+	.landing-page-icons div {
+		padding-right: 2em;
+		font-size: 0.9em;
+	}
 }
