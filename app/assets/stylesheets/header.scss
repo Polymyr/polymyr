@@ -3,7 +3,7 @@
 	margin: 0;
 	padding: 0 15px 0 15px;
 	height: 40px;
-	background: white;
+	background: transparent;
 	z-index: 1;
 }
 
@@ -12,13 +12,7 @@
 }
 
 .nav-top {
-	background: #0094D8;
 	position: absolute;
-	color: white;
-}
-
-.nav-top a {
-	color: white;
 }
 
 .prelaunch-nav {

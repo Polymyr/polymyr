@@ -75,6 +75,7 @@ form {
 	width: 25em;
 	max-width: 100%;
 	margin: auto;
+	padding: 1em;
 }
 
 .form-inputs {
@@ -172,4 +173,9 @@ form {
 	display: inline-block;
 	margin-left: 8px;
 	color: #D63230;
+}
+
+.form-wrapper a {
+	line-height: 1.8em;
+	font-size: 1.1em;
 }
