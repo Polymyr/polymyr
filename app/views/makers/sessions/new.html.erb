@@ -1,42 +1,40 @@
-<div class="container-narrow blue-background">
-	<div class="maker-start">
-		<div class="maker-signin-form">
+<div class="container-narrow">
+	<div class="maker-signin-form">
 
-			<div class="form-wrapper">
+		<div class="form-wrapper">
 
-				<h2>Sign in</h2>
+			<h2>Partner sign in</h2>
 
-				<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-					<%= f.error_notification %>
+			<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+				<%= f.error_notification %>
 
-				  <div class="form-inputs">
-				    <%= f.input :email, placeholder: "Email" %>
-				    <%= f.input :password, placeholder: "Password" %>
-				    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-				  </div>
+			  <div class="form-inputs">
+			    <%= f.input :email, placeholder: "Email" %>
+			    <%= f.input :password, placeholder: "Password" %>
+			    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+			  </div>
 
-				  <div class="form-actions">
-				    <%= f.button :submit, "Sign in" %>
-				  </div>
-				<% end %>
+			  <div class="form-actions">
+			    <%= f.button :submit, "Sign in" %>
+			  </div>
+			<% end %>
 
-				<%= render "makers/shared/links" %>
-			</div>
-		</div>
-
-		<div class="maker-signup-info">
-
-			<h2>Sell on Polymyr</h2>
-
-			<div class="maker-signup-caption">
-				Partner with Polymyr to sell your product and gain valuable user feedback. Choose custom review questions and decide on a reward for reviewers. Upon submission, your product will be featured on our front page.
-			</div>
-
-			<div class="maker-signup-portal">
-				<%= link_to new_maker_registration_path do %>
-					<i class="fa fa-arrow-right" aria-hidden="true"></i> Sign up and improve your products
-				<% end %>
-			</div>
+			<%= render "makers/shared/links" %>
 		</div>
 	</div>
+
+	<!-- <div class="maker-signup-info">
+
+		<h2>Sell on Polymyr</h2>
+
+		<div class="maker-signup-caption">
+			Partner with Polymyr to sell your product and gain valuable user feedback. Choose custom review questions and decide on a reward for reviewers. Upon submission, your product will be featured on our front page.
+		</div>
+
+		<div class="maker-signup-portal">
+			<%= link_to new_maker_registration_path do %>
+				<i class="fa fa-arrow-right" aria-hidden="true"></i> Sign up and improve your products
+			<% end %>
+		</div>
+	</div> -->
 </div>

@@ -14,7 +14,7 @@ html, body {
 }
 
 .container-narrow {
-	padding: 20px 15px 20px 15px;
+	padding: 60px 15px 20px 15px;
 	overflow: auto;
 }
 
@@ -31,13 +31,13 @@ html, body {
 		padding-top: 60px;
 	}
 	.container-narrow {
-		padding: 50px 60px 50px 60px;
+		padding: 110px 60px 50px 60px;
 	}
 }
 
 @media (min-width: 1170px) {
-  .container {
-		padding-top: 64px;
+	.container-narrow {
+		padding: 110px 80px 50px 80px;
 	}
 }
 
@@ -85,11 +85,10 @@ body .button {
 	color: white;
 	background: #0094D8;
 	text-align: center;
-	width: 15em;
-	max-width: 100%;
-	font-size: 1.5em;
+	width: 100%;
 	padding: 0.5em;
 	border-radius: 5px;
+	margin-top: 1.2em;
 }
 
 ul {
