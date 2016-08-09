@@ -17,7 +17,11 @@ Rails.application.routes.draw do
   end
 
   resources :users
-  resources :makers
+  resources :makers do
+    member do
+      get :payment
+    end
+  end
   resources :products do
     resources :build, controller: 'products/build'
     resources :uploads, only: [:new, :create, :destroy]

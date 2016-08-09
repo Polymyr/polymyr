@@ -10,4 +10,7 @@ class MakersController < ApplicationController
 		@started_products = @maker.products.started
 		@past_products = @maker.products.past
 	end
+
+	def payment
+	end
 end

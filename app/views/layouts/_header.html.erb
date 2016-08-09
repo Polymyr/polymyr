@@ -26,6 +26,7 @@
 				<div id="myDropdown" class="dropdown-content">
 					<!-- <i class="fa fa-caret-up fa-lg" aria-hidden="true"></i> -->
 			    <%= link_to "Settings", edit_maker_registration_path %>
+			    <%= link_to "Payment", payment_maker_path(current_maker) %>
 			    <%= link_to "Log out", destroy_maker_session_path, method: :delete %>
 			  </div>
 			</li>
