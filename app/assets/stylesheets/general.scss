@@ -8,13 +8,12 @@ html, body {
 }
 
 .container {
-	margin: 0;
-	padding-top: 40px;
+	padding: 60px 15px 20px 15px;
 	overflow: auto;
 }
 
 .container-narrow {
-	padding: 60px 15px 20px 15px;
+	padding: 30px 15px 30px 15px;
 	overflow: auto;
 }
 
@@ -28,16 +27,19 @@ html, body {
 
 @media screen and (min-width: 768px) {
 	.container {
-		padding-top: 60px;
+		padding: 110px 60px 50px 60px;
 	}
 	.container-narrow {
-		padding: 110px 60px 50px 60px;
+		padding: 40px 60px 40px 60px;
 	}
 }
 
 @media (min-width: 1170px) {
+	.container {
+		padding: 110px 100px 50px 100px;
+	}
 	.container-narrow {
-		padding: 110px 80px 50px 80px;
+		padding: 40px 100px 40px 100px;
 	}
 }
 
@@ -92,6 +94,7 @@ body .button {
 	background: #0094D8;
 	text-align: center;
 	width: 20em;
+	max-width: 100%;
 	font-size: 1.2em;
 	padding: 0.5em;
 	border-radius: 5px;

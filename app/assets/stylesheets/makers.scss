@@ -93,3 +93,22 @@
 .grey {
 	color: #707070;
 }
+
+.payment-title {
+	font-size: 2.5em;
+	margin: 0.8em 0 0.8em 0;
+	text-align: center;
+}
+
+#stripe-connect-button {
+	display: block;
+	margin: 1.6em auto 3.6em auto;
+	color: white;
+	background: #0094D8;
+	text-align: center;
+	width: 18em;
+	max-width: 100%;
+	font-size: 1.5em;
+	padding: 0.5em;
+	border-radius: 5px;
+}

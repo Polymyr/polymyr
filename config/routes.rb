@@ -36,4 +36,5 @@ Rails.application.routes.draw do
   get '/about', to: 'general#about'
   get '/dash/:id', to: 'products#dash', as: 'dash'
   get '/thanks', to: 'prospects#thanks'
+  get '/stripe_connect', to: 'makers#stripe_connect'
 end
