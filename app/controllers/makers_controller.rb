@@ -15,8 +15,8 @@ class MakersController < ApplicationController
 	end
 
 	def stripe_connect
-		puts 'WHAT'
 		require 'net/http'
+		require 'json'
 		uri = URI('https://connect.stripe.com/oauth/token')
 		# req = Net::HTTP::Post.new(url.to_s)
 		res = Net::HTTP.post_form(
@@ -28,6 +28,16 @@ class MakersController < ApplicationController
 		# res = Net::HTTP.start(url.host, url.port) {|http|
 		#   http.request(req)
 		# }
-		puts res.body
+		credentials = JSON.parse(res.body)
+		if current_maker.update_attributes({
+			stripe_publishable_key: credentials['stripe_publishable_key'],
+	    stripe_user_id: credentials['stripe_user_id'],
+	    refresh_token: credentials['refresh_token'],
+	    access_token: credentials['access_token']
+		})
+			flash[:success] = "Successfully connected Stripe!"
+		else
+			flash[:error] = "Failed to connect Stripe"
+		end
 	end
 end

@@ -54,7 +54,7 @@ group :development, :test do
   gem 'byebug'
 
   # Accessing local variables before starting application
-  gem 'foreman'
+  gem 'dotenv-rails'
 end
 
 group :development do

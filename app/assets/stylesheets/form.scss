@@ -69,11 +69,15 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .form-wrapper {
-	width: 20em;
+	width: 30em;
 	max-width: 100%;
 	margin: auto;
 	padding: 1em;
 	font-size: 1.1em;
+}
+
+.form-wrapper-narrow {
+	width: 24em;
 }
 
 .form-wrapper hr {
