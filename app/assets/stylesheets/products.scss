@@ -103,6 +103,10 @@
 	font-size: 0.9em;
 }
 
+.overview ul {
+	margin: 1em 0 1.2em 1em;
+}
+
 .overview ul li {
 	color: #707070;
 	font-size: 0.9em;
@@ -225,7 +229,7 @@
 /* Creating product */
 
 .start-caption {
-	margin-top: 2em;
+	margin-top: 1em;
 	text-align: center;
 }
 
@@ -253,21 +257,6 @@
 	margin: 10px 5px 10px 5px;
 }
 
-.product-build-heading {
-	font-size: 2em;
-	text-align: center;
-	margin: auto;
-	color: #0094D8;
-	max-width: 100%;
-}
-
-.product-build-subheading {
-	font-size: 1.6em;
-	text-align: center;
-	margin-top: 20px;
-	color: #0094D8;
-}
-
 .example-questions {
 	list-style-type: none;
 	padding: 0;
@@ -278,6 +267,17 @@
 
 .example-questions li {
 	margin-top: 3px;
+}
+
+#payment-next-step {
+	display: block;
+	text-align: center;
+	background: #0094D8;
+	color: white;
+	height: 2.5em;
+	padding: 5px 0px 5px 0px;
+	font-size: 1em;
+	margin-top: 1.2em;
 }
 
 .product-preview-caption {

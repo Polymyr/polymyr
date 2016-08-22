@@ -4,7 +4,7 @@ class Products::BuildController < ApplicationController
   before_action :authenticate_maker!
   before_action :correct_maker
 
-  steps :product, :questions, :preview
+  steps :product, :questions, :payment, :preview
 
   def show
     @product = Product.find(params[:product_id])
@@ -31,7 +31,7 @@ class Products::BuildController < ApplicationController
     end
   end
 
-  private 
+  private
 
     def build_params
       params.require(:product).permit(:name, :description, :price, :rebate, :quantity,

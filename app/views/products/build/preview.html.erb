@@ -1,15 +1,17 @@
 <div class="container">
 	<ul class="product-progress">
-		<li><%= link_to 'Product info', wizard_path(:product) %></li>
+		<li><%= link_to 'Product', wizard_path(:product) %></li>
 		<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
-		<li><%= link_to 'Custom questions', wizard_path(:questions) %></li>
+		<li><%= link_to 'Questions', wizard_path(:questions) %></li>
 		<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
-		<li><%= link_to 'Preview & Submit', wizard_path(:preview), class: 'progress-selected' %></li>
+		<li><%= link_to 'Payment', wizard_path(:payment) %></li>
+		<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
+		<li><%= link_to 'Submit', wizard_path(:preview), class: 'progress-selected' %></li>
 	</ul>
 
 	<%= render 'layouts/product_error_messages' %>
 
-	<div class="product-build-heading">This is what your product page will look like</div>
+	<div class="subtitle">This is what your product page will look like</div>
 
 	<div class="product-preview-caption">
 		After we accept your submission, you can no longer edit your product, so make sure your product page is exactly the way you want it!

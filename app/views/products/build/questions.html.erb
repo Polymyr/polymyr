@@ -1,13 +1,15 @@
 <div class="container">
 	<ul class="product-progress">
-		<li><%= link_to 'Product info', wizard_path(:product) %></li>
+		<li><%= link_to 'Product', wizard_path(:product) %></li>
 		<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
-		<li><%= link_to 'Custom questions', wizard_path(:questions), class: 'progress-selected' %></li>
+		<li><%= link_to 'Questions', wizard_path(:questions), class: 'progress-selected' %></li>
 		<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
-		<li><%= link_to 'Preview & Submit', wizard_path(:preview) %></li>
+		<li><%= link_to 'Payment', wizard_path(:payment) %></li>
+		<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
+		<li><%= link_to 'Submit', wizard_path(:preview) %></li>
 	</ul>
 
-	<div class="product-build-heading">What questions do you want to ask your users?</div>
+	<div class="subtitle">What questions do you want to ask your users?</div>
 
 	<div class="form-wrapper">
 
@@ -25,9 +27,7 @@
 				<%= f.input :q5, label: false, placeholder: "Question 5" %>
 			</div> -->
 
-			<br />
-
-			<div class="product-build-subheading">Setup</div>
+			<div class="small-subtitle">Setup</div>
 
 			<ul class="example-questions">
 				<li>You can ask things like:</li>
@@ -46,7 +46,7 @@
 
 			<br />
 
-			<div class="product-build-subheading">Usage</div>
+			<div class="small-subtitle">Usage</div>
 
 			<ul class="example-questions">
 				<li>You can ask things like:</li>
@@ -65,7 +65,7 @@
 
 			<br />
 
-			<div class="product-build-subheading">Conclusion</div>
+			<div class="small-subtitle">Conclusion</div>
 
 			<ul class="example-questions">
 				<li>You can ask things like:</li>

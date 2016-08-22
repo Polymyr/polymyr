@@ -1,0 +1,32 @@
+<div class="container">
+	<ul class="product-progress">
+		<li><%= link_to 'Product', wizard_path(:product) %></li>
+		<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
+		<li><%= link_to 'Questions', wizard_path(:questions) %></li>
+		<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
+		<li><%= link_to 'Payment', wizard_path(:payment), class: 'progress-selected' %></li>
+		<li><i class="fa fa-caret-right" aria-hidden="true"></i></li>
+		<li><%= link_to 'Submit', wizard_path(:preview) %></li>
+	</ul>
+
+	<div class="subtitle">Connect your Stripe account to get paid</div>
+
+		<% if @product.maker.stripe_user_id %>
+			<br />
+			<div class="small-subtitle">
+				Your Stripe account is connected!
+			</div>
+		<% else %>
+			<div class="stripe-connect-two-buttons">
+				<a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_8yNBdkjqvSFZzdWpfiqzr0YyQBAPXqiL&scope=read_write&
+				state=<%= @product.id %>" class="stripe-connect-left-button">Create a new Stripe account</a>
+				<a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_8yNBdkjqvSFZzdWpfiqzr0YyQBAPXqiL&scope=read_write&
+				state=<%= @product.id %>&
+				stripe_landing=login" class="stripe-connect-right-button">Connect an existing account</a>
+			</div>
+		<% end %>
+
+	<div class="form-wrapper">
+		<%= link_to 'Next', next_wizard_path, id: "payment-next-step", class: "btn" %>
+	</div>
+</div>

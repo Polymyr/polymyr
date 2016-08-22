@@ -18,7 +18,6 @@ class MakersController < ApplicationController
 		require 'net/http'
 		require 'json'
 		uri = URI('https://connect.stripe.com/oauth/token')
-		# req = Net::HTTP::Post.new(url.to_s)
 		res = Net::HTTP.post_form(
 			uri,
 			'client_secret' => Rails.application.secrets.stripe_secret_key, 
@@ -36,8 +35,18 @@ class MakersController < ApplicationController
 	    access_token: credentials['access_token']
 		})
 			flash[:success] = "Successfully connected Stripe!"
+			if params[:state]
+				redirect_to product_build_path(:payment, product_id: params[:state])
+			else
+				redirect_to payment_maker_path(current_maker)
+			end
 		else
-			flash[:error] = "Failed to connect Stripe"
+			flash.now[:error] = "Failed to connect Stripe"
+			if params[:state]
+				redirect_to product_build_path(:payment, product_id: params[:state])
+			else
+				redirect_to payment_maker_path(current_maker)
+			end
 		end
 	end
 end

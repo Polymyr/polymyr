@@ -14,7 +14,6 @@ class Product < ActiveRecord::Base
 	has_many :users, through: :reviews
 	has_many :uploads, dependent: :destroy
 
-	validates :maker_id, presence: true
 	validates :name, presence: true, length: { maximum: 50 }, :if => :pending?
 	validates :description, presence: true, length: { maximum: 50 }, :if => :pending?
 	validates :price, presence: true, :if => :pending?

@@ -8,6 +8,7 @@ class ChargesController < ApplicationController
 	def create
 
 		@product = Product.find(params[:product_id])
+		@maker = @product.maker
 
 		if !current_user.name.present? || !current_user.address.present? ||
 			 !current_user.city.present? || !current_user.zip.present?
@@ -36,7 +37,8 @@ class ChargesController < ApplicationController
 				:customer 	 => current_user.customer_id,
 			  :amount   	 => @product.price * 100,
 			  :description => 'Rails Stripe customer',
-			  :currency 	 => "usd"
+			  :currency 	 => "usd",
+			  :destination => @maker.stripe_user_id
 			)
 		end
 

@@ -2,6 +2,8 @@
 	<div class="dashboard">
 		<div class="title"><%= @maker.company %></div>
 		<% if @products.length == 0 %>
+			<br />
+			<div class="subtitle">Welcome to Polymyr!</div>
 			<%= link_to "Add a product", new_product_path, class: "button" %>
 		<% end %>
 		<% if @active_products.length > 0 %>

@@ -122,20 +122,6 @@ input[type=number]::-webkit-outer-spin-button {
 	-ms-transition: 0.5s ease;
 	transition: 0.5s ease;
 }
-/*
-.form-wrapper label {
-	transition: 0.2s;
-}*/
-
-/*.form-wrapper input:focus + label {
-	margin-top: -55px;
-	font-size: 0.8em;
-}
-
-.form-wrapper input:valid + label {
-	margin-top: -55px;
-	font-size: 0.8em;
-}*/
 
 .form-wrapper .form-actions input {
 	border: none;
@@ -160,11 +146,18 @@ input[type=number]::-webkit-outer-spin-button {
 
 .form-wrapper .error {
 	display: inline-block;
-	margin-left: 8px;
 	color: #D63230;
 }
 
 .form-wrapper a {
 	line-height: 1.8em;
 	font-size: 1.1em;
+}
+
+input.file {
+	display: block;
+	-webkit-appearance: initial;
+  background-color: initial;
+  padding: initial;
+  border: initial;
 }

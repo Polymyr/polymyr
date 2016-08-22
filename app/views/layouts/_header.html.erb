@@ -39,5 +39,9 @@
 <% else %>
   <nav class="nav nav-top">
 		<div class="logo"><a href=<%= unauthenticated_root_path %>>POLYMYR</a></div>
+		<ul class="menu">
+			<li><%= link_to "Sign up", "#signup", "data-toggle" => "modal", "data-dismiss" => "modal" %></li>
+			<li><%= link_to "Sign in", "#signin", "data-toggle" => "modal", "data-dismiss" => "modal" %></li>
+		</ul>
 	</nav>
 <% end %>
