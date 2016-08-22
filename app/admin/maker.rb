@@ -1,11 +1,10 @@
 ActiveAdmin.register Maker do
-	permit_params :first_name, :last_name, :email, 
+	permit_params :name, :email, 
 								:company, :website, :password
 
 	index do
     id_column
-    column :first_name
-    column :last_name
+    column :name
     column :email
     column :company
     column :website
@@ -14,8 +13,7 @@ ActiveAdmin.register Maker do
 
   form do |f|
     f.inputs "Maker information" do
-      f.input :first_name
-	    f.input :last_name
+      f.input :name
 	    f.input :email
 	    f.input :company
 	    f.input :website

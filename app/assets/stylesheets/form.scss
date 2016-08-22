@@ -54,6 +54,14 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0; 
 }
 
+.form-wrapper {
+	width: 30em;
+	max-width: 100%;
+	margin: auto;
+	padding: 1em;
+	font-size: 1.1em;
+}
+
 .form-wrapper div {
 	margin-bottom: 0.8em;
 }
@@ -66,14 +74,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 .signup-submit {
 	margin-top: 10px;
-}
-
-.form-wrapper {
-	width: 30em;
-	max-width: 100%;
-	margin: auto;
-	padding: 1em;
-	font-size: 1.1em;
 }
 
 .form-wrapper-narrow {

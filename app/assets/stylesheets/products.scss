@@ -280,10 +280,54 @@
 	margin-top: 1.2em;
 }
 
+.stripe-connect-button {
+	display: block;
+	margin: 1.6em auto 3.6em auto;
+	color: white !important;
+	background: #0094D8;
+	text-align: center;
+	width: 18em;
+	max-width: 100%;
+	font-size: 1.5em;
+	padding: 0.5em;
+	border-radius: 5px;
+}
+
+.stripe-connect-two-buttons {
+	width: 45em;
+	max-width: 100%;
+	margin: auto;
+	overflow: auto;
+}
+
+.stripe-connect-left-button, .stripe-connect-right-button {
+	display: block;
+	width: 48%;
+	margin-top: 1.5em;
+	text-align: center;
+	font-size: 1.2em;
+	padding: 0.8em 0.3em 0.8em 0.3em;
+	border: 2px solid #0094D8;
+	border-radius: 5px;
+}
+
+.stripe-connect-left-button {
+	float: left;
+	color: #0094D8 !important;
+}
+
+.stripe-connect-right-button {
+	float: right;
+	color: white !important;
+	background: #0094D8;
+}
+
 .product-preview-caption {
 	text-align: center;
-	margin: 30px auto 20px auto;
-	width: 24em;
+	margin: 30px auto 0 auto;
+	font-size: 1.1em;
+	width: 36em;
+	max-width: 100%;
 }
 
 .product-preview-separator {
