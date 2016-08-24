@@ -32,14 +32,25 @@
 				<%= f.input :description, placeholder: "Short description", as: :string %>
 				<%= f.input :price, placeholder: "Price" %>
 				<%= f.input :rebate, placeholder: "Rebate" %>
-				<%= f.input :quantity, placeholder: "Number of units" %>
+				<%= f.input :quantity, placeholder: "Product quantity" %>
 				<%= f.input :story, placeholder: "Product story" %>
 			</div>
 
 			<div class="form-actions">
-		    <%= f.button :submit, "Next" %>
+		    <%= f.button :submit, "Save and continue" %>
 		  </div>
 		<% end %>
+	</div>
+</div>
+
+<div class="loading-screen">
+	<div class="preloader loading">
+	  <span class="slice"></span>
+	  <span class="slice"></span>
+	  <span class="slice"></span>
+	  <span class="slice"></span>
+	  <span class="slice"></span>
+	  <span class="slice"></span>
 	</div>
 </div>
 
@@ -102,5 +113,10 @@
 	      <% end %>
 			}
 		});	
+	});
+
+	$(window).load(function() {
+		// Animate loader off screen
+		$(".loading-screen").fadeOut(800);
 	});
 </script>

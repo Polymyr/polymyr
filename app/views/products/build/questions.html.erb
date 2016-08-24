@@ -17,6 +17,13 @@
 
 			<div class="small-subtitle">Context</div>
 
+			<ul class="example-questions">
+				<li><b>You can ask things like:</b></li>
+				<li>How many people live in your household?</li>
+				<li>Do you live in the city or in the suburbs?</li>
+				<li>How much do you spend a year on tech products?</li>
+			</ul>
+
 			<div class="form-inputs">
 				<%= f.input :q1, placeholder: "Question 1", label: 
 				"Question 1" %>
@@ -26,10 +33,12 @@
 				<%= f.input :q5, placeholder: "Question 5", label: "Question 5" %>
 			</div>
 
+			<br />
+
 			<div class="small-subtitle">Setup</div>
 
 			<ul class="example-questions">
-				<li>You can ask things like:</li>
+				<li><b>You can ask things like:</b></li>
 				<li>How was the unboxing experience?</li>
 				<li>Were any instructions confusing?</li>
 				<li>What's your first impression?</li>
@@ -48,7 +57,7 @@
 			<div class="small-subtitle">Usage</div>
 
 			<ul class="example-questions">
-				<li>You can ask things like:</li>
+				<li><b>You can ask things like:</b></li>
 				<li>What did you like most about the product?</li>
 				<li>How often do you use it?</li>
 				<li>How effective is the product?</li>
@@ -67,7 +76,7 @@
 			<div class="small-subtitle">Conclusion</div>
 
 			<ul class="example-questions">
-				<li>You can ask things like:</li>
+				<li><b>You can ask things like:</b></li>
 				<li>What did you hate the most about the product?</li>
 				<li>What's one suggestion you'd make to improve it?</li>
 				<li>Which feature did you like the most?</li>
@@ -82,7 +91,7 @@
 			</div>
 
 			<div class="form-actions">
-		    <%= f.button :submit, "Next" %>
+		    <%= f.button :submit, "Save and continue" %>
 		  </div>
 
 		  <!-- <div class="previous-step">
