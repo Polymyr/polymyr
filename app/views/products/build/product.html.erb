@@ -28,12 +28,12 @@
 		<%= simple_form_for @product, url: wizard_path, method: :put do |f| %>
 
 			<div class="form-inputs">
-				<%= f.input :name, label: false, placeholder: 'Product name' %>
-				<%= f.input :description, label: false, placeholder: "Short description", as: :string %>
-				<%= f.input :price, label: false, placeholder: "Price" %>
-				<%= f.input :rebate, label: false, placeholder: "Rebate" %>
-				<%= f.input :quantity, label: false, placeholder: "Number of units" %>
-				<%= f.input :story, label: false, placeholder: "Product story" %>
+				<%= f.input :name, placeholder: 'Product name' %>
+				<%= f.input :description, placeholder: "Short description", as: :string %>
+				<%= f.input :price, placeholder: "Price" %>
+				<%= f.input :rebate, placeholder: "Rebate" %>
+				<%= f.input :quantity, placeholder: "Number of units" %>
+				<%= f.input :story, placeholder: "Product story" %>
 			</div>
 
 			<div class="form-actions">
