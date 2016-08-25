@@ -28,27 +28,35 @@
 	border-top: none;
 }
 
-.dash-product a {
+.dash-product {
 	display: block;
+	overflow: auto;
 }
 
-.dash-product a img {
+.dash-product img {
 	height: 36px;
 	width: 48px;
 	border-radius: 5px;
 	margin-right: 5px;
+	display: block;
+	float: left;
 }
 
 @media screen and (min-width: 768px) {
-	.dash-product a img {
+	.dash-product img {
 		height: 45px;
 		width: 60px;
 	}
 }
 
-.dash-button {
+.dash-button-left {
+	float: left;
+	margin-top: 10px;
+}
+
+.dash-button-right {
 	float: right;
-	margin-top: 9px;
+	margin-top: 10px;
 }
 
 .green {

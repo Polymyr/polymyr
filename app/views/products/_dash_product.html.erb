@@ -1,24 +1,44 @@
 <li class="dash-product">
-	<% if !product.status %>
-		<%= link_to product_build_path(:product, product_id: product.id) do %>
-			<% if product.uploads.length == 0 %>
-				<%= image_tag("image_not_found_small.png") %>
-			<% else %>
-				<%= image_tag product.uploads[0].image.url(:thumb) %>
-			<% end %>
-			<%= product.name %>
-			<div class="dash-button">Edit</div>
-		<% end %>
-	<% else %>
+	<% if product.status == "active" %>
 		<%= link_to dash_path(product) do %>
 			<% if product.uploads.length == 0 %>
 				<%= image_tag("image_not_found_small.png") %>
 			<% else %>
 				<%= image_tag product.uploads[0].image.url(:thumb) %>
 			<% end %>
-			<%= product.name %>
-			<div class="dash-button">Reviews</div>
+			<div class="dash-button-left"><%= product.name %></div>
 		<% end %>
+		<div class="dash-button-right green">Active</div>
+	<% elsif product.status == "pending" %>
+		<%= link_to product_build_path(:product, product_id: product.id) do %>
+			<% if product.uploads.length == 0 %>
+				<%= image_tag("image_not_found_small.png") %>
+			<% else %>
+				<%= image_tag product.uploads[0].image.url(:thumb) %>
+			<% end %>
+			<div class="dash-button-left"><%= product.name %></div>
+		<% end %>
+		<div class="dash-button-right orange">Pending</div>
+	<% elsif !product.status %>
+		<%= link_to product_build_path(:product, product_id: product.id) do %>
+			<% if product.uploads.length == 0 %>
+				<%= image_tag("image_not_found_small.png") %>
+			<% else %>
+				<%= image_tag product.uploads[0].image.url(:thumb) %>
+			<% end %>
+			<div class="dash-button-left"><%= product.name %></div>
+		<% end %>
+		<div class="dash-button-right">Incomplete</div>
+	<% elsif product.status == "complete" %>
+		<%= link_to dash_path(product) do %>
+			<% if product.uploads.length == 0 %>
+				<%= image_tag("image_not_found_small.png") %>
+			<% else %>
+				<%= image_tag product.uploads[0].image.url(:thumb) %>
+			<% end %>
+			<div class="dash-button-left"><%= product.name %></div>
+		<% end %>
+		<div class="dash-button-right grey">Finished</div>
 	<% end %>
 </li>
 
