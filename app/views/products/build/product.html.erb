@@ -17,10 +17,10 @@
 	  	<br /><br />
 	  	<span>Drop files here or click to upload</span>
 	  </div>
-	  <div class="fallback">
+	  <!-- <div class="fallback">
 	    <%= f.file_field :image %><br>
 	    <%= f.submit "Upload" %>
-	  </div>
+	  </div> -->
 	<% end %>
 
 	<div class="form-wrapper" data-id=<%= @product.id %>>
@@ -40,17 +40,6 @@
 		    <%= f.button :submit, "Save and continue" %>
 		  </div>
 		<% end %>
-	</div>
-</div>
-
-<div class="loading-screen">
-	<div class="preloader loading">
-	  <span class="slice"></span>
-	  <span class="slice"></span>
-	  <span class="slice"></span>
-	  <span class="slice"></span>
-	  <span class="slice"></span>
-	  <span class="slice"></span>
 	</div>
 </div>
 
@@ -113,10 +102,5 @@
 	      <% end %>
 			}
 		});	
-	});
-
-	$(window).load(function() {
-		// Animate loader off screen
-		$(".loading-screen").fadeOut(800);
 	});
 </script>
