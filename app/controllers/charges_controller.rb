@@ -28,7 +28,8 @@ class ChargesController < ApplicationController
 		    :customer    => customer.id,
 		    :amount 		 => @product.price * 100,
 		    :description => 'Rails Stripe customer',
-		    :currency    => 'usd'
+		    :currency    => 'usd',
+		    :destination => @maker.stripe_user_id
 		  )
 
 		  current_user.update_attribute(:customer_id, customer.id)
