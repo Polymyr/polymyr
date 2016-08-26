@@ -10,7 +10,13 @@ class User < ActiveRecord::Base
   has_many :reviews
   has_many :products, through: :reviews
 
-  has_attached_file :avatar, styles: { medium: "150x150>", thumb: "50x50>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :avatar, 
+    styles: { 
+      medium: "150x150>", 
+      thumb: "50x50>" 
+    }, 
+    default_url: "/images/:style/missing.png",
+    :s3_protocol => :https
   
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates :name, length: { maximum: 50 }
