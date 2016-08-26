@@ -6,12 +6,14 @@
 			<div class="subtitle">Welcome to Polymyr!</div>
 			<%= link_to "Add a product", new_product_path, class: "button" %>
 		<% end %>
-		<div class="dash-heading">My products</div>
-		<ul class="product-listings">
-			<%= render partial: "products/dash_product", collection: @active_products, as: :product %>
-			<%= render partial: "products/dash_product", collection: @pending_products, as: :product %>
-			<%= render partial: "products/dash_product", collection: @started_products, as: :product %>
-			<%= render partial: "products/dash_product", collection: @past_products, as: :product %>
-		</ul>
+		<% if @products.length > 0 %>
+			<div class="dash-heading">My products</div>
+			<ul class="product-listings">
+				<%= render partial: "products/dash_product", collection: @active_products, as: :product %>
+				<%= render partial: "products/dash_product", collection: @pending_products, as: :product %>
+				<%= render partial: "products/dash_product", collection: @started_products, as: :product %>
+				<%= render partial: "products/dash_product", collection: @past_products, as: :product %>
+			</ul>
+		<% end %>
 	</div>
 </div>

@@ -18,9 +18,11 @@
 		</div>
 	<% else %>
 		<div class="stripe-connect-two-buttons">
-			<a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_8yNBdkjqvSFZzdWpfiqzr0YyQBAPXqiL&scope=read_write&
+			<a href="https://connect.stripe.com/oauth/authorize?response_type=code&
+			client_id=<%= Rails.application.secrets.stripe_client_id %>&scope=read_write&
 			state=<%= @product.id %>" class="stripe-connect-left-button">Create a new Stripe account</a>
-			<a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_8yNBdkjqvSFZzdWpfiqzr0YyQBAPXqiL&scope=read_write&
+			<a href="https://connect.stripe.com/oauth/authorize?response_type=code&
+			client_id=<%= Rails.application.secrets.stripe_client_id %>&scope=read_write&
 			state=<%= @product.id %>&
 			stripe_landing=login" class="stripe-connect-right-button">Connect an existing account</a>
 		</div>

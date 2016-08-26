@@ -24,9 +24,8 @@ class MakersController < ApplicationController
 			'code' => params[:code],
 			'grant_type' => 'authorization_code'
 		)
-		# res = Net::HTTP.start(url.host, url.port) {|http|
-		#   http.request(req)
-		# }
+		puts "WHAT"
+		puts res
 		credentials = JSON.parse(res.body)
 		if current_maker.update_attributes({
 			stripe_publishable_key: credentials['stripe_publishable_key'],
