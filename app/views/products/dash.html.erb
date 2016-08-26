@@ -1,5 +1,9 @@
 <div class="container">
-	<% if @reviews.length > 0 %>
+	<% if @reviews.length == 0 %>
+		<br />
+		<div class="small-title">No reviews yet</div>
+	<% else %>
+		<div class="subtitle">Reviews</div>
 		<table class="reviews-table">
 			<tr>
 		    <td></td>
