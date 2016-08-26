@@ -18,6 +18,7 @@ class Product < ActiveRecord::Base
 	validates :description, presence: true, length: { maximum: 50 }, :if => :pending?
 	validates :price, presence: true, :if => :pending?
 	validates :rebate, presence: true, :if => :pending?
+	validate :rebate_is_less_than_or_equal_to_price
 	validates :quantity, presence: true, :if => :pending?
 	validates :story, presence: true, length: { maximum: 10000 }, :if => :pending?
 
@@ -32,9 +33,17 @@ class Product < ActiveRecord::Base
 	#   })
 	# end
 
-	def pending?
-    status == 'pending'
-  end
+	private
+
+		def pending?
+	    status == 'pending'
+	  end
+
+	  def rebate_is_less_than_or_equal_to_price
+	  	if pending? and price != nil and rebate != nil and rebate > price
+	  		errors.add(:rebate, "should not be greater than price")
+	  	end
+	  end
 end
 
 Product.import
