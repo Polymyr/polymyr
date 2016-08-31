@@ -49,6 +49,10 @@ html, body {
 	}
 }
 
+.centered {
+	text-align: center;
+}
+
 .title {
 	font-size: 2.8em;
 	margin-bottom: 0.5em;
@@ -69,6 +73,18 @@ html, body {
 
 .small-subtitle {
 	font-size: 1.6em;
+	margin-bottom: 0.5em;
+	text-align: center;
+}
+
+.caption {
+	font-size: 1.2em;
+	margin-bottom: 0.5em;
+	text-align: center;
+}
+
+.small-caption {
+	font-size: 1em;
 	margin-bottom: 0.5em;
 	text-align: center;
 }

@@ -30,7 +30,7 @@ Rails.application.routes.draw do
     resources :build, controller: 'reviews/build'
   end
   resources :charges
-  resources :prospects, only: [:new, :create]
+  resources :prospects, only: [:new, :create, :show]
 
   get '/search', to: 'search#search'
   get '/about', to: 'general#about'

@@ -7,17 +7,26 @@ class ProspectsController < ApplicationController
 	end
 
 	def create
-		@prospect = Prospect.new(prospect_params)
-		if @prospect.save
-			redirect_to '/thanks'
+		@prospect = Prospect.find_by_email(prospect_params[:email])
+		if @prospect
+			redirect_to @prospect
 		else
-			render 'new'
+			@prospect = Prospect.new(prospect_params)
+			if @prospect.save
+				redirect_to @prospect
+			else
+				render 'new'
+			end
 		end
+	end
+
+	def show
+		@prospect = Prospect.find(params[:id])
 	end
 
 	private
 
 		def prospect_params
-			params.require(:prospect).permit(:name, :email)
+			params.require(:prospect).permit(:email, :referral_code)
 		end
 end
