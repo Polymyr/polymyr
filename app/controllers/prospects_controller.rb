@@ -10,9 +10,9 @@ class ProspectsController < ApplicationController
 		@prospect = Prospect.find_by_email(prospect_params[:email])
 		if @prospect
 			redirect_to @prospect
+		elsif enforce_ip_block
+			return
 		else
-			if enforce_ip_block
-				return
 			@prospect = Prospect.new(prospect_params)
 			if @prospect.save
 				redirect_to @prospect
@@ -48,6 +48,7 @@ class ProspectsController < ApplicationController
 	                 Redirecting user back to landing page.')
 	      flash[:error] = "Too many signups from this IP address"
 	      redirect_to unauthenticated_root_path
+	      return true
 	    else
 	      current_ip.count += 1
 	      current_ip.save
