@@ -2,19 +2,16 @@ class ProspectsController < ApplicationController
 
 	layout 'prelaunch_application', only: [:new]
 
-	before_action :check_ip, only: [:create]
-
 	def new
 		@prospect = Prospect.new
 	end
 
 	def create
-		puts 'What'
-		puts request.remote_ip
 		@prospect = Prospect.find_by_email(prospect_params[:email])
 		if @prospect
 			redirect_to @prospect
 		else
+			check_ip
 			@prospect = Prospect.new(prospect_params)
 			if @prospect.save
 				redirect_to @prospect
@@ -49,7 +46,8 @@ class ProspectsController < ApplicationController
 	      logger.info('IP address has already appeared three times in our records.
 	                 Redirecting user back to landing page.')
 	      flash[:error] = "Too many signups from this IP address"
-	      return redirect_to unauthenticated_root_path
+	      redirect_to unauthenticated_root_path
+	      return
 	    else
 	      current_ip.count += 1
 	      current_ip.save

@@ -7,6 +7,7 @@ ActiveAdmin.register Product do
 								:q16, :q17, :q18, :q19, :q20
 
 	index do
+		selectable_column
     id_column
     column :status
     column :name

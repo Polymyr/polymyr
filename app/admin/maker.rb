@@ -3,6 +3,7 @@ ActiveAdmin.register Maker do
 								:company, :website, :password
 
 	index do
+    selectable_column
     id_column
     column :name
     column :email
