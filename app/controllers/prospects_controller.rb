@@ -11,7 +11,8 @@ class ProspectsController < ApplicationController
 		if @prospect
 			redirect_to @prospect
 		else
-			check_ip
+			if enforce_ip_block
+				return
 			@prospect = Prospect.new(prospect_params)
 			if @prospect.save
 				redirect_to @prospect
@@ -31,7 +32,7 @@ class ProspectsController < ApplicationController
 			params.require(:prospect).permit(:email, :referral_code)
 		end
 
-		def check_ip
+		def enforce_ip_block
 	    # Prevent someone from gaming the site by referring themselves.
 	    # Presumably, users are doing this from the same device so block
 	    # their ip after their ip appears three times in the database.
@@ -47,7 +48,6 @@ class ProspectsController < ApplicationController
 	                 Redirecting user back to landing page.')
 	      flash[:error] = "Too many signups from this IP address"
 	      redirect_to unauthenticated_root_path
-	      return
 	    else
 	      current_ip.count += 1
 	      current_ip.save
