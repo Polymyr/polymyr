@@ -33,7 +33,6 @@ class MakersController < ApplicationController
 	    refresh_token: credentials['refresh_token'],
 	    access_token: credentials['access_token']
 		})
-			flash[:success] = "Successfully connected Stripe!"
 			if params[:state]
 				redirect_to product_build_path(:payment, product_id: params[:state])
 			else
