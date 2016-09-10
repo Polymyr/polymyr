@@ -7,15 +7,25 @@ html, body {
 	color: #505050;
 }
 
-.container {
+.full-container {
 	padding: 60px 15px 20px 15px;
 	min-height: 100%;
 	overflow: auto;
 }
 
-.container-narrow {
+.full-container-narrow {
 	padding: 30px 15px 30px 15px;
 	min-height: 100%;
+	overflow: auto;
+}
+
+.container {
+	padding: 60px 15px 20px 15px;
+	overflow: auto;
+}
+
+.container-narrow {
+	padding: 30px 15px 30px 15px;
 	overflow: auto;
 }
 

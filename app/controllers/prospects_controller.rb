@@ -1,6 +1,6 @@
 class ProspectsController < ApplicationController
 
-	layout 'prelaunch_application', only: [:new]
+	layout 'prelaunch_application', only: [:new, :show]
 
 	before_action :ref_to_cookie, only: [:new]
 

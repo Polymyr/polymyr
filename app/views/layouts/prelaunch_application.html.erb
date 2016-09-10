@@ -17,11 +17,9 @@
     <%= render 'favicon' %>
   </head>
   <body>
+    <%= render 'layouts/messages' %>
     <%= render 'layouts/prelaunch_header' %>
-    <div>
-      <%= render 'layouts/messages' %>
-      <%= yield %>
-    </div>
+    <%= yield %>
     <%= render 'layouts/footer' %>
   </body>
 </html>
