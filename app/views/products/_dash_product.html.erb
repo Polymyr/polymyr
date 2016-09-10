@@ -8,7 +8,13 @@
 			<% end %>
 			<div class="dash-button-left"><%= product.name %></div>
 		<% end %>
-		<div class="dash-button-right green">Active</div>
+		<div class="dash-button-right">
+			<a onclick="dashDropdown(<%= product.id %>)" id="dash-dropdown-btn-<%= product.id%>" class="dash-dropdown-btn"><i class="fa fa-ellipsis-h fa-lg" aria-hidden="true"></i></a>
+			<div id="dash-dropdown-<%= product.id %>" class="dash-dropdown">
+		    <%= link_to "View", product_path(product) %>
+		    <%= link_to "Reviews", dash_path(product) %>
+		  </div>
+		</div>
 	<% elsif product.status == "pending" %>
 		<%= link_to product_build_path(:product, product_id: product.id) do %>
 			<% if product.uploads.length == 0 %>
@@ -18,7 +24,14 @@
 			<% end %>
 			<div class="dash-button-left"><%= product.name %></div>
 		<% end %>
-		<div class="dash-button-right orange">Pending</div>
+		<div class="dash-button-right">
+			<a onclick="dashDropdown(<%= product.id %>)" id="dash-dropdown-btn-<%= product.id%>" class="dash-dropdown-btn"><i class="fa fa-ellipsis-h fa-lg" aria-hidden="true"></i></a>
+			<div id="dash-dropdown-<%= product.id %>" class="dash-dropdown">
+		    <%= link_to "Edit", product_build_path(:product, product_id: product.id) %>
+		    <%= link_to "Delete", product, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+		  </div>
+		</div>
 	<% elsif !product.status %>
 		<%= link_to product_build_path(:product, product_id: product.id) do %>
 			<% if product.uploads.length == 0 %>
@@ -28,7 +41,14 @@
 			<% end %>
 			<div class="dash-button-left"><%= product.name %></div>
 		<% end %>
-		<div class="dash-button-right">Incomplete</div>
+		<div class="dash-button-right">
+			<a onclick="dashDropdown(<%= product.id %>)" id="dash-dropdown-btn-<%= product.id%>" class="dash-dropdown-btn"><i class="fa fa-ellipsis-h fa-lg" aria-hidden="true"></i></a>
+			<div id="dash-dropdown-<%= product.id %>" class="dash-dropdown">
+		    <%= link_to "Edit", product_build_path(:product, product_id: product.id) %>
+		    <%= link_to "Delete", product, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+		  </div>
+		</div>
 	<% elsif product.status == "complete" %>
 		<%= link_to dash_path(product) do %>
 			<% if product.uploads.length == 0 %>
@@ -38,7 +58,13 @@
 			<% end %>
 			<div class="dash-button-left"><%= product.name %></div>
 		<% end %>
-		<div class="dash-button-right grey">Finished</div>
+		<div class="dash-button-right">
+			<a onclick="dashDropdown(<%= product.id %>)" id="dash-dropdown-btn-<%= product.id%>" class="dash-dropdown-btn"><i class="fa fa-ellipsis-h fa-lg" aria-hidden="true"></i></a>
+			<div id="dash-dropdown-<%= product.id %>" class="dash-dropdown">
+		    <%= link_to "View", product_path(product) %>
+		    <%= link_to "Reviews", dash_path(product) %>
+		  </div>
+		</div>
 	<% end %>
 </li>
 

@@ -36,8 +36,7 @@ class ProductsController < ApplicationController
   	@product = current_maker.products.find_by(id: params[:id])
   	redirect_to root_path if @product.nil?
   	@product.destroy
-  	flash[:success] = "Product deleted!"
-  	redirect_to root_path
+  	redirect_to current_maker
   end
 
 	def show
