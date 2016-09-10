@@ -24,7 +24,10 @@ function dashDropdown(id) {
 window.onclick = function(event) {
   // Close header dropdown
   if (!event.target.matches('#header-dropdown-btn') && !event.target.matches('#header-dropdown-btn i')) {
-    document.getElementById("header-dropdown").classList.remove("show");
+    var headerDropdown =  document.getElementById("header-dropdown");
+    if (headerDropdown) {
+      headerDropdown.classList.remove("show");
+    }
   }
   // Close dash dropdown unless you click on a dash dropdown button
   if (!event.target.matches('.dash-dropdown-btn i')) {

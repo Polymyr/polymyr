@@ -2,6 +2,8 @@ class ProspectsController < ApplicationController
 
 	layout 'prelaunch_application', only: [:new]
 
+	before_action :ref_to_cookie, only: [:new]
+
 	def new
 		@prospect = Prospect.new
 	end
@@ -13,7 +15,9 @@ class ProspectsController < ApplicationController
 		elsif enforce_ip_block
 			return
 		else
+			ref_code = cookies[:h_ref]
 			@prospect = Prospect.new(prospect_params)
+			@prospect.referrer = Prospect.find_by_referral_code(ref_code) if ref_code
 			if @prospect.save
 				redirect_to @prospect
 			else
@@ -43,7 +47,8 @@ class ProspectsController < ApplicationController
 	    current_ip = IpAddress.find_by_address(address)
 	    if current_ip.nil?
 	      current_ip = IpAddress.create(address: address, count: 1)
-	    elsif current_ip.count > 2
+	      return false
+	    elsif current_ip.count > 3
 	      logger.info('IP address has already appeared three times in our records.
 	                 Redirecting user back to landing page.')
 	      flash[:error] = "Too many signups from this IP address"
@@ -52,6 +57,16 @@ class ProspectsController < ApplicationController
 	    else
 	      current_ip.count += 1
 	      current_ip.save
+	      return false
+	    end
+	  end
+
+	  def ref_to_cookie
+	    return if !params[:ref]
+
+	    unless Prospect.find_by_referral_code(params[:ref]).nil?
+	      h_ref = { value: params[:ref], expires: 1.week.from_now }
+	      cookies[:h_ref] = h_ref
 	    end
 	  end
 end

@@ -3,11 +3,15 @@ class Prospect < ActiveRecord::Base
 
 	before_create :create_referral_code
 
+  belongs_to :referrer, class_name: 'Prospect', foreign_key: 'referrer_id'
+  has_many :referrals, class_name: 'Prospect', foreign_key: 'referrer_id'
+
 	validates :email,
     presence: true,
     length: { maximum: 255 }, 
     format: { with: VALID_EMAIL_REGEX }, 
     uniqueness: { case_sensitive: false, message: "This email already exists" }
+  validates :referral_code, uniqueness: true
 
   private
 
