@@ -16,7 +16,6 @@ class Products::BuildController < ApplicationController
     if step == steps.last
       @product.status = "pending"
       if @product.save
-        flash[:success] = "Your product has been submitted for approval"
         redirect_to @product.maker
       else
         @product.status = ""
