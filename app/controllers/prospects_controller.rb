@@ -24,7 +24,7 @@ class ProspectsController < ApplicationController
 				redirect_to @prospect
 			else
 				puts("oh no")
-				puts @prospect
+				puts @prospect.email
 				render 'new'
 			end
 		end

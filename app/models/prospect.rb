@@ -16,6 +16,6 @@ class Prospect < ActiveRecord::Base
   private
 
   	def create_referral_code
-	    self.referral_code = UsersHelper.unused_referral_code
+	    self.referral_code = ProspectsHelper.unused_referral_code
 	  end
 end

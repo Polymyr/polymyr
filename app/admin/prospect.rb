@@ -6,6 +6,7 @@ ActiveAdmin.register Prospect do
     id_column
     column :email
     column :referral_code
+    column :referrer_id
     actions
   end
 
