@@ -33,7 +33,7 @@ class ProspectsController < ApplicationController
 	private
 
 		def prospect_params
-			params.require(:prospect).permit(:email, :referral_code)
+			params.require(:prospect).permit(:email, :referral_code, :referrer_id)
 		end
 
 		def enforce_ip_block
