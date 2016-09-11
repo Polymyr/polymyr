@@ -19,8 +19,12 @@ class ProspectsController < ApplicationController
 			@prospect = Prospect.new(prospect_params)
 			@prospect.referrer = Prospect.find_by_referral_code(ref_code) if ref_code
 			if @prospect.save
+				puts("oh yes")
+				puts @prospect
 				redirect_to @prospect
 			else
+				puts("oh no")
+				puts @prospect
 				render 'new'
 			end
 		end
@@ -33,7 +37,7 @@ class ProspectsController < ApplicationController
 	private
 
 		def prospect_params
-			params.require(:prospect).permit(:email, :referral_code, :referrer_id)
+			params.require(:prospect).permit(:email, :referral_code)
 		end
 
 		def enforce_ip_block
@@ -48,7 +52,7 @@ class ProspectsController < ApplicationController
 	    if current_ip.nil?
 	      current_ip = IpAddress.create(address: address, count: 1)
 	      return false
-	    elsif current_ip.count > 3
+	    elsif current_ip.count > 50
 	      logger.info('IP address has already appeared three times in our records.
 	                 Redirecting user back to landing page.')
 	      flash[:error] = "Too many signups from this IP address"
