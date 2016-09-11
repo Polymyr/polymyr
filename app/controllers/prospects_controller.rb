@@ -42,7 +42,7 @@ class ProspectsController < ApplicationController
 	    # their ip after their ip appears three times in the database.
 
 	    address = request.remote_ip
-	    return if address.nil?
+	    return false if address.nil?
 
 	    current_ip = IpAddress.find_by_address(address)
 	    if current_ip.nil?
