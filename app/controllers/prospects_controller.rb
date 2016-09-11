@@ -2,7 +2,7 @@ class ProspectsController < ApplicationController
 
 	layout 'prelaunch_application'
 
-	before_action :ref_to_cookie, only: [:new]
+	# before_action :ref_to_cookie, only: [:new]
 
 	def new
 		@prospect = Prospect.new
