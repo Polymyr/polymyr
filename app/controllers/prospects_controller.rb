@@ -12,10 +12,10 @@ class ProspectsController < ApplicationController
 		@prospect = Prospect.find_by_email(prospect_params[:email])
 		if @prospect
 			redirect_to @prospect
-		elsif enforce_ip_block
-			redirect_to unauthenticated_root_path
+		# elsif enforce_ip_block
+		# 	redirect_to unauthenticated_root_path
 		else
-			ref_code = cookies[:h_ref]
+			# ref_code = cookies[:h_ref]
 			@prospect = Prospect.new(prospect_params)
 			# @prospect.referrer = Prospect.find_by_referral_code(ref_code) if ref_code
 			if @prospect.save
