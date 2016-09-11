@@ -11,11 +11,16 @@
 
 	<div class="subtitle">Tell us about your product</div>
 
+	<br />
+
+	<div class="caption grey">Upload images</div>
+
 	<%= form_for([@product, Upload.new], html: { multipart: true, class: "dropzone", :product_id => @product.id }) do |f|  %>
 	  <div class="dz-message" data-dz-message>
-	  	<span><i class="fa fa-upload fa-3x" aria-hidden="true"></i></span>
+	  	<span><i class="fa fa-upload fa-4x" aria-hidden="true"></i></span>
 	  	<br /><br />
-	  	<span>Drop files here or click to upload</span>
+	  	<div class="caption">Drop files here or click to upload</div>
+	  	<div>Max image size 1MB</div>
 	  </div>
 	  <!-- <div class="fallback">
 	    <%= f.file_field :image %><br>
@@ -80,9 +85,10 @@
 					url: '/products/' + product_id + '/uploads/' + id,
 					success: function(data){
 						console.log(data.message);
-						file.previewElement.remove();
 					}
 				});
+				// Remove both successful and failed image uploads
+				file.previewElement.remove();
 			},
 
 			init: function () {

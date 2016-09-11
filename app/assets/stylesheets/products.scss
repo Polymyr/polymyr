@@ -379,25 +379,31 @@
 }
 
 .dropzone {
-	height: 330px;
-	width: 564px;
-	padding: 0;
-	margin: 40px auto 20px auto;
+	height: 305px;
+	width: 255px;
+	padding: 5px;
+	margin: 15px auto 15px auto;
 	color: #A0A0A0;
 	border-color: #C0C0C0;
-	font-size: 1.2em;
 }
 
 .dropzone .dz-message {
-	margin-top: 100px;
-	width: 564px;
+	margin-top: 70px;
+	width: 255px;
 	position: absolute;
+}
+
+@media screen and (min-width: 768px) {
+	.dropzone {
+		height: 305px;
+		width: 495px;
+	}
+	.dropzone .dz-message {
+		width: 495px;
+	}
 }
 
 .dropzone .dz-preview {
 	margin: 10px 10px 10px 10px;
 }
 
-.dropzone .dz-remove {
-	margin-top: 5px;
-}
