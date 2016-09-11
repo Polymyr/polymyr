@@ -17,7 +17,7 @@ class ProspectsController < ApplicationController
 		else
 			ref_code = cookies[:h_ref]
 			@prospect = Prospect.new(prospect_params)
-			@prospect.referrer = Prospect.find_by_referral_code(ref_code) if ref_code
+			# @prospect.referrer = Prospect.find_by_referral_code(ref_code) if ref_code
 			if @prospect.save
 				puts("oh yes")
 				puts @prospect
