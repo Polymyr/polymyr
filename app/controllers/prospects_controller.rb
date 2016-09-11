@@ -1,6 +1,6 @@
 class ProspectsController < ApplicationController
 
-	layout 'prelaunch_application', only: [:new, :show]
+	layout 'prelaunch_application'
 
 	before_action :ref_to_cookie, only: [:new]
 
@@ -13,7 +13,7 @@ class ProspectsController < ApplicationController
 		if @prospect
 			redirect_to @prospect
 		elsif enforce_ip_block
-			return
+			redirect_to unauthenticated_root_path
 		else
 			ref_code = cookies[:h_ref]
 			@prospect = Prospect.new(prospect_params)
@@ -52,7 +52,6 @@ class ProspectsController < ApplicationController
 	      logger.info('IP address has already appeared three times in our records.
 	                 Redirecting user back to landing page.')
 	      flash[:error] = "Too many signups from this IP address"
-	      redirect_to unauthenticated_root_path
 	      return true
 	    else
 	      current_ip.count += 1
