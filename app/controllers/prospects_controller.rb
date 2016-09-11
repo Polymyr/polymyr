@@ -2,7 +2,7 @@ class ProspectsController < ApplicationController
 
 	layout 'prelaunch_application'
 
-	# before_action :ref_to_cookie, only: [:new]
+	before_action :ref_to_cookie, only: [:new]
 
 	def new
 		@prospect = Prospect.new
@@ -12,19 +12,15 @@ class ProspectsController < ApplicationController
 		@prospect = Prospect.find_by_email(prospect_params[:email])
 		if @prospect
 			redirect_to @prospect
-		# elsif enforce_ip_block
-		# 	redirect_to unauthenticated_root_path
+		elsif enforce_ip_block
+			redirect_to unauthenticated_root_path
 		else
-			# ref_code = cookies[:h_ref]
+			ref_code = cookies[:h_ref]
 			@prospect = Prospect.new(prospect_params)
-			# @prospect.referrer = Prospect.find_by_referral_code(ref_code) if ref_code
+			@prospect.referrer = Prospect.find_by_referral_code(ref_code) if ref_code
 			if @prospect.save
-				puts("oh yes")
-				puts @prospect
 				redirect_to @prospect
 			else
-				puts("oh no")
-				puts @prospect.email
 				render 'new'
 			end
 		end
@@ -46,13 +42,13 @@ class ProspectsController < ApplicationController
 	    # their ip after their ip appears three times in the database.
 
 	    address = request.remote_ip
-	    return false if address.nil?
+	    return if address.nil?
 
 	    current_ip = IpAddress.find_by_address(address)
 	    if current_ip.nil?
 	      current_ip = IpAddress.create(address: address, count: 1)
-	      return false
-	    elsif current_ip.count > 50
+	      return
+	    elsif current_ip.count > 3
 	      logger.info('IP address has already appeared three times in our records.
 	                 Redirecting user back to landing page.')
 	      flash[:error] = "Too many signups from this IP address"
@@ -60,7 +56,7 @@ class ProspectsController < ApplicationController
 	    else
 	      current_ip.count += 1
 	      current_ip.save
-	      return false
+	      return
 	    end
 	  end
 
