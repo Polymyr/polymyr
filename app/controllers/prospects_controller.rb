@@ -42,12 +42,12 @@ class ProspectsController < ApplicationController
 	    # their ip after their ip appears three times in the database.
 
 	    address = request.remote_ip
-	    return if address.nil?
+	    return false if address.nil?
 
 	    current_ip = IpAddress.find_by_address(address)
 	    if current_ip.nil?
 	      current_ip = IpAddress.create(address: address, count: 1)
-	      return
+	      return false
 	    elsif current_ip.count > 3
 	      logger.info('IP address has already appeared three times in our records.
 	                 Redirecting user back to landing page.')
@@ -56,7 +56,7 @@ class ProspectsController < ApplicationController
 	    else
 	      current_ip.count += 1
 	      current_ip.save
-	      return
+	      return false
 	    end
 	  end
 

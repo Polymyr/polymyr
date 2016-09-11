@@ -11,7 +11,7 @@ class Prospect < ActiveRecord::Base
     length: { maximum: 255 }, 
     format: { with: VALID_EMAIL_REGEX }, 
     uniqueness: { case_sensitive: false, message: "This email already exists" }
-  validates :referral_code, uniqueness: true
+  validates :referral_code, uniqueness: true, allow_blank: true
 
   private
 
