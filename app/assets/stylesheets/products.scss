@@ -46,6 +46,7 @@
 	padding: 0;
 	line-height: 0;
 	list-style-type: none;
+	min-height: 1px;
 }
 
 .thumbnails li {
@@ -353,7 +354,7 @@
 .product-progress {
 	list-style-type: none;
 	text-align: center;
-	margin: 0 auto 30px auto;
+	margin: 0 auto 1em auto;
 	padding: 0;
 	width: 100%;
 	border-radius: 15px;
@@ -381,7 +382,7 @@
 .dropzone {
 	height: 305px;
 	width: 255px;
-	padding: 5px;
+	padding: 0;
 	margin: 15px auto 15px auto;
 	color: #A0A0A0;
 	border-color: #C0C0C0;

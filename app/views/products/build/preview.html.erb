@@ -11,7 +11,7 @@
 
 	<%= render 'layouts/product_error_messages' %>
 
-	<div class="subtitle">This is what your product page will look like</div>
+	<div class="subtitle">Below is a preview of your product page</div>
 
 	<div class="product-preview-caption">
 		After we accept your submission, you can no longer edit your product, so make sure your product page is exactly the way you want it!
@@ -45,7 +45,11 @@
 
 				  <!-- Wrapper for slides -->
 				  <div class="carousel-inner" role="listbox">
-				  	<% if @product.uploads.length > 0 %>
+				  	<% if @product.uploads.length == 0 %>
+				  		<div class="item active">
+					      <%= image_tag("image_not_found_large.png") %>
+					    </div>
+					  <% else %>
 					    <div class="item active">
 					      <%= image_tag @product.uploads[0].image.url(:large) %>
 					    </div>

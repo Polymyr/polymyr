@@ -11,30 +11,36 @@
 
 	<div class="subtitle">Tell us about your product</div>
 
-	<br />
-
-	<div class="caption grey">Upload images</div>
-
-	<%= form_for([@product, Upload.new], html: { multipart: true, class: "dropzone", :product_id => @product.id }) do |f|  %>
-	  <div class="dz-message" data-dz-message>
-	  	<span><i class="fa fa-upload fa-4x" aria-hidden="true"></i></span>
-	  	<br /><br />
-	  	<div class="caption">Drop files here or click to upload</div>
-	  	<div>Max image size 1MB</div>
-	  </div>
-	  <!-- <div class="fallback">
-	    <%= f.file_field :image %><br>
-	    <%= f.submit "Upload" %>
-	  </div> -->
-	<% end %>
-
 	<div class="form-wrapper" data-id=<%= @product.id %>>
+
+		<div class="small-subtitle">Images and video</div>
+
+		<%= form_for([@product, Upload.new], html: { multipart: true, class: "dropzone", :product_id => @product.id }) do |f|  %>
+		  <div class="dz-message" data-dz-message>
+		  	<span><i class="fa fa-upload fa-4x" aria-hidden="true"></i></span>
+		  	<br /><br />
+		  	<div class="caption">Drop files here or click to upload</div>
+		  	<div>Max image size 1MB</div>
+		  </div>
+		  <!-- <div class="fallback">
+		    <%= f.file_field :image %><br>
+		    <%= f.submit "Upload" %>
+		  </div> -->
+		<% end %>
 
 		<%= simple_form_for @product, url: wizard_path, method: :put do |f| %>
 
 			<div class="form-inputs">
-				<%= f.input :name, placeholder: 'Product name' %>
-				<%= f.input :description, placeholder: "Short description", as: :string %>
+				<%= f.input :youtube_url, placeholder: "Youtube video link", label: "Youtube video link" %>
+			</div>
+
+			<br />
+
+			<div class="small-subtitle">Product info</div>
+
+			<div class="form-inputs">
+				<%= f.input :name, placeholder: "Product name" %>
+				<%= f.input :description, placeholder: "Short description", label: "Short description", as: :string %>
 				<%= f.input :price, placeholder: "Price" %>
 				<div id="price-dollar-sign">$</div>
 				<%= f.input :rebate, placeholder: "Rebate" %>

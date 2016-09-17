@@ -1,6 +1,6 @@
 <li class="dash-product">
 	<% if product.status == "active" %>
-		<%= link_to dash_path(product) do %>
+		<%= link_to product_path(product) do %>
 			<% if product.uploads.length == 0 %>
 				<%= image_tag("image_not_found_small.png") %>
 			<% else %>
