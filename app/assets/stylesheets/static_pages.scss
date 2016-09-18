@@ -3,9 +3,17 @@
 	overflow: auto;
 }
 
+.wide-about-section {
+	padding: 5em 2em 6em 2em;
+	overflow: auto;
+}
+
 @media screen and (min-width: 768px) {
 	.about-section {
 		padding: 7em 12em 9em 12em;
+	}
+	.wide-about-section {
+		padding: 5em 4em 6em 4em;
 	}
 }
 
@@ -25,13 +33,29 @@
 
 .founder img {
 	border-radius: 5px;
-	width: 8em;
-	max-width: 90%;
 	margin-bottom: 0.5em;
 }
 
-.founder h4 {
-	margin-bottom: 0.2em;
+.founder-image {
+	float: left;
+	width: 5.5em;
+}
+
+.founder .founder-desc {
+	float: left;
+	font-size: 0.7em;
+	width: calc(100% - 8em);
+	padding-left: 1em;
+}
+
+@media screen and (min-width: 768px) {
+	.founder-image {
+		width: 8em;
+	}
+	.founder .founder-desc {
+		width: calc(100% - 10em);
+		font-size: 0.8em;
+	}
 }
 
 .vincent {
