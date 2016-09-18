@@ -1,5 +1,5 @@
 ActiveAdmin.register Product do
-	permit_params :status, :name, :description, 
+	permit_params :status, :name, :description, :youtube_url,
 								:price, :rebate, :quantity,
 								:story, :q1, :q2, :q3, :q4,
 								:q5, :q6, :q7, :q8, :q9, :q10,
@@ -12,6 +12,7 @@ ActiveAdmin.register Product do
     column :status
     column :name
     column :description
+    column :youtube_url
     column :price
     column :rebate
     column :quantity
@@ -23,6 +24,7 @@ ActiveAdmin.register Product do
     	f.input :status
       f.input :name
 	    f.input :description
+	    f.input :youtube_url
 	    f.input :price
 	    f.input :rebate
 	    f.input :quantity

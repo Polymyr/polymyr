@@ -88,11 +88,14 @@
 				<% end %>
 			</div>
 		</div>
-		<br />
-		<h3>Product Story</h3>
-		<h5>
-			<%= sanitize @product.story if @product.story.present? %>
-		</h5>
-		<br />
+		<div class="product-section">
+			<div class="small-subtitle">Product Story</div>
+			<h5>
+				<%= sanitize @product.story if @product.story.present? %>
+			</h5>
+		</div>
+		<div class="embed-container">
+			<%= embed(@product.youtube_url) %>
+		</div>
 	</div>
 </div>
