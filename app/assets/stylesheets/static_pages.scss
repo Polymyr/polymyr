@@ -1,10 +1,11 @@
 .about-section {
-	padding: 5em;
+	padding: 5em 3em 6em 3em;
+	overflow: auto;
 }
 
 @media screen and (min-width: 768px) {
 	.about-section {
-		padding: 8em 12em 9em 12em;
+		padding: 7em 12em 9em 12em;
 	}
 }
 
@@ -15,4 +16,28 @@
   -o-background-size: cover;      /* Opera*/
   background-size: cover;  
   color: white;
+}
+
+.founder {
+	width: 50%;
+	float: left;
+}
+
+.founder img {
+	border-radius: 5px;
+	width: 8em;
+	max-width: 90%;
+	margin-bottom: 0.5em;
+}
+
+.founder h4 {
+	margin-bottom: 0.2em;
+}
+
+.vincent {
+	padding-right: 1em;
+}
+
+.michael {
+	padding-left: 1em;
 }
