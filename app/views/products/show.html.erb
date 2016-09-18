@@ -65,11 +65,16 @@
 				<% end %>
 			</div>
 		</div>
-		<br />
-		<h3>Product Description</h3>
-		<h5>
-			<%= sanitize @product.story %>
-		</h5>
-		<br />
+		<div class="product-section">
+			<div class="small-subtitle">Product Story</div>
+			<h5>
+				<%= sanitize @product.story %>
+			</h5>
+		</div>
+		<% if @product.youtube_url.present? %>
+			<div class="embed-container">
+				<%= embed(@product.youtube_url) %>
+			</div>
+		<% end %>
 	</div>
 </div>

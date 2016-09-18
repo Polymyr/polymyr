@@ -94,8 +94,10 @@
 				<%= sanitize @product.story if @product.story.present? %>
 			</h5>
 		</div>
-		<div class="embed-container">
-			<%= embed(@product.youtube_url) %>
-		</div>
+		<% if @product.youtube_url.present? %>
+			<div class="embed-container">
+				<%= embed(@product.youtube_url) %>
+			</div>
+		<% end %>
 	</div>
 </div>
