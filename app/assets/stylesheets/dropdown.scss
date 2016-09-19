@@ -89,8 +89,8 @@
 .dash-dropdown {
   display: none;
   position: absolute;
-  top: 28px;
-  right: -10px;
+  top: 30px;
+  right: -7px;
   background: white;
   min-width: 9.5em;
   border: 1px solid #C0C0C0;
@@ -138,8 +138,8 @@
 
 @media screen and (min-width: 768px) {
   .dash-dropdown {
-    top: 32px;
-    right: -8px;
+    top: 35px;
+    right: -5px;
   }
   .dash-dropdown .fa-caret-up {
     top: -8px;

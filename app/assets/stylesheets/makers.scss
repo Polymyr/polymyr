@@ -14,16 +14,16 @@
 	max-width: 100%;
 }
 
+.dash-wrapper h4 {
+	margin-bottom: 0.2em;
+}
+
 .dash-product {
 	width: 100%;
 	border-top: 1px solid #D0D0D0;
 	padding: 0.5em 0 0.5em 0;
 	display: block;
 	position: relative;
-}
-
-.dash-product:first-child {
-	border-top: none;
 }
 
 .dash-product img {
@@ -48,10 +48,16 @@
 
 .dash-button-right {
 	display: inline-block;
-	margin-top: 10px;
-	color: #707070;
+	margin-top: 5px;
 	position: absolute;
 	right: 0;
+	font-size: 1.1em;
+}
+
+.dash-button-right .dash-dropdown-btn {
+	color: #707070;
+	display: block;
+	padding: 5px 3px 5px 3px;
 }
 
 .payment-title {
