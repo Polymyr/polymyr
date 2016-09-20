@@ -48,26 +48,32 @@
 
 				  <!-- Wrapper for slides -->
 				  <div class="carousel-inner" role="listbox">
-				  	<% if @product.uploads.length == 0 %>
+				  	<% if @product.uploads.length == 0 && !@product.youtube_url.present? %>
 				  		<div class="item active">
 					      <%= image_tag("image_not_found_large.png") %>
 					    </div>
-					  <% else %>
-					    <div class="item active">
-					      <%= image_tag @product.uploads[0].image.url(:large) %>
-					    </div>
-					  <% end %>
-				  	<% for i in 1..@product.uploads.length - 1 %>
-					    <div class="item">
-					      <%= image_tag @product.uploads[i].image.url(:large) %>
-					    </div>
-					  <% end %>
-					  <% if @product.youtube_url.present? %>
-						  <div class="item video">
+					  <% elsif @product.uploads.length == 0 && @product.youtube_url.present? %>
+					  	<div class="item active video">
 						  	<div class="embed-container">
 									<%= embed(@product.youtube_url) %>
 								</div>
 						  </div>
+					  <% else %>
+					    <div class="item active">
+					      <%= image_tag @product.uploads[0].image.url(:large) %>
+					    </div>
+					  	<% for i in 1..@product.uploads.length - 1 %>
+						    <div class="item">
+						      <%= image_tag @product.uploads[i].image.url(:large) %>
+						    </div>
+						  <% end %>
+						  <% if @product.youtube_url.present? %>
+							  <div class="item video">
+							  	<div class="embed-container">
+										<%= embed(@product.youtube_url) %>
+									</div>
+							  </div>
+							<% end %>
 						<% end %>
 				  </div>
 				</div>
@@ -82,7 +88,9 @@
 						<li><%= image_tag @product.uploads[i].image.url(:thumb), 'data-target' => "#product-carousel", 'data-slide-to' => i %></li>
 					<% end %>
 					<% if @product.youtube_url.present? %>
-						<li id="separator"></li>
+						<% if @product.uploads.length > 0 %>
+							<li id="separator"></li>
+						<% end %>
 						<li>
 							<%= image_tag "//img.youtube.com/vi/" + youtube_id(@product.youtube_url) + "/mqdefault.jpg", 'data-target' => "#product-carousel", 'data-slide-to' => @product.uploads.length %>
 							<i class="fa fa-play-circle-o" aria-hidden="true" data-target="#product-carousel", data-slide-to=<%= @product.uploads.length %>></i>

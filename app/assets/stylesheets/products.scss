@@ -452,17 +452,36 @@
 }
 
 .dropzone .dz-message {
-	margin-top: 70px;
+	margin-top: 65px;
 	width: 255px;
 	position: absolute;
 }
 
+.dropzone .dz-preview .dz-image {
+	border-radius: 5px;
+	margin-bottom: 0.3em;
+}
+
+.dropzone .dz-details {
+	margin-bottom: 0;
+}
+
+@media screen and (min-width: 480px) {
+	.dropzone {
+		width: 365px;
+	}
+	.dropzone .dz-message {
+		margin-top: 75px;
+		width: 365px;
+	}
+}
+
 @media screen and (min-width: 768px) {
 	.dropzone {
-		height: 305px;
 		width: 495px;
 	}
 	.dropzone .dz-message {
+		margin-top: 60px;
 		width: 495px;
 	}
 }

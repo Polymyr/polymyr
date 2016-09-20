@@ -236,7 +236,7 @@
       font-size: 13px;
       min-width: 100%;
       max-width: 100%;
-      padding: 2em 1em;
+      padding: 1em 1em;
       text-align: center;
       color: rgba(0, 0, 0, 0.9);
       line-height: 150%; }
@@ -369,7 +369,7 @@
       transition: opacity 0.3s ease;
       border-radius: 8px;
       font-size: 12px;
-      top: 140px;
+      top: 135px;
       left: -10px;
       width: 120px;
       background: #be2626;
@@ -379,7 +379,7 @@
       .dropzone .dz-preview .dz-error-message:after {
         content: '';
         position: absolute;
-        top: -6px;
+        top: -5px;
         left: 54px;
         width: 0;
         height: 0;
