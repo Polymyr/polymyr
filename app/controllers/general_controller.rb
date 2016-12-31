@@ -1,6 +1,6 @@
 class GeneralController < ApplicationController
 
-	layout 'prelaunch_application', only: [:about]
+	# layout 'prelaunch_application', only: [:about]
 
 	def home
 		@products = Product.active
@@ -9,4 +9,3 @@ class GeneralController < ApplicationController
 	def about
 	end
 end
-
